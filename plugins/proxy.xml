@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plugin SYSTEM "http://www.phamm.org/DTD/phamm-plugins.dtd">
+
+<plugin name="proxy">
+	<label>PROXY</label>
+	<version>
+		<number>0.0.3</number>
+		<creationDate>2005-02-19</creationDate>
+		<updatedDate>2008-09-08</updatedDate>
+		<status>beta</status>
+	</version>
+	<author>
+		<firstName>Alessandro De Zorzi</firstName>
+		<lastName>De Zorzi</lastName>
+		<mail>team@phamm.org</mail>
+		<web>http://www.phamm.org</web>
+	</author>
+	<license>GPL</license>
+	<shortDescription>Plugin to manage proxy accounts</shortDescription>
+	<longDescription>Plugin to manage proxy accounts (Squid...)</longDescription>
+	<parent>top</parent>
+	<color>FF4455</color>
+	<minAuthLevel>10</minAuthLevel>
+	<isDomainRelated>0</isDomainRelated>
+	<isPostmasterRelated>0</isPostmasterRelated>
+	<isAccountRelated>1</isAccountRelated>
+	
+	<account>
+		<objectClasses>
+			<objectClass name="proxyAccount">
+				<bug>0</bug>
+			</objectClass>
+		</objectClasses>
+		<attributes>
+			<attribute name="webAccess">
+				<prettyName>Web Access</prettyName>
+				<table>1</table>
+				<bool>1</bool>
+				<default>TRUE</default>
+			</attribute>
+			<attribute name="proxyHost">
+				<prettyName>Proxy Host</prettyName>
+				<table>1</table>
+			</attribute>
+		</attributes>
+	</account>
+</plugin>

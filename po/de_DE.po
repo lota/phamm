@@ -1,0 +1,509 @@
+# German Phamm Translation
+# Copyright (c) 2004,2008 Alessandro De Zorzi, Mirko Grava
+# This file is distributed under the same license as the Phamm package.
+#
+# Jan Dankert <jan.2007 AT jandankert DOT de>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phamm 0.5.13\n"
+"POT-Creation-Date: 2008-09-22 15:50+0300\n"
+"PO-Revision-Date: 2008-09-22 15:50+0300\n"
+"Last-Translator: Jan Dankert\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ../www-data/main.php:204
+#, php-format
+msgid "%s modified"
+msgstr "%s geändert"
+
+#: ../www-data/main.php:605
+#, php-format
+msgid "%s not added!"
+msgstr "%s nicht hinzugefügt"
+
+#: ../lib/xhtml.php:979
+msgid "...execute a command"
+msgstr "...einen Befehl ausführen"
+
+#: ../lib/xhtml.php:1005
+msgid "...select an action"
+msgstr "...eine Aktion auswählen"
+
+#: ../lib/xhtml.php:747
+msgid "Account"
+msgstr ""
+
+#: ../www-data/main.php:599
+#, php-format
+msgid "Account %s successfully added"
+msgstr "Account %s wurde erfolgreich hinzugefügt"
+
+#: ../lib/xhtml.php:281
+#, php-format
+msgid "Account (%d)"
+msgid_plural "Accounts (%d)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../www-data/main.php:369
+msgid "Account or Alias already exists"
+msgstr "Der Account oder der Alias existiert bereits"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:44 ../plugins/mail.xml:52 ../plugins/mail.xml:125
+#, no-wrap
+msgid "Active"
+msgstr "Aktiv"
+
+#: ../lib/xhtml.php:1130
+msgid "Add catch-all address"
+msgstr "Neue Catch-All-Adresse einrichten"
+
+#: ../lib/xhtml.php:715 ../lib/xhtml.php:739
+msgid "Add new account"
+msgstr "Neuen Account einrichten"
+
+#: ../lib/xhtml.php:380 ../lib/xhtml.php:648
+msgid "Add new domain"
+msgstr "Neue Domain hinzufügen"
+
+#: ../lib/xhtml.php:838
+msgid "All"
+msgstr "Alle"
+
+#: ../lib/xhtml.php:822
+msgid "All domains"
+msgstr "Alle Domains"
+
+#: ../www-data/main.php:110
+msgid "Bye!"
+msgstr "Auf Wiedersehen!"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:84
+#, no-wrap
+msgid "Can edit Accounts"
+msgstr "Accounts bearbeiten"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:59
+#, no-wrap
+msgid "Can edit Anti-Virus"
+msgstr "Bearbeite Antivirenprogramm"
+
+#: ../www-data/main.php:97
+msgid "Can't contact LDAP server"
+msgstr "Keine Verbindung zum LDAP-Server möglich"
+
+#: ../www-data/main.php:424
+msgid "Catch all"
+msgstr "Catch all"
+
+#: ../www-data/main.php:422
+msgid "Catch all active"
+msgstr "Catch all aktiv"
+
+#: ../www-data/main.php:221
+msgid "Changes have not performed"
+msgstr "Die Änderungen wurden nicht durchgeführt"
+
+#: ../lib/common.php:482
+msgid "Code "
+msgstr "Code"
+
+#: ../lib/xhtml.php:283
+msgid "Common Name"
+msgstr "Name"
+
+#: ../lib/xhtml.php:662 ../lib/xhtml.php:753
+msgid "Confirm Password"
+msgstr "Kennwort bestätigen"
+
+#: ../www-data/main.php:72
+msgid "Connection to LDAP Server Failed!"
+msgstr "Keine Verbindung zum LDAP-Server möglich"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:290
+#, no-wrap
+msgid "Creation Date"
+msgstr "Anlage-Datum"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:65 ../plugins/mail.xml:161
+#, no-wrap
+msgid "Delete"
+msgstr "Entfernen"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:39
+#, no-wrap
+msgid "Destination"
+msgstr "Ziel"
+
+#: ../lib/xhtml.php:656
+msgid "Domain"
+msgstr "Domain"
+
+#: ../www-data/main.php:339
+#, php-format
+msgid "Domain %s successfully added"
+msgstr "Die Domain %s wurde erfolgreich hinzugefügt"
+
+#: ../lib/xhtml.php:155
+#, php-format
+msgid "Domain (%d)"
+msgid_plural "Domains (%d)"
+msgstr[0] "Domain (%d)"
+msgstr[1] "Domains (%d)"
+
+#: ../www-data/main.php:412
+msgid "Domain property"
+msgstr "Domain-Eigenschaft"
+
+#: ../lib/phamm.php:172
+msgid "Error: "
+msgstr "Fehler: "
+
+#: ../lib/xhtml.php:989 ../lib/xhtml.php:1015
+msgid "Execute command"
+msgstr "Befehl ausführen"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:48
+#, no-wrap
+msgid "FAX"
+msgstr "Telefax"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:71
+#, no-wrap
+msgid "FTP Quota Mb"
+msgstr "FTP Speichergrenze (in MB)"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:65
+#, no-wrap
+msgid "FTP Status"
+msgstr "FTP-Status"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:202
+#, no-wrap
+msgid "Forward Active"
+msgstr "Weiterleitung aktiv"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:39
+#, no-wrap
+msgid "GID number"
+msgstr "GID"
+
+#: ../www-data/main.php:99
+msgid "Generic Error: "
+msgstr "Allgemeiner Programmfehler: "
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:45
+#, no-wrap
+msgid "Home Directory"
+msgstr "Heimatverzeichnis"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:40
+#, no-wrap
+msgid "Home Phone"
+msgstr "Telefon privat"
+
+#: ../lib/common.php:482
+msgid "LDAP Error: "
+msgstr "Fehler bei LDAP-Zugriff"
+
+#: ../lib/xhtml.php:113
+msgid "Login"
+msgstr "Anmeldung"
+
+#: ../lib/xhtml.php:107
+msgid "Login Name"
+msgstr "Benutzername"
+
+#: ../www-data/main.php:95
+msgid "Login Username or Password not valid."
+msgstr "Benutzername oder Kennwort nicht gültig."
+
+#: ../www-data/main.php:168
+#, php-format
+msgid "Logout %s"
+msgstr "Abmelden"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:155
+#, no-wrap
+msgid "Mail Autoreply"
+msgstr "E-Mail automatische Antwort"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:140
+#, no-wrap
+msgid "Mailbox"
+msgstr "Anrufbeantworter"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:210
+#, no-wrap
+msgid "Maildrop"
+msgstr "Maildrop"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:45
+#, no-wrap
+msgid "Max Quota"
+msgstr "Maximale Größe der Mailbox (Quota)"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:38
+#, no-wrap
+msgid "Max number of Alias"
+msgstr "Maximale Anzahl von Aliases"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:31
+#, no-wrap
+msgid "Max number of Mail"
+msgstr "Maximale Anzahl von E-Mail-Nachrichten"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:44
+#, no-wrap
+msgid "Mobile"
+msgstr "Mobil"
+
+#: ../lib/xhtml.php:737
+msgid "Modify account"
+msgstr "Account bearbeiten"
+
+#: ../lib/xhtml.php:646
+msgid "Modify domain"
+msgstr "Domain ändern"
+
+#: ../lib/xhtml.php:905 ../lib/xhtml.php:906
+msgid "NO"
+msgstr "NEIN"
+
+#: ../lib/xhtml.php:756
+msgid "Name"
+msgstr "Name"
+
+#: ../www-data/main.php:476
+msgid "Name is not valid"
+msgstr "Der Name ist ungültig"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:170
+#, no-wrap
+msgid "Other Transport"
+msgstr "Anderer Transport"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:52
+#, no-wrap
+msgid "Pager"
+msgstr "Pager"
+
+#: ../lib/xhtml.php:109 ../lib/xhtml.php:659 ../lib/xhtml.php:750
+msgid "Password"
+msgstr "Kennwort"
+
+#: ../lib/common.php:282
+msgid "Password contains special chars"
+msgstr "Das Kennwort enthält Sonderzeichen"
+
+#: ../lib/common.php:279
+msgid "Password too short!"
+msgstr "Das Kennwort ist zu kurz!"
+
+#: ../lib/common.php:276
+msgid "Passwords don't match!"
+msgstr "Die Kennwörter stimmen nicht überein!"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:74
+#, no-wrap
+msgid "Postfix Transport"
+msgstr "Postfix Transport"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/proxy.xml:42
+#, no-wrap
+msgid "Proxy Host"
+msgstr "Proxy Hostname"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:117
+#, no-wrap
+msgid "Quota"
+msgstr "Speicher (Quota)"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:51 ../plugins/mail.xml:110
+#, no-wrap
+msgid "SMTP Auth"
+msgstr "SMTP Authentifizierung"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:65 ../plugins/mail.xml:222
+#, no-wrap
+msgid "SPAM Check"
+msgstr "SPAM-Prüfung"
+
+#: ../www-data/main.php:393
+msgid "SPAM Tags level are not set correctly!"
+msgstr "Die Spam Tags level sind nicht korrekt!"
+
+#: ../lib/xhtml.php:985
+msgid "Set"
+msgstr "Set"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:230
+#, no-wrap
+msgid "Spam Kill Level"
+msgstr "Spam Ablehnungs-Level"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:270
+#, no-wrap
+msgid "Spam Tag Level"
+msgstr "Spam Markierungs-Level 1"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:250
+#, no-wrap
+msgid "Spam Tag2 Level"
+msgstr "Spam Markierungslevel 2"
+
+#: ../www-data/main.php:371
+msgid "Special Characters not Allowed in E-mail address"
+msgstr "In E-Mail-Adressen sind keine Sonderzeichen erlaubt"
+
+#: ../lib/xhtml.php:759
+msgid "Surname"
+msgstr "Nachname"
+
+#: ../www-data/main.php:478
+msgid "Surname is not valid"
+msgstr "Der Nachname ist ungültig"
+
+#: ../www-data/main.php:239
+msgid "Syntax not valid or special chars found in domain name"
+msgstr "Die Syntax ist ungültig oder es befinden sich Sonderzeichen im Domainnamen"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:36
+#, no-wrap
+msgid "Telephone"
+msgstr "Telefon"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:52 ../plugins/mail.xml:147
+#, no-wrap
+msgid "UID"
+msgstr "UID"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:59
+#, no-wrap
+msgid "UID Number"
+msgstr "UID-Nummer"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:176
+#, no-wrap
+msgid "Vacation"
+msgstr "Abwesenheit"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:197
+#, no-wrap
+msgid "Vacation End"
+msgstr "Abwesenheit-Ende"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:187
+#, no-wrap
+msgid "Vacation Forward"
+msgstr "Abwesenheit-Weiterleitung"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:182
+#, no-wrap
+msgid "Vacation Info"
+msgstr "Abwesenheits-Information"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:192
+#, no-wrap
+msgid "Vacation Start"
+msgstr "Abwesenheit-Beginn"
+
+#: ../lib/xhtml.php:63 ../lib/xhtml.php:99
+#, php-format
+msgid "Ver. %s"
+msgstr "Ver. %s"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:133
+#, no-wrap
+msgid "Virtual Home"
+msgstr "Virtuelles Heimatverzeichnis"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:58 ../plugins/mail.xml:214
+#, no-wrap
+msgid "Virus Check"
+msgstr "Virus-Prüfung"
+
+#: ../lib/phamm.php:176
+msgid "Warning: "
+msgstr "Warnung"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/proxy.xml:36
+#, no-wrap
+msgid "Web Access"
+msgstr "Web-Adresse"
+
+#: ../lib/xhtml.php:905 ../lib/xhtml.php:906
+msgid "YES"
+msgstr "JA"
+
+#: ../lib/common.php:73
+msgid ""
+"You will be automatically redirected to a new page within a few seconds.<br/"
+"> If this does not happen, please follow the link:"
+msgstr "Sie werden in wenigen Sekunden automatisch auf die nächste Seite weiterleitet. Falls dies nicht geschieht, folgen Sie bitte diesem Link:"
+
+#: ../www-data/main.php:757
+#, php-format
+msgid "account %s not updated!"
+msgstr "Account %s wurde nicht aktualisiert!"
+
+#: ../lib/common.php:73
+msgid "click here"
+msgstr "Hier klicken"
+
+#: ../www-data/main.php:395
+msgid "do not activate Forward and Vacation Forward in the same time!"
+msgstr "Sie dürfen Weiterleitung und Abwesenheitsnachricht nicht kombinieren!"
+
+#: ../www-data/main.php:344
+#, php-format
+msgid "domain %s not added!"
+msgstr "Domain %s nicht hinzugefügt!"
+
+#: ../www-data/main.php:397
+msgid "please, insert a forward destination or disable Forward!"
+msgstr "Bitte ein Weiterleitungsziel einfügen oder die Weiterleitung deaktivieren!"

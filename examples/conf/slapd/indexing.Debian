@@ -1,0 +1,8 @@
+# specific for mail
+index   objectClass                             eq
+index   cn,mail,givenname                       eq,subinitial
+index   vd,delete                               eq,pres
+index   accountActive,forwardActive             eq,pres
+index   smtpAuth                                eq,pres
+index   sn,displayName                          pres,eq,sub
+index   default                                 sub

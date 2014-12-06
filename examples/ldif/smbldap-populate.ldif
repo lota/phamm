@@ -1,0 +1,198 @@
+# LDIF Export for: dc=example,dc=tld
+# Server: My LDAP Server (localhost)
+# IMPORTANT READ THIS FIRST
+# change the basedn and
+# change "THISISMYSID" with the SID obtained
+# by "net getlocalsid" by root
+# after this do the following command
+# smbldap-populate -i smbldap-populate.ldif -a Administrator
+# 
+dn: uid=Administrator,vd=example.tld,o=hosting,dc=example,dc=tld
+cn: Administrator
+sn: Administrator
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: sambaSamAccount
+objectClass: posixAccount
+objectClass: shadowAccount
+gidNumber: 0
+uid: Administrator
+uidNumber: 0
+homeDirectory: /home/Administrator
+sambaLogonTime: 0
+sambaLogoffTime: 2147483647
+sambaKickoffTime: 2147483647
+sambaPwdCanChange: 0
+sambaHomePath: \\PHAMM-PDC\Administrator
+sambaHomeDrive: H:
+sambaProfilePath: \\PHAMM-PDC\profiles\Administrator
+sambaPrimaryGroupSID: THISISMYSID-5012
+sambaSID: THISISMYSID-5000
+loginShell: /bin/false
+gecos: Netbios Domain Administrator
+sambaLMPassword: D58939F1B5DBE9DBAAD3B435B51404EE
+sambaAcctFlags: [U]
+sambaNTPassword: A107034C4767307F00FD68E3ED9330E6
+sambaPwdLastSet: 1148320187
+sambaPwdMustChange: 1152208187
+userPassword: {SSHA}h5GQAerojC7lZfU3JYLZbKKXSCNndUxP
+
+dn: uid=nobody,vd=example.tld,o=hosting,dc=example,dc=tld
+cn: nobody
+sn: nobody
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: sambaSamAccount
+objectClass: posixAccount
+objectClass: shadowAccount
+gidNumber: 5014
+uid: nobody
+uidNumber: 999
+homeDirectory: /dev/null
+sambaPwdLastSet: 0
+sambaLogonTime: 0
+sambaLogoffTime: 2147483647
+sambaKickoffTime: 2147483647
+sambaPwdCanChange: 0
+sambaPwdMustChange: 2147483647
+sambaHomePath: \\PHAMM-PDC\nobody
+sambaHomeDrive: H:
+sambaProfilePath: \\PHAMM-PDC\profiles\nobody
+sambaPrimaryGroupSID: THISISMYSID-5014
+sambaLMPassword: NO PASSWORDXXXXXXXXXXXXXXXXXXXXX
+sambaNTPassword: NO PASSWORDXXXXXXXXXXXXXXXXXXXXX
+sambaAcctFlags: [NUD        ]
+sambaSID: THISISMYSID-2998
+loginShell: /bin/false
+
+dn: o=samba,dc=example,dc=tld
+objectClass: organization
+o: samba
+
+dn: ou=Computers,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: organizationalUnit
+ou: Computers
+
+dn: ou=Groups,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: organizationalUnit
+ou: Groups
+
+dn: cn=Account Operators,ou=Groups,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 5048
+cn: Account Operators
+description: Netbios Domain Users to manipulate users accounts
+sambaSID: S-1-5-32-5048
+sambaGroupType: 5
+displayName: Account Operators
+
+dn: cn=Administrators,ou=Groups,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 5044
+cn: Administrators
+description: Netbios Domain Members can fully administer the computer/sambaDomainName
+sambaSID: S-1-5-32-5044
+sambaGroupType: 5
+displayName: Administrators
+
+dn: cn=Backup Operators,ou=Groups,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 5051
+cn: Backup Operators
+description: Netbios Domain Members can bypass file security to back up files
+sambaSID: S-1-5-32-5051
+sambaGroupType: 5
+displayName: Backup Operators
+
+dn: cn=Domain Admins,ou=Groups,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 5012
+cn: Domain Admins
+memberUid: root
+description: Netbios Domain Administrators
+sambaSID: THISISMYSID-5012
+sambaGroupType: 2
+displayName: Domain Admins
+
+dn: cn=Domain Computers,ou=Groups,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 5015
+cn: Domain Computers
+description: Netbios Domain Computers accounts
+sambaSID: THISISMYSID-5015
+sambaGroupType: 2
+displayName: Domain Computers
+
+dn: cn=Domain Guests,ou=Groups,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 5014
+cn: Domain Guests
+description: Netbios Domain Guests Users
+sambaSID: THISISMYSID-5014
+sambaGroupType: 2
+displayName: Domain Guests
+
+dn: cn=Domain Users,ou=Groups,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 5013
+cn: Domain Users
+description: Netbios Domain Users
+sambaSID: THISISMYSID-5013
+sambaGroupType: 2
+displayName: Domain Users
+
+dn: cn=Print Operators,ou=Groups,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 5050
+cn: Print Operators
+description: Netbios Domain Print Operators
+sambaSID: S-1-5-32-5050
+sambaGroupType: 5
+displayName: Print Operators
+
+dn: cn=Replicators,ou=Groups,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 5052
+cn: Replicators
+description: Netbios Domain Supports file replication in a sambaDomainName
+sambaSID: S-1-5-32-5052
+sambaGroupType: 5
+displayName: Replicators
+
+dn: ou=Idmap,o=samba,dc=example,dc=tld
+objectClass: top
+objectClass: organizationalUnit
+ou: Idmap
+
+dn: sambaDomainName=PHAMM,o=samba,dc=example,dc=tld
+gidNumber: 10000
+uidNumber: 10000
+objectClass: top
+objectClass: sambaDomain
+objectClass: sambaUnixIdPool
+sambaSID: THISISMYSID
+sambaDomainName: PHAMM

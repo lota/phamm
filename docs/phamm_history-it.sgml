@@ -1,0 +1,179 @@
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook V3.1//EN">
+
+<article lang="it">
+
+<!-- Header -->
+
+<artheader>
+
+	<title>Phamm 05</title>
+
+	<author>
+	
+		<surname>De Zorzi</surname>
+		
+		<affiliation>
+			<address>
+				<email>team@phamm.org</email>
+			</address>
+		</affiliation>
+		
+	</author>
+
+	<revhistory>
+	
+		<revision>
+			<revnumber>0.2</revnumber>
+			<date>2014-12-06</date>
+			<authorinitials>dza</authorinitials>
+			<revremark>Seconda versione</revremark>
+		</revision>
+	
+	<!-- Si raccomanda di scrivere qui le altre note di revisione -->
+	
+	</revhistory>
+
+	<abstract>
+	
+	<para>Questo documento ...
+	Phamm
+	.</para>
+	</abstract>
+
+</artheader>
+
+<!-- Section1: storia -->
+<sect1 id="storia">
+	<title>Storia del progetto</title>
+	
+	<para>Conoscevo Mirko Grava da neanche un anno
+	e mi dimostrò come nel 2002 installava e configurava server
+	mail con domini virtuali utilizzando come base dati LDAP,
+	certo un sistema all'avanguardia pensando che esso era
+	totlamente basato su software open-source.
+	Come front-end di gestione web Mirko usava Jamm,
+	un software scritto in linguaggio JSP.</para>
+	<para>Alle installazioni di base effettuate usando
+	l'howto di Jamm Mirko aggiungeva via via sempre
+	più caratteristiche e novità, prima fra tutte il
+	vacation e si presentò ben presto l'esigenza
+	di avere a disposizione un software modificabile e velocemente
+	adattabile alle nuove esigenze e qui fui interpellato.</para>
+	<para>Non conoscendo il linguaggio JSP pensai che forse non sarebbe
+	stato difficile riscrivere totalmente il front-end in PHP. L'idea
+	piacque a Mirko in quanto l'installazione dell'esecutore di Java
+	quasi sempre installato appositamente per il front-end Jamm poteva
+	essere evitata adottando più comodamente una installazione del server
+	web con supporto PHP. Inoltre usando PHP si sarebbe usato solo
+	software libero già disponibili su tutte le distribuzioni Linux,
+	un vantaggio non trascurabile.</para>
+	<para>Non fu difficile dare le basi al progetto, in un
+	pomeriggio c'era un qualcosa che fu la versione 0.0.1 che gestiva
+	i dati in sola lettura.
+	Inizialmente decidemmo di mantenere lo schema del progetto Jamm
+	e di ricreare pezzo per pezzo tutte le caratteristiche di Jamm ma
+	riscrivendo totalmente il codice in PHP.</para>
+	<para>Il 04/06/2004 11:14 si annunciava sulla mailing list ufficiale
+	di Phamm (che contava meno di cinque iscritti) la versione 0.0.2
+	destinata ai soli sviluppatori.</para>
+
+	<para>Dalla versione 0.0.9 si cominciava a fare sul serio, Phamm a
+	parte alcune feature mancante e qualche bug di giovinezza era
+	usabile quanto Jamm, in sostanza la serie 0.1.x segna l'entrata di
+	Phamm sui sistemi di produzione RHX (la nostra azienda).</para>
+
+	<para>Già da queste prime versioni alcuni temerari sistemisti
+	iniziarono a usare Phamm e a fornire le prime traduzioni.
+	Nello stesso periodo Mirko e io eravamo sorpresi ma
+	carichi nel vedere che altre persone erano interessate al
+	progetto, probabilmente per gli stessi motivi che avevano spinto
+	noi alla scrittura iniziale di Phamm.</para>
+
+
+
+<sect2 id="plugin">
+	<title>I plugin</title>
+
+	<para>L'idea dei plugin non è nuova ed era un obiettivo a cui volevo
+	arrivare, la versione 0.2.0 segna l'introduzione del supporto dei plugin. Il primo plugin a essere scritto fu il plugin pdns.</para>
+</sect2>
+	
+<sect2 id="phamm.schema">
+	<title>phamm.schema</title>
+	
+	<para>Studiando più a fondo LDAP e seguento una pianificazione mirata
+	si decise di abbandonare jamm.schema questo non voleva essere una scelta
+	per customizzare il progetto, anzi la idea di creare delle objectClass
+	generiche che fossero sub di person dimostra il voler utilizzare quanto
+	già disponibile e aprire la strada per l'integrazione di nuove
+	funzionalità: i plugin.</para>
+
+	<para>La versione 0.3.0 segna l'entrata del phamm.schema. A breve
+	fu richiesto a IANA e assegnato a RHX Studio Associato un OID
+	utilizzato nel progetto. L'OID assegnato è il numero 22339
+	ed è pubblicato sulla URL http://www.iana.org/assignments/enterprise-numbers.</para>
+</sect2>
+
+<sect2 id="phamm04">
+	<title>phamm04</title>
+	<para>La versione 0.4.0 segna dei cambiamenti sostanziali alla
+	struttura del file-system come la separazione della directory
+	www-data per separare i file accessibili da web.</para>
+	<para>Nel 2005 phamm04 era ormai utilizzato da molte persone
+	si presentava tuttavia alcuni limiti derivanti dallo sviluppo
+	precoce del progetto dettato dalla necessità di rimpiazzare
+	in produzione Jamm. Si decise quindi di aprire non nuovo branch
+	ma un nuovo modulo riscrivendo il codice al 100%.</para>
+</sect2>
+
+<sect2 id="phamm05">
+	<title>phamm05</title>
+	<para>Alla fine del 2005 buttai le basi per phamm05 il server
+	CVS del progetto era ospitato Savannah (gnu.org) dopo essere
+	transitato su diversi server cvs,svn di nostra proprietà per
+	dare un accesso pubblico al sorgente e più in linea con le
+	esigenze di un progetto open-source.</para>
+	<para>Dopo una lunga gestazione durata quasi due anni, finalmente
+	a settembre 2007 phamm05 era usabile. In breve periodo si sussegguirono
+	alcune versioni che correggievano errori e introducevano le
+	feature mancanti.</para>
+	<para>Grazie all'aiuto di Fabio all'epoca manutentore di PHPLdapAdmin,
+	a fine 2007 Phamm entra in Debian e risulta quindi facilitata la
+	installazione e aggiornamento.</para>
+</sect2>
+
+<sect2 id="phamm06">
+        <title>phamm06</title>
+	<para>Fino all'inizio del 2013, si aggiunsero minor relase sopratrutto
+	bug-fix, RHX continua a utilizzare Phamm sui propri sistemi. Nel 2013
+	in una giornata di tempo libero decisi di provare a modernizzare l'aspetto
+	del front-end con Bootstrap, non fu difficile e decisi di iniziare a
+	riorganizzare il codice per classi: nasceva Phamm06</para>
+</sect2>
+
+<sect2 id="xmltemplate">
+	<title>XML Temaple 4 Phamm</title>
+	<para>Parallelamente allo sviluppo di Phamm mi interesai al
+	progetto PHPLdapAdmin che per sua natura (linguaggio PHP) era
+	una montagna di codice che svolgeva raffinate funzioni di accesso
+	in lettura/scrittura a diversi server LDAP. In particolare
+	mi interessava il sistema di definizione dei Template che usava
+	un file XML per la generazione di maschere di creazione di nuovi
+	oggetti. Per un po' studiai il sistema e fornii anche alcune
+	patch che furono accettate dagli sviluppatori perché tentavo
+	di capire se PHPLdapAdmin avrebbe potuto essere un sistema
+	che si prestava alla customizzazione, tramite appunto i template
+	per le esigenze di Phamm.</para>
+	<para>Dopo qualche mese decisi che PHPLdap admin i cui
+	obiettivi erano quelli di fornire un frontedn generico di accesso
+	ai server LDAP non erano compatibili con Phamm che doveva svolgere
+	compiti molto più precisi. Il lavoro effettuato con PLA fu comunque
+	un buon punto di partenza per la creazione del nuovo sistema di
+	template XML di Phamm.</para>
+</sect2>
+	
+	
+	
+</sect1>
+
+</article>

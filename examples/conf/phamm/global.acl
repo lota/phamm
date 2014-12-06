@@ -1,0 +1,130 @@
+# acl specific for phamm
+
+#  Copyright (c) 2005 Alessandro De Zorzi, Mirko Grava
+#  				<phamm@rhx.it> http://phamm.rhx.it/
+#
+#  Permission is granted to copy, distribute and/or modify this document
+#  under the terms of the GNU Free Documentation License, Version 1.2
+#  or any later version published by the Free Software Foundation;
+#  A copy of the license in DOCS.LICENSE file.
+
+# First of all
+# acl for pdns
+access to dn.regex="^(.+,)?cn=([^,]+),ou=dns,dc=example,dc=tld$"
+        by dn="cn=admin,dc=example,dc=tld" write
+        by anonymous auth
+        by dn.exact="cn=dnsldap,ou=dns,dc=example,dc=tld" read
+        by dn.exact,expand="cn=postmaster,vd=$2,o=hosting,dc=example,dc=tld" write
+
+access to dn.regex="^(.+,)?dc=([^,]+),ou=dns,dc=example,dc=tld$"
+        by dn="cn=admin,dc=example,dc=tld" write
+        by anonymous auth
+        by dn.exact="cn=dnsldap,ou=dns,dc=example,dc=tld" read
+        by dn.exact,expand="cn=postmaster,vd=$2,o=hosting,dc=example,dc=tld" write
+
+access to dn.regex="ou=dns,dc=example,dc=tld$"
+        by dn="cn=admin,dc=example,dc=tld" write
+        by anonymous auth
+        by dn.exact="cn=dnsldap,ou=dns,dc=example,dc=tld" read 
+
+# now mail service 
+# account must edit his password, spam level, forward, vacation, his name
+# postmaster with editAccounts=FALSE do the same thing for his domain
+# postmaster with editAccounts=TRUE can add account/alias and edit also amavisBypassVirusChecks, quota and smtpAuth
+# vadmin could do the same as postmaster with editAccounts=TRUE for some domains
+access to dn.regex=".+,vd=([^,]+),o=hosting,dc=example,dc=tld$" attrs=userPassword,sambaNTPassword,sambaLMPassword
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self write
+        by anonymous auth
+        by dn.exact,expand="cn=postmaster,vd=$1,o=hosting,dc=example,dc=tld" write
+        by set.expand="user/vd & [$1]" write
+
+access to dn.regex=".+,vd=([^,]+),o=hosting,dc=example,dc=tld$" attrs=amavisBypassVirusChecks,quota,smtpAuth,accountActive
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self read
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read 
+        by set.expand="user/editAccounts & [TRUE]" write
+        by dn.exact,expand="cn=postmaster,vd=$1,o=hosting,dc=example,dc=tld" read
+        by set.expand="user/vd & [$1]" write
+
+access to dn.regex=".+,vd=([^,]+),o=hosting,dc=example,dc=tld$" attrs=cn,sn,forwardActive,vacationActive,vacationInfo,vacationStart,vacationEnd,vacationForward,amavisSpamTagLevel,amavisSpamTag2Level,amavisSpamKillLevel
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self write
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read 
+        by dn.exact,expand="cn=postmaster,vd=$1,o=hosting,dc=example,dc=tld" write
+        by set.expand="user/vd & [$1]" write
+
+access to dn.regex="^.*,vd=([^,]+),o=hosting,dc=example,dc=tld$" attrs=editAccounts
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self read
+        by set.expand="user/editAccounts & [TRUE]" write
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read 
+        by * none
+
+access to dn.regex=".+,vd=([^,]+),o=hosting,dc=example,dc=tld$" attrs=objectClass,entry
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self write
+        by anonymous read
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read
+        by set.expand="user/editAccounts & [TRUE]" write
+        by dn.exact,expand="cn=postmaster,vd=$1,o=hosting,dc=example,dc=tld" read
+
+access to dn.regex=".+,vd=([^,]+),o=hosting,dc=example,dc=tld$" attrs=amavisBypassSpamChecks,accountActive,delete
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self read
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read 
+        by dn.exact,expand="cn=postmaster,vd=$1,o=hosting,dc=example,dc=tld" write
+        by set.expand="user/vd & [$1]" write
+
+access to dn.regex=".+,vd=([^,]+),o=hosting,dc=example,dc=tld$" attrs=FTPQuotaMBytes,FTPStatus,FTPQuotaFiles,uid,otherPath
+        by dn="cn=admin,dc=example,dc=tld" write
+        by anonymous read
+        by self read
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read 
+        by dn.exact,expand="cn=postmaster,vd=$1,o=hosting,dc=example,dc=tld" read
+        by set.expand="user/vd & [$1]" write
+
+access to dn.regex=".+,vd=([^,]+),o=hosting,dc=example,dc=tld$" attrs=uidNumber,gidNumber,createMaildir,vdHome,mailbox,otherTransport
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self read
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read 
+        by set.expand="user/vd & [$1]" read
+
+access to dn.regex="^(.+,)?vd=([^,]+),o=hosting,dc=example,dc=tld$" attrs=vd
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self write
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read 
+        by dn.exact,expand="cn=postmaster,vd=$2,o=hosting,dc=example,dc=tld" write
+        by set.expand="user/vd & [$2]" write
+
+access to dn.regex="^(.+,)?vd=([^,]+),o=hosting,dc=example,dc=tld$"
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self write
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read 
+        by set.expand="user/editAccounts & [FALSE]" read
+        by dn.exact,expand="cn=postmaster,vd=$2,o=hosting,dc=example,dc=tld" write
+        by set.expand="user/vd & [$2]" write
+
+access to dn.regex=".+,o=hosting,dc=example,dc=tld$"
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self write
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read 
+        by anonymous auth
+
+access to dn.regex=".+,dc=tld$"
+        by dn="cn=admin,dc=example,dc=tld" write
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read
+        by anonymous auth
+
+access to dn.regex=".+,ou=admin,dc=example,dc=tld$" attrs=userPassword
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self write
+        by anonymous auth
+
+access to dn.regex=".+,ou=admin,dc=example,dc=tld$" attrs=vd
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self read
+
+access to dn.regex="ou=admin,dc=x4w,dc=it$"
+        by dn="cn=admin,dc=example,dc=tld" write
+        by self read

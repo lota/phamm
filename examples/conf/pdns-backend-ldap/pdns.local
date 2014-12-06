@@ -1,0 +1,16 @@
+# pdns.local specific for phamm
+
+#  Copyright (c) 2005 Alessandro De Zorzi, Mirko Grava
+#                               <phamm@rhx.it> http://phamm.rhx.it/
+#
+#  Permission is granted to copy, distribute and/or modify this document
+#  under the terms of the GNU Free Documentation License, Version 1.2
+#  or any later version published by the Free Software Foundation;
+#  A copy of the license in DOCS.LICENSE file.
+#
+# view original sample from pdns package
+# this is a simple config for a LAN
+ldap-basedn=ou=dns,dc=example,dc=tld
+ldap-binddn=cn=dnsldap,ou=dns,dc=example,dc=tld
+ldap-secret=yourdnsldappasswdhere
+ldap-method=simple

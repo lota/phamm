@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "Admin Zone"
+AuthBasicProvider ldap
+AuthzLDAPAuthoritative on
+AuthLDAPURL ldap://localhost:389/o=hosting,dc=example,dc=tld?uid?sub?
+Require ldap-user "phamm"
+Require ldap-user "example.com"

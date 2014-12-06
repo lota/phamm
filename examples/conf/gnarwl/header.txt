@@ -1,0 +1,8 @@
+From: $fullname <$reply>
+To: $sender
+X-mailer: GNARWL
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+Subject: Re: $subject
+

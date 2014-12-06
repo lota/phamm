@@ -1,0 +1,29 @@
+use strict;
+
+#
+# Place your configuration directives here.  They will override those in
+# earlier files.
+#
+# See /usr/share/doc/amavisd-new/ for documentation and examples of
+# the directives you can use in this file
+#
+$warnvirusrecip = 1;
+
+@bypass_virus_checks_acl = qw("localhost.$mydomain");
+#
+$enable_ldap = 1;
+$default_ldap = {
+        hostname => [ 'localhost' ],
+        port => 389,
+        version => 3,
+        timeout => 120,
+        tls => 0,
+        scope => 'sub',
+        base => 'o=hosting,dc=example,dc=tld',
+        bind_dn => 'cn=admin,dc=example,dc=tld',
+        bind_password => 'rhx',
+        query_filter => '(&(objectClass=amavisAccount)(mail=%m))'
+};
+
+#------------ Do not modify anything below this line -------------
+1;  # insure a defined return

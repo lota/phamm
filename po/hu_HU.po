@@ -1,0 +1,510 @@
+# Hungarian Phamm Translation
+#  Copyright (c) 2004,2009 Alessandro De Zorzi, Mirko Grava
+# This file is distributed under the same license as the Phamm package.
+# Zsolt Jonas <zsolt.jonas AT naxonet DOT hu>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phamm 0.5.14\n"
+"POT-Creation-Date: 2008-10-15 12:50+0300\n"
+"PO-Revision-Date: 2009-02-01 19:03+0100\n"
+"Last-Translator: Zsolt Jonas <zsolt.jonas@naxonet.hu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 7bit\n"
+
+#: ../www-data/main.php:204
+#, php-format
+msgid "%s modified"
+msgstr "%s módosítva"
+
+#: ../www-data/main.php:605
+#, php-format
+msgid "%s not added!"
+msgstr "%s nincs hozzáadva!"
+
+#: ../lib/xhtml.php:984
+msgid "...execute a command"
+msgstr "...parancs futtatása"
+
+#: ../lib/xhtml.php:750
+msgid "Account"
+msgstr "Postafiók"
+
+#: ../www-data/main.php:599
+#, php-format
+msgid "Account %s successfully added"
+msgstr "%s postafiók sikeresen hozzáadva"
+
+#: ../lib/xhtml.php:281
+#, php-format
+msgid "Account (%d)"
+msgid_plural "Accounts (%d)"
+msgstr[0] "Postafiók (%d)"
+msgstr[1] "Postafiókok (%d)"
+
+#: ../www-data/main.php:369
+msgid "Account or Alias already exists"
+msgstr "Postafiók vagy álnév (alias) már létezik"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:44 ../plugins/mail.xml:52 ../plugins/mail.xml:125
+#, no-wrap
+msgid "Active"
+msgstr "Aktív"
+
+#: ../lib/xhtml.php:1110
+msgid "Add catch-all address"
+msgstr "Gyűjtő (catch-all) postafiók hozzáadása"
+
+#: ../lib/xhtml.php:718 ../lib/xhtml.php:742
+msgid "Add new account"
+msgstr "Új postafiók hozzáadása"
+
+#: ../lib/xhtml.php:380 ../lib/xhtml.php:649
+msgid "Add new domain"
+msgstr "Új domain hozzáadása"
+
+#: ../lib/xhtml.php:842
+msgid "All"
+msgstr "Mind"
+
+#: ../lib/xhtml.php:826
+msgid "All domains"
+msgstr "Összes domain"
+
+#: ../www-data/main.php:110
+msgid "Bye!"
+msgstr "Viszlát!"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:84
+#, no-wrap
+msgid "Can edit Accounts"
+msgstr "Szerkeszthető postafiókok"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:59
+#, no-wrap
+msgid "Can edit Anti-Virus"
+msgstr "Módosítható az Anti-Vírus állapota"
+
+#: ../www-data/main.php:97
+msgid "Can't contact LDAP server"
+msgstr "Nem lehet kapcsolódni az LDAP kiszolgálóhoz"
+
+#: ../www-data/main.php:424
+msgid "Catch all"
+msgstr "Gyűjtő postafiók"
+
+#: ../www-data/main.php:422
+msgid "Catch all active"
+msgstr "Gyűjtó postafiók aktív"
+
+#: ../lib/xhtml.php:1097
+msgid "Catch-all"
+msgstr "Gyűjtő postafiók címe"
+
+#: ../www-data/main.php:221
+msgid "Changes have not performed"
+msgstr "A változások végrehajtása meghiusúlt"
+
+#: ../lib/common.php:485
+msgid "Code "
+msgstr "Kód "
+
+#: ../lib/xhtml.php:283
+msgid "Common Name"
+msgstr "Megjelenített név"
+
+#: ../lib/xhtml.php:663 ../lib/xhtml.php:756
+msgid "Confirm Password"
+msgstr "Jelszó megerősítése"
+
+#: ../www-data/main.php:72
+msgid "Connection to LDAP Server Failed!"
+msgstr "Hiba az LDAP kiszolgálóhoz történő kapcsolódása közben!"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:290
+#, no-wrap
+msgid "Creation Date"
+msgstr "Létrehozva"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:65 ../plugins/mail.xml:161
+#, no-wrap
+msgid "Delete"
+msgstr "Törlés"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:39
+#, no-wrap
+msgid "Destination"
+msgstr "Cél"
+
+#: ../lib/xhtml.php:657
+msgid "Domain"
+msgstr "Domain"
+
+#: ../www-data/main.php:339
+#, php-format
+msgid "Domain %s successfully added"
+msgstr "%s domain sikeresen hozzáadva"
+
+#: ../lib/xhtml.php:155
+#, php-format
+msgid "Domain (%d)"
+msgid_plural "Domains (%d)"
+msgstr[0] "Domain (%d)"
+msgstr[1] "Domain-ek (%d)"
+
+#: ../www-data/main.php:412
+msgid "Domain property"
+msgstr "Domain beállítás"
+
+#: ../lib/phamm.php:172
+msgid "Error: "
+msgstr "Hiba: "
+
+#: ../lib/xhtml.php:994
+msgid "Execute command"
+msgstr "Parancs futtatása"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:48
+#, no-wrap
+msgid "FAX"
+msgstr "FAX"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:71
+#, no-wrap
+msgid "FTP Quota Mb"
+msgstr "FTP Kvóta (MB)"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:65
+#, no-wrap
+msgid "FTP Status"
+msgstr "FTP állapot"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:202
+#, no-wrap
+msgid "Forward Active"
+msgstr "Továbbítás aktív"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:39
+#, no-wrap
+msgid "GID number"
+msgstr "GID szám"
+
+#: ../www-data/main.php:99
+msgid "Generic Error: "
+msgstr "Általános hiba: "
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:45
+#, no-wrap
+msgid "Home Directory"
+msgstr "Home könyvtár"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:40
+#, no-wrap
+msgid "Home Phone"
+msgstr "Otthoni telefonszám"
+
+#: ../lib/common.php:485
+msgid "LDAP Error: "
+msgstr "LDAP hiba: "
+
+#: ../lib/xhtml.php:113
+msgid "Login"
+msgstr "Belépés"
+
+#: ../lib/xhtml.php:107
+msgid "Login Name"
+msgstr "Belépési azonosító"
+
+#: ../www-data/main.php:95
+msgid "Login Username or Password not valid."
+msgstr "Hibás belépési azonosító vagy jelszó."
+
+#: ../www-data/main.php:168
+#, php-format
+msgid "Logout %s"
+msgstr "Kilépés (%s)"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:155
+#, no-wrap
+msgid "Mail Autoreply"
+msgstr "Automatikus válaszüzenet"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:140
+#, no-wrap
+msgid "Mailbox"
+msgstr "Postaláda"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:210
+#, no-wrap
+msgid "Maildrop"
+msgstr "Levél kézbesítő"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:45
+#, no-wrap
+msgid "Max Quota"
+msgstr "Max kvóta"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:38
+#, no-wrap
+msgid "Max number of Alias"
+msgstr "Max álnevek (alias) száma"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:31
+#, no-wrap
+msgid "Max number of Mail"
+msgstr "Max postafiókok száma"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:44
+#, no-wrap
+msgid "Mobile"
+msgstr "Mobil"
+
+#: ../lib/xhtml.php:740
+msgid "Modify account"
+msgstr "Postafiók módosítása"
+
+#: ../lib/xhtml.php:647
+msgid "Modify domain"
+msgstr "Domain módosítása"
+
+#: ../lib/xhtml.php:910 ../lib/xhtml.php:911
+msgid "NO"
+msgstr "NEM"
+
+#: ../lib/xhtml.php:759
+msgid "Name"
+msgstr "Keresztnév"
+
+#: ../www-data/main.php:476
+msgid "Name is not valid"
+msgstr "Hibás keresztnév"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:170
+#, no-wrap
+msgid "Other Transport"
+msgstr "Más továbbító (transport)"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:52
+#, no-wrap
+msgid "Pager"
+msgstr "Személyhívó"
+
+#: ../lib/xhtml.php:109 ../lib/xhtml.php:660 ../lib/xhtml.php:753
+msgid "Password"
+msgstr "Jelszó"
+
+#: ../lib/common.php:285
+msgid "Password contains special chars"
+msgstr "A jelszó speciális karaktereket is tartalmaz"
+
+#: ../lib/common.php:282
+msgid "Password too short!"
+msgstr "A jelszó túl rövid!"
+
+#: ../lib/common.php:279
+msgid "Passwords don't match!"
+msgstr "A beírt jelszavak nem egyeznek!"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:74
+#, no-wrap
+msgid "Postfix Transport"
+msgstr "Postfix továbbító (transport)"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/proxy.xml:42
+#, no-wrap
+msgid "Proxy Host"
+msgstr "Proxy kiszolgáló"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:117
+#, no-wrap
+msgid "Quota"
+msgstr "Kvóta"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:51 ../plugins/mail.xml:110
+#, no-wrap
+msgid "SMTP Auth"
+msgstr "SMTP azonosítás"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:65 ../plugins/mail.xml:222
+#, no-wrap
+msgid "SPAM Check"
+msgstr "SPAM szűrés"
+
+#: ../www-data/main.php:393
+msgid "SPAM Tags level are not set correctly!"
+msgstr "SPAM jelölési szint nem helyes!"
+
+#: ../lib/xhtml.php:990
+msgid "Set"
+msgstr "Beállít"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:230
+#, no-wrap
+msgid "Spam Kill Level"
+msgstr "Spam eldobási szint (Kill)"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:270
+#, no-wrap
+msgid "Spam Tag Level"
+msgstr "Spam jelölési szint (Tag)"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:250
+#, no-wrap
+msgid "Spam Tag2 Level"
+msgstr "Spam megjelölési szint (Tag2)"
+
+#: ../www-data/main.php:371
+msgid "Special Characters not Allowed in E-mail address"
+msgstr "Speciális karakterek nem szerepelhetnek az e-mail címben"
+
+#: ../lib/xhtml.php:762
+msgid "Surname"
+msgstr "Vezetéknév"
+
+#: ../www-data/main.php:478
+msgid "Surname is not valid"
+msgstr "Hibás vezetéknév"
+
+#: ../www-data/main.php:239
+msgid "Syntax not valid or special chars found in domain name"
+msgstr "Hibás vagy nem megengedett karaktereket tartalmazó domain név"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:36
+#, no-wrap
+msgid "Telephone"
+msgstr "Telefon"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:52 ../plugins/mail.xml:147
+#, no-wrap
+msgid "UID"
+msgstr "UID"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:59
+#, no-wrap
+msgid "UID Number"
+msgstr "UID szám"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:176
+#, no-wrap
+msgid "Vacation"
+msgstr "Távollét"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:197
+#, no-wrap
+msgid "Vacation End"
+msgstr "Távollét vége"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:187
+#, no-wrap
+msgid "Vacation Forward"
+msgstr "Távollét alatti továbbítás"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:182
+#, no-wrap
+msgid "Vacation Info"
+msgstr "Távolléti üzenet"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:192
+#, no-wrap
+msgid "Vacation Start"
+msgstr "Távollét kezdete"
+
+#: ../lib/xhtml.php:63 ../lib/xhtml.php:99
+#, php-format
+msgid "Ver. %s"
+msgstr "Változat: %s"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:133
+#, no-wrap
+msgid "Virtual Home"
+msgstr "Postafiókok könyvtára"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:58 ../plugins/mail.xml:214
+#, no-wrap
+msgid "Virus Check"
+msgstr "Vírus ellenőrzés"
+
+#: ../lib/phamm.php:176
+msgid "Warning: "
+msgstr "Figyelem: "
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/proxy.xml:36
+#, no-wrap
+msgid "Web Access"
+msgstr "Web hozzáférés"
+
+#: ../lib/xhtml.php:910 ../lib/xhtml.php:911
+msgid "YES"
+msgstr "IGEN"
+
+#: ../lib/common.php:73
+msgid ""
+"You will be automatically redirected to a new page within a few seconds.<br/"
+"> If this does not happen, please follow the link:"
+msgstr ""
+"Pár másodperc múlva átirányítunk egy új oldalra<br/"
+"> Ha ez nem történik meg, akkor "
+
+#: ../www-data/main.php:763
+#, php-format
+msgid "account %s not updated!"
+msgstr "%s postafiók nincs frissítve!"
+
+#: ../lib/common.php:73
+msgid "click here"
+msgstr "kattints ide"
+
+#: ../www-data/main.php:395
+msgid "do not activate Forward and Vacation Forward in the same time!"
+msgstr "ne engedélyezd egyszerre a Továbbítás és a Távollét Alatti Továbbítás funkciót"
+
+#: ../www-data/main.php:344
+#, php-format
+msgid "domain %s not added!"
+msgstr "%s domain nincs hozzáadva!"
+
+#: ../www-data/main.php:397
+msgid "please, insert a forward destination or disable Forward!"
+msgstr "kérlek, állíts be továbbítási címet vagy kapcsold ki a Továbbítást!"

@@ -1,0 +1,38 @@
+****************************************
+../lib/ldap.php
+
+    static function phamm_connect ()
+    static function phamm_list ($base_dn,$filter,$attributes=null,$sort=null)
+    static function phamm_search ($base_dn,$filter,$attributes=null,$sort=null)
+    static function phamm_add ($dn,$entry)
+    static function phamm_modify ($dn,$entry)
+    static function phamm_self_values ($dn, $filter="(cn=*)")
+    static function phamm_mod_add ($dn,$entry)
+    static function phamm_mod_del ($dn,$entry)
+    static function phamm_delete($dn,$recursive=false)
+        static function phamm_error ()
+---------------------------------------------------------
+../lib/locale.php
+
+    function __construct()
+    public function change_language($new_language)
+    public function get_language()
+---------------------------------------------------------
+../lib/login.php
+
+    function login_dn_costructor($login_username)
+    function login_try($connect, $proposed, $login_password,$login_username)
+    function bind_try($connect, $dn, $password)
+    function login_check()
+    function logout()
+---------------------------------------------------------
+../lib/log.php
+
+    public function __construct()
+    public function phamm_log ($pn,$user,$operation,$result)
+---------------------------------------------------------
+../lib/plugin.php
+
+    public function plugins_load()
+    private function xml2array ($file)
+---------------------------------------------------------

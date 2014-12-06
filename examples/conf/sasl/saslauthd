@@ -1,0 +1,9 @@
+# On Debian this is in /etc/default/
+# This needs to be uncommented before saslauthd will be run automatically
+START=yes
+# You must specify the authentication mechanisms you wish to use.
+# This defaults to "pam" for PAM support, but may also include
+# "shadow" or "sasldb", like this:
+# MECHANISMS="pam shadow"
+MECHANISMS="ldap"
+PARAMS="-O /etc/saslauthd.conf"

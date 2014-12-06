@@ -1,0 +1,11 @@
+# this is an add-on ONLY for SASL-AUTH
+# in your /etc/postfix/main.cf
+# remember to add permit_sasl_authenticated
+# where you need
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_application_name = smtpd
+smtpd_sasl_security_options = noanonymous
+smtpd_sasl_local_domain = 
+broken_sasl_auth_clients = yes
+smtpd_recipient_restrictions = permit_mynetworks, permit_sasl_authenticated,
+ check_relay_domains, .....

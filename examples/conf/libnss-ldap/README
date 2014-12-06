@@ -1,0 +1,2 @@
+For Debian users
+please use dpkg-reconfigure libnss-ldap to create also libnss-ldap.secret

@@ -1,0 +1,27 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Phamm - README.PLUGINS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  Copyright (c) 2006 Alessandro De Zorzi, Mirko Grava
+  				<team@phamm.org> http://www.phamm.org/
+
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version 1.2
+  or any later version published by the Free Software Foundation;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Create a file .xml inside plugins directory
+
+<PLUGIN_NAME>.xml
+
+Take a look at DTD/phamm-plugins.dtd
+
+To validate a XML plugin description file use
+on-line or other tools
+
+http://validator.w3.org/
+http://www.stg.brown.edu/service/xmlvalid/
+
+Enable plugin with a new entry in config.inc.php
+
+$plugins[] = "<PLUGIN_NAME>";

@@ -1,0 +1,53 @@
+# main.cf specific for phamm
+# on the mx backup
+
+#  Copyright (c) 2005 Alessandro De Zorzi, Mirko Grava
+#  				<phamm@rhx.it> http://phamm.rhx.it/
+#
+#  Permission is granted to copy, distribute and/or modify this document
+#  under the terms of the GNU Free Documentation License, Version 1.2
+#  or any later version published by the Free Software Foundation;
+#  A copy of the license in DOCS.LICENSE file.
+
+ldap_bind_dn = cn=phamm,o=hosting,dc=example,dc=tld
+ldap_bind_pw = rhx
+ldap_search_base = o=hosting,dc=example,dc=tld
+ldap_domain = dc=example,dc=tld
+ldap_server_host = localhost
+ldap_server_port = 389
+ldap_version = 3
+
+# MX Backup
+mxb_server_host = $ldap_server_host
+mxb_search_base = $ldap_search_base
+mxb_query_filter = (&(&(vd=%s)(objectClass=VirtualDomain))(accountActive=TRUE)(delete=FALSE)) 
+mxb_result_attribute = vd
+mxb_cache = no
+mxb_bind = yes
+mxb_scope = one
+mxb_bind_dn = $ldap_bind_dn
+mxb_bind_pw = $ldap_bind_pw
+mxb_version = $ldap_version
+
+accountsmap_server_host = $ldap_server_host
+accountsmap_search_base = $ldap_search_base
+accountsmap_query_filter = (&(&(objectClass=VirtualMailAccount)(mail=%s))(accountActive=TRUE)(delete=FALSE))
+accountsmap_result_attribute = mail
+accountsmap_cache = no
+accountsmap_bind = yes
+accountsmap_bind_dn = $ldap_bind_dn
+accountsmap_bind_pw = $ldap_bind_pw
+accountsmap_version = $ldap_version
+
+aliasmap_server_host = $ldap_server_host
+aliasmap_search_base = $ldap_search_base
+aliasmap_query_filter = (&(&(objectClass=VirtualMailAlias)(mail=%s))(accountActive=TRUE))
+aliasmap_result_attribute = mail
+aliasmap_cache = no
+aliasmap_bind = yes
+aliasmap_bind_dn = $ldap_bind_dn
+aliasmap_bind_pw = $ldap_bind_pw
+aliasmap_version = $ldap_version
+
+relay_domains = $mydestination, ldap:mxb
+relay_recipient_maps = hash:/etc/postfix/relay_recipients, ldap:accountsmap, ldap:aliasmap

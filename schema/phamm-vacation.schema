@@ -1,0 +1,63 @@
+#--------------------------------------------------------------------------
+# LDAP Schema for phamm-vacation
+#----------------------
+# Release 1.1.1
+# 2012/08/28
+#--------------------------------------------------------------------------
+# Copyright (c) 2008-2012 Mirko Grava, RHX Studio Snc - www.rhx.it
+# Permission is granted to copy, distribute and/or modify this document
+# under the terms of the GNU Free Documentation License, Version 2
+# or any later version published by the Free Software Foundation;
+#--------------------------------------------------------------------------
+# 1.3.6.1.4.1.22339	    RHX Studio Snc's OID
+# 1.3.6.1.4.1.22339.2	    Phamm-vacation
+# 1.3.6.1.4.1.22339.2.1	    AttributeTypes
+# 1.3.6.1.4.1.22339.2.2	    ObjectClasses
+#--------------------------------------------------------------------------
+
+# Attribute Types
+#-----------------
+attributetype ( 1.3.6.1.4.1.22339.2.1.1 NAME 'vacationActive'
+        DESC 'A flag, for marking the user as being away'
+        EQUALITY booleanMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.2.1.2 NAME 'vacationInfo'
+        DESC 'Absentee note to leave behind, while on vacation'
+        EQUALITY octetStringMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.2.1.3 NAME 'vacationStart'
+        DESC 'Beginning of vacation'
+        EQUALITY octetStringMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.2.1.4 NAME 'vacationEnd'
+        DESC 'End of vacation'
+        EQUALITY octetStringMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.2.1.5 NAME 'vacationForward'
+        DESC 'RFC1274: RFC822 Mailbox'
+        EQUALITY caseIgnoreIA5Match
+        SUBSTR caseIgnoreIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26{256} )
+
+attributetype ( 1.3.6.1.4.1.22339.2.1.6 NAME 'vacationSubject'
+        DESC 'Subject for the vacation message'
+        EQUALITY octetStringMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 SINGLE-VALUE )
+ 
+attributetype ( 1.3.6.1.4.1.22339.2.1.7 NAME 'vacationReminder'
+        DESC 'How many hours we should wait before a second email from someone will cause another vacation message to be sent to that email address'
+        EQUALITY octetStringMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 SINGLE-VALUE )
+
+# Classes
+#---------
+
+objectclass ( 1.3.6.1.4.1.22339.2.2.1 NAME 'Vacation'
+        SUP top AUXILIARY
+        DESC 'Users vacation status information'
+        MUST ( vacationActive )
+        MAY ( vacationInfo $ vacationStart $ vacationEnd $ vacationForward $ vacationSubject $ vacationReminder ) )

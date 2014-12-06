@@ -1,0 +1,30 @@
+# master.cf specific for phamm
+
+#  Copyright (c) 2005 Alessandro De Zorzi, Mirko Grava
+#  				<phamm@rhx.it> http://phamm.rhx.it/
+#
+#  Permission is granted to copy, distribute and/or modify this document
+#  under the terms of the GNU Free Documentation License, Version 1.2
+#  or any later version published by the Free Software Foundation;
+#  A copy of the license in DOCS.LICENSE file.
+# change the line maildrop like this
+maildrop  unix  -       n       n       -       -       pipe
+ flags=Rhu user=daemon argv=/usr/bin/maildrop -w 91 -d ${recipient}
+# for autoresponder
+gnarwl    unix  -       n       n       -       -       pipe
+   flags=F  user=vmail argv=/usr/bin/gnarwl -a ${user}@${nexthop} -s ${sender}
+# only if you use amavisd-new for content filtering
+#smtp-amavis   unix - - n - 3 smtp
+#   -o smtp_data_done_timeout=1200
+#   -o disable_dns_lookups=yes
+#127.0.0.1:10025 inet n - n - - smtpd
+#   -o content_filter=
+#   -o local_recipient_maps=
+#   -o relay_recipient_maps=
+#   -o smtpd_restriction_classes=
+#   -o smtpd_client_restrictions=
+#   -o smtpd_helo_restrictions=
+#   -o smtpd_sender_restrictions=
+#   -o smtpd_recipient_restrictions=permit_mynetworks,reject
+#   -o mynetworks=127.0.0.0/8
+#   -o strict_rfc821_envelopes=yes

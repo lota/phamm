@@ -1,0 +1,41 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Phamm - README.translations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  Copyright (c) 2005-2009 Phamm Team <team@phamm.org>
+
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version 1.2
+  or any later version published by the Free Software Foundation;
+  A copy of the license in DOCS.LICENSE file.
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Phamm uge gettext to support locale translations.
+
+Howto create a new translation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1- enter in po directory and copy phamm.pot (Phamm po Template) in your
+   new ll_CC.po file or from SVN repository
+
+   http://cvs.savannah.gnu.org/viewvc/*checkout*/phamm/phamm05/po/phamm.pot
+
+   ll = indicate the language (en, fr, de, it...)
+   CC = indicate the country code (GB, CH, DE...)
+
+2- edit your ll_CC.po and edit header informations
+
+3- fill all msgstr messages (preserve variable like %s or %d)
+
+   Note that you can provide partial translation, the words not available
+   in your translation will be displayed in English.
+
+4- (optional) try compile your translation with msgfmt -v ll_CC.po
+
+5- Submit you translation as patch using
+   https://savannah.nongnu.org/projects/phamm or send a e-mail attach
+   to <team@phamm.org>
+
+Thanks!
+

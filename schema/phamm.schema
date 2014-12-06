@@ -1,0 +1,240 @@
+#--------------------------------------------------------------------------
+# LDAP Schema for phamm
+#----------------------
+# Release 1.5
+# 2014/10/3
+#--------------------------------------------------------------------------
+# Copyright (c) 2006-2009 Mirko Grava, RHX Studio Snc - www.rhx.it
+# Permission is granted to copy, distribute and/or modify this document
+# under the terms of the GNU Free Documentation License, Version 2
+# or any later version published by the Free Software Foundation;
+#--------------------------------------------------------------------------
+# 1.3.6.1.4.1.22339	    RHX Studio Snc's OID
+# 1.3.6.1.4.1.22339.1	    Phamm
+# 1.3.6.1.4.1.22339.1.1	    AttributeTypes
+# 1.3.6.1.4.1.22339.1.2	    ObjectClasses
+#--------------------------------------------------------------------------
+
+# Attribute Types
+#-----------------
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.1 NAME 'postfixTransport'
+	DESC 'A string directing postfix which transport to use'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26{20} SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.2 NAME 'accountActive'
+	DESC 'A boolean telling whether an account is active or not'
+	EQUALITY booleanMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.3 NAME 'lastChange'
+	DESC 'Time in unix time of last change in entry'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.4 NAME 'vd'
+	DESC 'A virtual domain managed by Phamm'
+	EQUALITY caseIgnoreIA5Match
+	SUBSTR caseIgnoreIA5SubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.5 NAME 'mailbox'
+	DESC 'The absolute path to the mailbox for a mail account in a non-default location'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.6 NAME 'quota'
+	DESC 'A string that represents the quota on a mailbox'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.7 NAME 'clearPassword'
+	DESC 'A separate text that stores the mail account password in clear text'
+	EQUALITY octetStringMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.40{128})
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.8 NAME 'maildrop'
+	DESC 'RFC822 Mailbox - mail alias'
+	EQUALITY caseIgnoreIA5Match
+	SUBSTR caseIgnoreIA5SubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26{256} )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.9 NAME 'mailsource'
+	DESC 'Message source'
+	EQUALITY caseIgnoreIA5Match
+	SUBSTR caseIgnoreIA5SubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.10 NAME 'editAliases'
+	DESC 'A boolean telling whether a domain manager can edit Aliases'
+	EQUALITY booleanMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.11 NAME 'editAccounts'
+	DESC 'A boolean telling whether a domain manager can edit Accounts'
+	EQUALITY booleanMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.12 NAME 'editAV'
+	DESC 'A boolean telling whether a domain manager can edit Antivirus'
+	EQUALITY booleanMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.13 NAME 'delete'
+	DESC 'A boolean telling whether this item is marked for deletion'
+	EQUALITY booleanMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+	
+attributetype ( 1.3.6.1.4.1.22339.1.1.14 NAME 'forwardActive'
+	DESC 'A boolean telling whether this item is using forward'
+	EQUALITY booleanMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.15 NAME 'maxDomain'
+	DESC 'A string that represents the max domain for a VirtualAdmin'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.16 NAME 'maxMail'
+	DESC 'A string that represents the max mail for a VirtualAdmin'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.17 NAME 'maxAlias'
+	DESC 'A string that represents the max alias for a VirtualAdmin'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.18 NAME 'maxQuota'
+	DESC 'A string that represents the max quota for a VirtualAdmin'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.19 NAME 'adminID'
+	DESC 'A string that represents the dn of admin domain'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.20 NAME 'vdHome'
+	DESC 'The absolute path to the virtual domain home'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.21 NAME 'otherTransport'
+	DESC 'A string directing postfix which transport to use'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26{20} SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.22 NAME 'creationDate'
+	DESC 'Timestamp of creation'
+	EQUALITY integerMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.27{14} SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.23 NAME 'otherPath'
+	DESC 'This path to help any application'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.24 NAME 'createMaildir'
+	DESC 'A boolean telling when we must create Maildir for maildrop transport'
+	EQUALITY booleanMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.25 NAME 'smtpAuth'
+	DESC 'A boolean telling when we could do smtp-auth'
+	EQUALITY booleanMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.26 NAME 'expireDate'
+	DESC 'Expire date'
+	EQUALITY integerMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.27{14} SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.27 NAME 'mailAutoreply'
+	DESC 'RFC822 Mailbox - mail for autoreply'
+	EQUALITY caseIgnoreIA5Match
+	SUBSTR caseIgnoreIA5SubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26{256} )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.28 NAME 'bypassGreyListing'
+        DESC 'A boolean telling when we could bypass Grey Listing'
+        EQUALITY booleanMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.29 NAME 'phammGroup'
+        DESC 'Define the phamm Group of the VirtualMailAccount'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{256} )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.30 NAME 'maxSmtpAuth'
+	DESC 'A string that represents the max SMTP Auth for a VirtualAdmin'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.31 NAME 'maxAntivirus'
+	DESC 'A string that represents the max Antivirus for a VirtualAdmin'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.32 NAME 'maxAntiSpam'
+	DESC 'A string that represents the max AntiSpam for a VirtualAdmin'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.22339.1.1.33 NAME 'maxGreyList'
+	DESC 'A string that represents the max AntiGreyList for a VirtualAdmin'
+	EQUALITY caseExactIA5Match
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+# Classes
+#---------
+
+objectclass ( 1.3.6.1.4.1.22339.1.2.1 NAME 'VirtualMailAccount'
+	SUP inetOrgPerson STRUCTURAL
+	DESC 'Mail account objects'
+	MUST ( mail $ vdHome $ mailbox $ accountActive $ lastChange $ delete )
+	MAY ( quota $ otherTransport $ editAccounts $ creationDate $ createMaildir $ smtpAuth $ expireDate $ mailAutoreply $ bypassGreyListing $ phammGroup ) )
+
+objectclass ( 1.3.6.1.4.1.22339.1.2.2 NAME 'VirtualMailAlias'
+	SUP inetOrgPerson STRUCTURAL
+	DESC 'Mail aliasing/forwarding entry'
+	MUST ( mail $ maildrop $ accountActive $ lastChange )
+	MAY ( mailsource $ editAccounts $ creationDate $ smtpAuth $ expireDate $ bypassGreyListing) )
+
+objectclass ( 1.3.6.1.4.1.22339.1.2.3 NAME 'VirtualDomain'
+	SUP top STRUCTURAL
+	DESC 'Virtual Domain entry to be used with postfix transport maps'
+	MUST ( vd $ accountActive $ lastChange $ delete )
+	MAY ( postfixTransport $ description $ maxMail $ maxAlias $ maxQuota $ editAV $ adminID $ creationDate $ bypassGreyListing $ maxSmtpAuth $ maxAntivirus $ maxAntiSpam $ maxGreyList) )
+
+objectclass ( 1.3.6.1.4.1.22339.1.2.4 NAME 'VirtualForward'
+	SUP top AUXILIARY
+	DESC 'Forward setting for VirtualMailAccount'
+	MUST ( forwardActive )
+	MAY ( maildrop ) )
+
+objectclass ( 1.3.6.1.4.1.22339.1.2.5 NAME 'VirtualAdmin'
+	SUP inetOrgPerson STRUCTURAL
+	DESC 'Virtual Admin entry'
+	MUST ( mail $ maxDomain $ accountActive $ lastChange )
+	MAY ( vd $ editAccounts ) )
+
+objectclass ( 1.3.6.1.4.1.22339.1.2.6 NAME 'VirtualBackupDomain'
+	SUP top STRUCTURAL
+	DESC 'Virtual Backup Domain entry to be used for relay'
+	MUST ( vd $ accountActive $ lastChange $ delete )
+	MAY ( description ) )
+
+objectclass ( 1.3.6.1.4.1.22339.1.2.7 NAME 'VirtualBackupMail'
+	SUP top STRUCTURAL
+	DESC 'Virtual Backup Mail entry to be used for relay'
+	MUST ( mail $ accountActive $ lastChange )
+	MAY ( description ) )
+
+objectclass ( 1.3.6.1.4.1.22339.1.2.8 NAME 'Yap'
+	SUP top AUXILIARY
+	DESC 'Yet another path'
+	MUST ( otherPath )
+	)
+

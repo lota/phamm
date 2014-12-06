@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plugin SYSTEM "http://www.phamm.org/DTD/phamm-plugins.dtd">
+
+<plugin name="davical">
+	<label>DAViCal</label>
+	<version>
+		<number>0.0.1</number>
+		<creationDate>2009-09-02</creationDate>
+		<updatedDate>2009-09-02</updatedDate>
+		<status>beta</status>
+	</version>
+	<author>
+		<firstName>viva</firstName>
+		<lastName>perversia</lastName>
+		<mail>viva@perversia.net</mail>
+		<web>http://perversia.net</web>
+	</author>
+	<license>GPL</license>
+	<shortDescription>Plugin to manage DAViCal accounts</shortDescription>
+	<longDescription>Plugin to manage DAViCal accounts</longDescription>
+	<parent>top</parent>
+	<color>FF4455</color>
+	<minAuthLevel>10</minAuthLevel>
+	<isDomainRelated>0</isDomainRelated>
+	<isPostmasterRelated>0</isPostmasterRelated>
+	<isAccountRelated>1</isAccountRelated>
+	
+	<account>
+		<objectClasses>
+			<objectClass name="CalDavAccount">
+				<bug>0</bug>
+			</objectClass>
+		</objectClasses>
+		<attributes>
+			<attribute name="CalDavAccess">
+				<prettyName>CalDav Access</prettyName>
+				<table>1</table>
+				<bool>1</bool>
+				<required>1</required>
+				<default>TRUE</default>
+			</attribute>
+		</attributes>
+	</account>
+</plugin>

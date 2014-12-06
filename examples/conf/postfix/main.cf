@@ -1,0 +1,111 @@
+# main.cf specific for phamm
+
+#  Copyright (c) 2005 Alessandro De Zorzi, Mirko Grava
+#  				<phamm@rhx.it> http://phamm.rhx.it/
+#
+#  Permission is granted to copy, distribute and/or modify this document
+#  under the terms of the GNU Free Documentation License, Version 1.2
+#  or any later version published by the Free Software Foundation;
+#  A copy of the license in DOCS.LICENSE file.
+
+ldap_bind_dn = cn=phamm,o=hosting,dc=example,dc=tld
+ldap_bind_pw = rhx
+ldap_search_base = o=hosting,dc=example,dc=tld
+ldap_domain = dc=example,dc=tld
+ldap_server_host = localhost
+ldap_server_port = 389
+ldap_version = 3
+
+# transports
+transport_server_host = $ldap_server_host
+transport_search_base = $ldap_search_base
+transport_query_filter = (&(&(vd=%s)(objectClass=VirtualDomain))(accountActive=TRUE)(delete=FALSE)) 
+transport_result_attribute = postfixTransport
+transport_cache = no
+transport_bind = yes
+transport_scope = one
+transport_bind_dn = $ldap_bind_dn
+transport_bind_pw = $ldap_bind_pw
+transport_version = $ldap_version
+
+# aliases
+aliases_server_host = $ldap_server_host
+aliases_search_base = $ldap_search_base
+aliases_query_filter = (&(&(objectClass=VirtualMailAlias)(mail=%s))(accountActive=TRUE))
+aliases_result_attribute = maildrop
+aliases_bind = yes
+aliases_cache = no
+aliases_bind_dn = $ldap_bind_dn
+aliases_bind_pw = $ldap_bind_pw
+aliases_version = $ldap_version
+
+# VirtualForward
+virtualforward_server_host = $ldap_server_host
+virtualforward_search_base = $ldap_search_base
+virtualforward_query_filter = (&(&(objectClass=VirtualMailAccount)(mail=%s))(vacationActive=FALSE)(forwardActive=TRUE)(accountActive=TRUE)(delete=FALSE))
+virtualforward_result_attribute = maildrop
+virtualforward_bind = yes
+virtualforward_cache = no
+virtualforward_bind_dn = $ldap_bind_dn
+virtualforward_bind_pw = $ldap_bind_pw
+virtualforward_version = $ldap_version
+
+# Accounts
+accounts_server_host = $ldap_server_host
+accounts_search_base = $ldap_search_base
+accounts_query_filter = (&(&(objectClass=VirtualMailAccount)(mail=%s))(forwardActive=FALSE)(accountActive=TRUE)(delete=FALSE))
+accounts_result_attribute = mailbox
+accounts_cache = no
+accounts_bind = yes
+accounts_bind_dn = $ldap_bind_dn
+accounts_bind_pw = $ldap_bind_pw
+accounts_version = $ldap_version
+
+accountsmap_server_host = $ldap_server_host
+accountsmap_search_base = $ldap_search_base
+accountsmap_query_filter = (&(&(objectClass=VirtualMailAccount)(mail=%s))(forwardActive=FALSE)(accountActive=TRUE)(delete=FALSE))
+accountsmap_result_attribute = mail
+accountsmap_cache = no
+accountsmap_bind = yes
+accountsmap_bind_dn = $ldap_bind_dn
+accountsmap_bind_pw = $ldap_bind_pw
+accountsmap_version = $ldap_version
+
+# virtual quota
+quota_server_host = $ldap_server_host
+quota_search_base = $ldap_search_base
+quota_query_filter = (&(&(objectClass=VirtualMailAccount)(mail=%s))(accountActive=TRUE)(delete=FALSE))
+quota_result_attribute = quota
+quota_cache = no
+quota_bind = yes
+quota_bind_dn = $ldap_bind_dn
+quota_bind_pw = $ldap_bind_pw
+quota_version = $ldap_version
+
+# Mail to reply for gnarwl and mail to forward during vacation
+recipient_bcc_maps = ldap:vma
+vma_server_host = $ldap_server_host
+vma_search_base = $ldap_search_base
+vma_query_filter = (&(&(objectClass=VirtualMailAccount)(mail=%s))(vacationActive=TRUE)(forwardActive=FALSE)(accountActive=TRUE)(delete=FALSE))
+vma_result_attribute = mailAutoreply
+vma_cache = no
+vma_bind = yes
+vma_bind_dn = $ldap_bind_dn
+vma_bind_pw = $ldap_bind_pw
+vma_version = $ldap_version
+
+# transport_maps
+maildrop_destination_concurrency_limit = 2 
+maildrop_destination_recipient_limit = 1
+transport_maps = hash:/etc/postfix/transport, ldap:transport
+mydestination = $transport_maps, localhost, $myhostname, localhost.$mydomain, $mydomain
+virtual_alias_maps = hash:/etc/postfix/virtual, ldap:virtualforward, ldap:aliases, ldap:accountsmap
+
+# virtual accounts for delivery
+virtual_mailbox_base = /home/vmail/domains
+virtual_mailbox_maps = ldap:accounts
+virtual_minimum_uid = 500 
+virtual_uid_maps = static:500
+virtual_gid_maps = static:500
+
+local_recipient_maps = proxy:unix:passwd.byname, $alias_maps, $virtual_mailbox_maps

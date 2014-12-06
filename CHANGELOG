@@ -1,0 +1,177 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Phamm - CHANGELOG
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  
+  Copyright (c) 2005-2014 Alessandro De Zorzi, Mirko Grava
+  <team@phamm.org> http://www.phamm.org/
+  
+  Project sponsored by RHX Studio Snc - www.rhx.it
+
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version 1.2
+  or any later version published by the Free Software Foundation;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+0.6.4 20141206 r.58
+    * Added random_password() function
+    * Updated phamm.schema
+    * Use max* attribute if exists
+    * Fix minor bugs
+
+0.6.3 20141112 r.53
+    * Added attribute on Phamm schema ( maxSmtpAuth, maxAntivirus, maxAntiSpam, maxGreyList )
+    * Modified objectClass VirtualDomain
+    * use of the max* attribute
+
+0.6.2 20140314 r.46
+    * use of the maxMail attribute
+    * fix minor bugs
+
+0.6.1 20131226 r.41
+    * fix Alerts and Labels style
+    * renamed password_hash() function for PHP >= 5.5.0 compatibility
+
+0.6.0 20131226 r.36
+    * Rebuild PHP code in Class
+    * Bootstrap front-end
+    * SVG Phamm Logo
+
+0.5.20 20131007
+    * Added script vacation.py, this is useful to active vacation (thanks Michele Baldessari)
+    * Added new attribute in phamm-vacation.schema (thanks Mauricio Tavares)
+    * Hide PHP E_DEPRECATED in default ERROR_LEVEL
+
+0.5.19 20111226
+    * Fixed minor bugs
+    * Added Portuguese translation thanks to Rafael Domingues
+    * Replaced some Deprecated PHP functions (thx to Claudio Strizzolo)
+
+0.5.18 20100331
+    * Updated OID on phamm-vacation.schema
+    * Updated examples file postfix/main.cf
+
+0.5.17 20091109
+    * Modified OID 1.3.6.1.4.1.22339.1.1.33 vacationActive
+      (Thanks to jonhattan at faita dot net)
+    * added Jabber and Davical plugins (Thanks to Viva Perversia)
+    * added perversia.net.schema
+    * update French Translations (Thanks to Aldo Reset)
+    * added Danish Translation (Thanks to Alice Kaerast)
+
+0.5.16 20090528
+    * modify ACL (postmaster may change uid)
+    * added attribute bypassGreyListing on phamm.schema
+    * Add 3 rows for TLS in example for slapd.conf
+    * Added Hungarian translation thanks to Zsolt Jonas
+    * Fixed some minor bugs (Thanks to kabe - jp)
+    * Improve UTF-8 support for welcome message (Thanks to Zsolt Jonas hu)
+    * Fixed VacationStart and VacationEnd data format (Thanks to Zsolt Jonas hu)
+
+0.5.15 20090108
+    * Changed back-end database fot Slapd from bdb to hdb (example conf)
+    * defined expand to ruleset <who> in the slapd ACL
+    * Added French translation thanks to Aldo Reset
+    * Fixed quota format in domain view
+    * Updated documentations
+    * Added TLS support
+
+0.5.14 20081221
+    * Improved error messages
+    * Fixed minor bugs
+    * Added Russian translation thanks to Yuri Kozlov
+    * Added Polish translation thanks to Sławomir Paszkiewicz
+
+0.5.13 20081005
+  * Added phamm-vacation.schema
+  * Clean up config file
+  * Improved select actions "...execute a command"
+  * Added givenName value instead cn
+  * [plugins] added prettyName attribute
+  * [plugins] templates updated
+  * Fix minor bug (Delete attribute values from current attributes
+    with many plugins active)
+  * Translations updated (switch to gettext)
+    - German - thanks to Jan Dankert 
+    - Spanish - thanks to jonhattan
+    - Vietnamese - thanks to Clytie Siddall
+    - Italian - thanks to Phamm Team
+
+0.5.12 20080719
+Added visible Amavis Spam level control
+New feature: checking for existing mail (and alias)
+CSS recoded
+DTD updated
+XML plugin templates updated
+Italian translation updated
+Added useful static warnings for non correct account configuration
+Modified postfix transport from virtual to maildrop in sample ldif
+
+0.5.11 20080426
+updated ACL, examples and configuration files to Debian standard
+  (rootdn admin instead manager)
+improved welcome message Headers (From and Return-path)
+updated ACL files to use only per mail service
+added ACL examples
+updated DTD and mail.xml
+fixed accounts filter by initial
+updated sample to use LDAP bind v3
+added checkAll js function
+
+0.5.10 20080206
+fixed md5 hash function
+updated Dovecot examples
+updated en_GB.php
+
+0.5.9 20071224
+fixed some PHP Notice and Warning
+fixed XHTML syntax
+added attribute Autoreply for objectClass VirtualMailAccount in
+ phamm.schema for Vacation and VacationForward without script fork.pl
+Added sample footer.txt and header.txt for gnarwl
+Updated gnarwl.cfg, postfix transport, main.cf, master.cf samples
+moved AUTHORS to COPYRIGHT
+updated INSTALL and README
+removed schema/contrib/*schema
+
+0.5.8 20071218
+Changes required by Debian License Policy
+
+0.5.7 20071211
+removed restrictive images license
+added documentation
+
+0.5.6 20071201
+account uid creation defined in mail.xml plugin
+added count for domains and accounts
+updated mail.xml plugin
+fixed login with username and domain uppercase
+updated ACL
+
+0.5.5 20071020
+update mail.xml (domainActive attribute)
+fixed update action for values_multi
+fixed plugin integration in form view
+update logo (white background)
+
+0.5.4 20071006
+added catch all feature
+added DEFAULT_DOMAIN login feature
+fixed XHTML syntax
+sort accounts results
+improved log function
+
+0.5.3 20070930
+added textarea input box (ex. Vacation Info...)
+added date input box (ex. vacationStart, vacationEnd...)
+exception vacationActive to delete VacationForward if exists
+language support
+
+0.5.2 20070929
+a usable release
+
+0.5.1 20070911 (island)
+a working release
+
+0.5.0 20060516 (alfamatta)
+initial alpha release
+add some sample for samba

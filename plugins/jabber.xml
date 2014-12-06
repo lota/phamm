@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plugin SYSTEM "http://www.phamm.org/DTD/phamm-plugins.dtd">
+
+<plugin name="jabber">
+	<label>JABBER</label>
+	<version>
+		<number>0.0.1</number>
+		<creationDate>2009-08-13</creationDate>
+		<updatedDate>2009-08-13</updatedDate>
+		<status>beta</status>
+	</version>
+	<author>
+		<firstName>viva</firstName>
+		<lastName>perversia</lastName>
+		<mail>viva@perversia.net</mail>
+		<web>http://perversia.net</web>
+	</author>
+	<license>GPL</license>
+	<shortDescription>Plugin to manage jabber accounts</shortDescription>
+	<longDescription>Plugin to manage jabber accounts</longDescription>
+	<parent>top</parent>
+	<color>FF4455</color>
+	<minAuthLevel>10</minAuthLevel>
+	<isDomainRelated>0</isDomainRelated>
+	<isPostmasterRelated>0</isPostmasterRelated>
+	<isAccountRelated>1</isAccountRelated>
+	
+	<account>
+		<objectClasses>
+			<objectClass name="jabberAccount">
+				<bug>0</bug>
+			</objectClass>
+		</objectClasses>
+		<attributes>
+			<attribute name="jabberAccess">
+				<prettyName>Jabber Access</prettyName>
+				<table>1</table>
+				<bool>1</bool>
+				<required>1</required>
+				<default>TRUE</default>
+			</attribute>
+			<attribute name="jabberID">
+				<prettyName>Jabber-ID</prettyName>
+				<editable>1</editable>
+				<required>1</required>
+				<default>=php.Value(+account_new+,@,%domain%)</default>
+			</attribute>
+		</attributes>
+	</account>
+</plugin>

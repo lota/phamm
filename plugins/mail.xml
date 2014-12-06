@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plugin SYSTEM "http://www.phamm.org/DTD/phamm-plugins.dtd">
+
+<plugin name="mail">
+	<label>MAIL</label>
+	<version>
+		<number>0.0.4</number>
+		<creationDate>2005-02-19</creationDate>
+		<updatedDate>2008-09-08</updatedDate>
+		<status>stable</status>
+	</version>
+	<author>
+		<firstName>Alessandro De Zorzi</firstName>
+		<lastName>De Zorzi</lastName>
+		<mail>team@phamm.org</mail>
+		<web>http://www.phamm.org</web>
+	</author>
+	<license>GPL</license>
+	<shortDescription>Plugin to manage Virtual Domain, e-mail account and aliases</shortDescription>
+	<longDescription>Plugin to manage Virtual Domain, e-mail account and aliases</longDescription>
+	<parent>top</parent>
+	<color>FF4455</color>
+	<minAuthLevel>2</minAuthLevel>
+	<isDomainRelated>1</isDomainRelated>
+	<isPostmasterRelated>1</isPostmasterRelated>
+	<isAccountRelated>1</isAccountRelated>
+
+	<domain>
+		<attributes>
+			<attribute name="maxMail">
+				<prettyName>Max number of Mail</prettyName>
+				<size>4</size>
+				<hidden>1</hidden>
+				<maxlength>4</maxlength>
+				<default>100</default>
+			</attribute>
+			<attribute name="maxAlias">
+				<prettyName>Max number of Alias</prettyName>
+				<hidden>1</hidden>
+				<size>4</size>
+				<maxlength>4</maxlength>
+				<default>100</default>
+			</attribute>
+			<attribute name="maxQuota">
+				<prettyName>Max Quota</prettyName>
+				<size>4</size>
+				<hidden>1</hidden>
+				<maxlength>4</maxlength>
+				<default>100</default>
+			</attribute>
+			<attribute name="maxSmtpAuth">
+				<prettyName>Max Smtp Auth</prettyName>
+				<size>4</size>
+				<hidden>1</hidden>
+				<maxlength>4</maxlength>
+				<default>-1</default>
+			</attribute>
+			<attribute name="accountActive">
+				<prettyName>Active</prettyName>
+				<bool>1</bool>
+				<hidden>1</hidden>
+				<table>1</table>
+				<default>TRUE</default>
+			</attribute>
+			<attribute name="editAV">
+				<prettyName>Can edit Anti-Virus</prettyName>
+				<bool>1</bool>
+				<hidden>1</hidden>
+				<default>TRUE</default>
+			</attribute>
+			<attribute name="delete">
+				<prettyName>Delete</prettyName>
+				<bool>1</bool>
+				<table>1</table>
+				<hidden>1</hidden>
+				<cron>1</cron>
+				<required>1</required>
+				<default>FALSE</default>
+			</attribute>
+			<attribute name="postfixTransport">
+				<prettyName>Postfix Transport</prettyName>
+				<default>maildrop:</default>
+				<hidden>1</hidden>
+			</attribute>
+		</attributes>
+	</domain>
+	
+	<postmaster>
+		<attributes>
+			<attribute name="editAccounts">
+				<prettyName>Can edit Accounts</prettyName>
+				<bool>1</bool>
+				<table>1</table>
+				<default>TRUE</default>
+				<minAuthLevel>6</minAuthLevel>
+			</attribute>
+		</attributes>
+	</postmaster>
+
+	<account>
+		<objectClasses>
+			<objectClass name="VirtualMailAccount">
+				<bug>0</bug>
+			</objectClass>
+			<objectClass name="Vacation">
+				<bug>0</bug>
+			</objectClass>
+			<objectClass name="VirtualForward">
+				<bug>0</bug>
+			</objectClass>
+			<objectClass name="amavisAccount">
+				<bug>0</bug>
+			</objectClass>
+		</objectClasses>
+		<attributes>
+			<attribute name="smtpAuth">
+				<prettyName>SMTP Auth</prettyName>
+				<bool>1</bool>
+				<table>1</table>
+				<default>FALSE</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="quota">
+				<prettyName>Quota</prettyName>
+				<table>1</table>
+				<default>1000</default>
+				<multiplier>1048576</multiplier>
+				<suffix>S</suffix>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="accountActive">
+				<prettyName>Active</prettyName>
+				<bool>1</bool>
+				<table>1</table>
+				<required>1</required>
+				<default>TRUE</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="vdHome">
+				<prettyName>Virtual Home</prettyName>
+				<hidden>1</hidden>
+				<required>1</required>
+				<default>/home/vmail/domains</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="mailbox">
+				<prettyName>Mailbox</prettyName>
+				<hidden>1</hidden>
+				<required>1</required>
+				<default>=php.Value(%domain%,/,+account_new+,/)</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="uid">
+				<prettyName>UID</prettyName>
+				<required>1</required>
+				<default>=php.Value(+account_new+,.,%domain%)</default>
+				<minAuthLevel>4</minAuthLevel>
+				<hidden>1</hidden>
+				<hideCreation>1</hideCreation>
+			</attribute>
+			<attribute name="mailAutoreply">
+				<prettyName>Mail Autoreply</prettyName>
+				<hidden>1</hidden>
+				<default>=php.Value(+account_new+,@,%domain%,.autoreply)</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="delete">
+				<prettyName>Delete</prettyName>
+				<bool>1</bool>
+				<hidden>1</hidden>
+				<table>1</table>
+				<default>FALSE</default>
+				<minAuthLevel>4</minAuthLevel>
+				<cron>1</cron>
+			</attribute>
+			<attribute name="otherTransport">
+				<prettyName>Other Transport</prettyName>
+				<hidden>1</hidden>
+				<default>phamm:</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="vacationActive">
+				<prettyName>Vacation</prettyName>
+				<default>FALSE</default>
+				<bool>1</bool>
+				<hidecreation>1</hidecreation>
+			</attribute>
+			<attribute name="vacationInfo">
+				<prettyName>Vacation Info</prettyName>
+			    <subordinated>vacationActive</subordinated>
+			    <textarea>1</textarea>
+			</attribute>
+			<attribute name="vacationForward">
+			    <prettyName>Vacation Forward</prettyName>
+			    <subordinated>vacationActive</subordinated>
+			    <subordinateddelete>1</subordinateddelete>
+			</attribute>
+			<attribute name="vacationStart">
+			    <prettyName>Vacation Start</prettyName>
+			    <subordinated>vacationActive</subordinated>
+				<default>201001010000</default>
+			    <date>1</date>
+			</attribute>
+			<attribute name="vacationEnd">
+			    <prettyName>Vacation End</prettyName>
+			    <subordinated>vacationActive</subordinated>
+				<default>201001010000</default>
+			    <date>1</date>
+			</attribute>
+			<attribute name="forwardActive">
+			    <prettyName>Forward Active</prettyName>
+				<bool>1</bool>
+				<default>FALSE</default>
+				<hidecreation>1</hidecreation>
+				<table>1</table>
+			</attribute>
+			<attribute name="maildrop">
+			    <prettyName>Maildrop</prettyName>
+				<subordinated>forwardActive</subordinated>
+			</attribute>
+			<attribute name="amavisBypassVirusChecks">
+			    <prettyName>Virus Check</prettyName>
+				<bool>1</bool>
+				<table>1</table>
+				<reverse>1</reverse>
+				<default>TRUE</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="amavisBypassSpamChecks">
+			    <prettyName>SPAM Check</prettyName>
+				<bool>1</bool>
+				<table>1</table>
+				<reverse>1</reverse>
+				<default>FALSE</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="amavisSpamKillLevel">
+			    <prettyName>Spam Kill Level</prettyName>
+			    <subordinatedReverse>amavisBypassSpamChecks</subordinatedReverse>
+			    <minAuthLevel>4</minAuthLevel>
+			    <default>6.0</default>
+			    <options>
+				<option name="low">
+				    <value>10.0</value>
+				</option>
+				<option name="medium">
+				    <value>6.0</value>
+				</option>
+				<option name="high">
+				    <value>4.5</value>
+				</option>
+				<option name="very_high">
+				    <value>3.0</value>
+				</option>
+			    </options>
+			</attribute>
+			<attribute name="amavisSpamTag2Level">
+			    <prettyName>Spam Tag2 Level</prettyName>
+			    <subordinatedReverse>amavisBypassSpamChecks</subordinatedReverse>
+			    <minAuthLevel>4</minAuthLevel>
+			    <default>5.5</default>
+			    <options>
+				<option name="low">
+				    <value>9.5</value>
+				</option>
+				<option name="medium">
+				    <value>5.5</value>
+				</option>
+				<option name="high">
+				    <value>4.0</value>
+				</option>
+				<option name="very_high">
+				    <value>2.5</value>
+				</option>
+			    </options>
+			</attribute>
+			<attribute name="amavisSpamTagLevel">
+			    <prettyName>Spam Tag Level</prettyName>
+			    <subordinatedReverse>amavisBypassSpamChecks</subordinatedReverse>
+			    <default>3.0</default>
+			    <options>
+				<option name="low">
+				    <value>7.0</value>
+				</option>
+				<option name="medium">
+				    <value>3.0</value>
+				</option>
+				<option name="high">
+				    <value>1.5</value>
+				</option>
+				<option name="very_high">
+				    <value>0.0</value>
+				</option>
+			    </options>
+			    <minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="creationDate">
+			    <prettyName>Creation Date</prettyName>
+			    <table>1</table>
+			    <hidden>1</hidden>
+			</attribute>
+		</attributes>
+	</account>
+</plugin>

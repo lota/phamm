@@ -1,0 +1,12 @@
+dn:o=hosting,dc=example,dc=tld
+objectClass: top
+objectClass: organization
+o: hosting
+description: mail.example.tld hosting root
+
+dn:cn=phamm,o=hosting,dc=example,dc=tld
+objectClass: top
+objectClass: organizationalRole
+objectClass: simpleSecurityObject
+cn: phamm
+userPassword: {SSHA}zCfpI3LEnzO0ZWJo8VeHes6TicnPJuME

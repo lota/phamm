@@ -1,0 +1,72 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Phamm - THANKS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  Copyright (c) 2005-2014 Alessandro De Zorzi, Mirko Grava
+  <team@phamm.org> http://www.phamm.org/
+  
+  Project sponsored by RHX Studio Snc - www.rhx.it
+
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version 1.2
+  or any later version published by the Free Software Foundation;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Translators
+^^^^^^^^^^^
+	Renato Ben (Italiano)
+	Tristan Defert (Francais)
+	Jan Dankert (Deutsch)
+	Ronaldo Fabricio Reis Silva (Portugues Brasileiro)
+	Zoltan Gyula Beck (Magyar)
+	Ari Widodo (Indonesian)
+	Igor V. Gots (Russian)
+	Javier Enrique Tiá Marí (Spanish)
+	Alice Kaerast (Danish)
+
+Fabio Tranchitella:
+	phpLDAPAdmin Maintainer
+	http://www.kobold.it/
+	for Debian Package Support
+
+Pierangelo Masarati:
+	OpenLDAP Core Team
+	http://www.sys-net.it
+	for ACL suggestions and more
+
+Michele Baldessari:
+	Interesting suggestions
+
+Alan Walters:
+	Interesting suggestions abount schema extensions. Documentation review
+
+Tristan Defert:
+	Interesting suggestions about front-end
+
+Tiziano D'Inca':
+	Radius plugins
+
+Marco Sanson:
+	Initial idea of perl transport script
+
+Ricardo Amaro:
+	Perl transport script improvements.
+
+Iliana Comina:
+	for Phamm Logo restyling
+
+Bruno Pelaia:
+	Interesting suggestions
+
+Zsolt Jonas:
+	patchs and bugs fix
+
+kabe:
+	patchs and bugs fix
+
+Sebastian:
+	patchs and bugs fix
+
+And many others, whose names are lost in the changelog.
+Thank you.
+

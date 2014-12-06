@@ -1,0 +1,91 @@
+dn:vd=example.tld,o=hosting,dc=example,dc=tld
+objectClass: top
+objectClass: VirtualDomain
+postfixTransport: maildrop:
+lastChange: 1066742030
+vd: example.tld
+delete: FALSE
+accountActive: TRUE
+adminID: cn=matrix,ou=admin,dc=example,dc=tld
+editAV: FALSE
+maxAlias: 20
+maxMail: 10
+maxQuota: 250
+
+dn:cn=postmaster,vd=example.tld,o=hosting,dc=example,dc=tld
+objectClass: top
+objectClass: VirtualMailAlias
+mail: postmaster@example.tld
+lastChange: 1066742031
+maildrop: postmaster
+accountActive: TRUE
+cn: postmaster
+sn: postmaster
+userPassword: {SSHA}G7vRIKNRvDQg0T0qarcMgbYaQ+iOLEgq
+editAccounts: FALSE
+
+dn:mail=abuse@example.tld,vd=example.tld,o=hosting,dc=example,dc=tld
+objectClass: top
+objectClass: VirtualMailAlias
+mail: abuse@example.tld
+lastChange: 1066742031
+maildrop: postmaster
+accountActive: TRUE
+cn: abuse
+sn: abuse
+
+dn:mail=john.doe@example.tld,vd=example.tld,o=hosting,dc=example,dc=tld
+objectClass: top
+objectClass: VirtualMailAccount
+objectClass: Vacation
+objectClass: amavisAccount
+objectClass: VirtualForward
+mail: john.doe@example.tld
+vdHome: /home/vmail/domains
+mailbox: example.tld/john.doe/
+delete: FALSE
+accountActive: TRUE
+sn: Doe
+userPassword: {SSHA}G7vRIKNRvDQg0T0qarcMgbYaQ+iOLEgq
+description: Vacation description
+vacationActive: FALSE
+vacationStart: 201001010000
+vacationEnd: 201001010000
+forwardActive: FALSE
+lastChange: 1108499016
+cn: John
+quota: 52428800S
+amavisSpamKillLevel: 6.0
+amavisSpamTag2Level: 5.5
+amavisSpamTagLevel: 3.0
+amavisBypassVirusChecks: FALSE
+amavisBypassSpamChecks: TRUE
+mailAutoreply: john.doe@example.tld.autoreply
+
+dn:mail=john.smith@example.tld,vd=example.tld,o=hosting,dc=example,dc=tld
+objectClass: top
+objectClass: VirtualMailAccount
+objectClass: Vacation
+objectClass: amavisAccount
+objectClass: VirtualForward
+mail: john.smith@example.tld
+vdHome: /home/vmail/domains
+mailbox: example.tld/john.smith/
+delete: FALSE
+accountActive: TRUE
+sn: Smith
+userPassword: {SSHA}G7vRIKNRvDQg0T0qarcMgbYaQ+iOLEgq
+description: Vacation description
+vacationActive: FALSE
+vacationStart: 201001010000
+vacationEnd: 201001010000
+amavisBypassVirusChecks: TRUE
+amavisBypassSpamChecks: FALSE
+forwardActive: FALSE
+lastChange: 1108499023
+cn: John
+quota: 52428800S
+amavisSpamKillLevel: 6.0
+amavisSpamTag2Level: 5.5
+amavisSpamTagLevel: 3.0
+mailAutoreply: john.smith@example.tld.autoreply

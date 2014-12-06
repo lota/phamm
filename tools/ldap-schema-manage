@@ -1,0 +1,70 @@
+#!/bin/bash
+#
+# This script help you to modify /etc/ldap/slapd.conf to manage
+# .schema files
+#
+# Phamm - http://www.phamm.org - <team@phamm.org>
+# Copyright (C) 2008 Alessandro De Zorzi and Mirko Grava
+# 
+# Phamm is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# Phamm is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+ACTION=$1
+SCHEMA=$2
+EXT=`echo $2 | cut -d "." -f 2`
+
+# Check if 2th argument is given
+if [ ! $SCHEMA ]; then
+    echo "Usage: ldap-schema-manage [install|check|purge] file.schema"
+    exit 1
+fi
+
+# Check if 2th argument is a .schema file
+if [ $EXT != 'schema' ]; then
+    echo "Error: 2th argument should be a .schema file"
+    exit 2
+fi
+
+# Check if .schema file exits
+if [ ! -f $SCHEMA ]; then
+    echo "Error: $SCHEMA do not exits!"
+    exit 3
+fi
+
+# Check if .schema already in /etc/ldap/schema
+if [ ! -f "/etc/ldap/schema/$SCHEMA" ]; then
+    echo "Error: $SCHEMA already present in /etc/ldap/schema/ !"
+    exit 4
+fi
+
+case "$ACTION" in
+	
+install )
+    echo "Installing $SCHEMA"
+;;
+
+check )
+    echo "Checking $SCHEMA"
+;;
+
+purge )
+    echo "Purging $SCHEMA"
+;;
+
+* )
+    echo "Usage: ldap-schema-manage [install|check|purge] file.schema"
+;;
+
+esac
+
+exit 0

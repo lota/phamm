@@ -1,0 +1,70 @@
+/************************
+* Phamm 0.6             *
+************************/
+
+    * CSS2 and XHTML Strict
+    * AJAX search functions
+    * PHP5 and OOP
+
+/************************
+* Phamm 0.5             *
+************************/
+
+- enable deault filter view (high number of domain...)
+
+- immediate delete for account and domain (see recursive fix)
+
+- header mail "Phamm"
+
+- fix error with multi windows open/different domain in session
+
+- attribute hidden in cration only
+  (es. postmaster can write but not modify uid)
+
+- attribute hidden does not work with field <date>1</date>
+
+- Meta attribute (SPAM protetion level for user interface)
+
+- Manager/Postmaster attribute direct input (no select...)
+
+- Log
+    http://it.php.net/manual/en/function.syslog.php
+    http://it.php.net/manual/en/function.openlog.php
+
+- php5-mcrypt
+  http://www.webmasterworld.com/forum88/157.htm
+
+- multi-select option template engine
+
+- error form if Domain Property update missing data
+
+- alias require 1 destination
+
+- mail plugin not required
+
+- remind lost password
+
+- rename attribute "delete" when phamm.schema change
+
+- random password
+
+- VirtualBackupMail
+
+dn: vd=example.com,o=hosting,dc=x4w,dc=it
+objectClass: top
+objectClass: VirtualDomain
+vd: example.com
+accountActive: TRUE
+lastChange: 1098956723
+delete: FALSE
+postfixTransport: smtp:[192.168.10.10]:25
+
+dn: mail=@example.com,vd=example.com,o=hosting,dc=x4w,dc=it
+objectClass: top
+objectClass: VirtualBackupMail
+mail: @example.com
+accountActive: TRUE
+lastChange: 1132572757
+description: MX secondario dominio
+
+- avoid alias destination with the same address

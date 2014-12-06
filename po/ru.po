@@ -1,0 +1,517 @@
+# translation of ru.po to Russian
+# Copyright (c) 2004,2008 Alessandro De Zorzi, Mirko Grava
+# This file is distributed under the same license as the Phamm package.
+#
+# Igor V. Gots  <igor@gots.ru>, 2005.
+# Yuri Kozlov <kozlov.y@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: phamm NEW\n"
+"POT-Creation-Date: 2008-10-15 09:56+0300\n"
+"PO-Revision-Date: 2008-10-15 22:21+0400\n"
+"Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
+"Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../www-data/main.php:204
+#, php-format
+msgid "%s modified"
+msgstr "Значение %s изменено"
+
+#: ../www-data/main.php:605
+#, php-format
+msgid "%s not added!"
+msgstr "%s не добавлено!"
+
+#: ../lib/xhtml.php:981
+msgid "...execute a command"
+msgstr "...выполнение команды"
+
+#: ../lib/xhtml.php:747
+msgid "Account"
+msgstr "Аккаунт"
+
+#: ../www-data/main.php:599
+#, php-format
+msgid "Account %s successfully added"
+msgstr "Аккаунт %s добавлен"
+
+#: ../lib/xhtml.php:281
+#, php-format
+msgid "Account (%d)"
+msgid_plural "Accounts (%d)"
+msgstr[0] "%d аккаунт"
+msgstr[1] "%d аккаунта"
+msgstr[2] "%d аккаунтов"
+
+#: ../www-data/main.php:369
+msgid "Account or Alias already exists"
+msgstr "Аккаунт или псевдоним уже существуют"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:44 ../plugins/mail.xml:52 ../plugins/mail.xml:125
+#, no-wrap
+msgid "Active"
+msgstr "Активен"
+
+#: ../lib/xhtml.php:1107
+msgid "Add catch-all address"
+msgstr "Добавить адрес для всей почты"
+
+#: ../lib/xhtml.php:715 ../lib/xhtml.php:739
+msgid "Add new account"
+msgstr "Добавить новый аккаунт"
+
+#: ../lib/xhtml.php:380 ../lib/xhtml.php:648
+msgid "Add new domain"
+msgstr "Добавить новый домен"
+
+#: ../lib/xhtml.php:839
+msgid "All"
+msgstr "Все"
+
+#: ../lib/xhtml.php:823
+msgid "All domains"
+msgstr "Все домены"
+
+#: ../www-data/main.php:110
+msgid "Bye!"
+msgstr "Пока!"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:84
+#, no-wrap
+msgid "Can edit Accounts"
+msgstr "Может редактировать аккаунты"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:59
+#, no-wrap
+msgid "Can edit Anti-Virus"
+msgstr "Может управлять антивирусом"
+
+#: ../www-data/main.php:97
+msgid "Can't contact LDAP server"
+msgstr "Не удалось связаться с сервером LDAP"
+
+#: ../www-data/main.php:424
+msgid "Catch all"
+msgstr "Принимать всё"
+
+#: ../www-data/main.php:422
+msgid "Catch all active"
+msgstr "Приём всей почты включён"
+
+#: ../lib/xhtml.php:1094
+msgid "Catch-all"
+msgstr "Вся почта"
+
+#: ../www-data/main.php:221
+msgid "Changes have not performed"
+msgstr "Изменения не внесены"
+
+#: ../lib/common.php:482
+msgid "Code "
+msgstr "Код "
+
+#: ../lib/xhtml.php:283
+msgid "Common Name"
+msgstr "Общее имя"
+
+#: ../lib/xhtml.php:662 ../lib/xhtml.php:753
+msgid "Confirm Password"
+msgstr "Подтверждение пароля"
+
+#: ../www-data/main.php:72
+msgid "Connection to LDAP Server Failed!"
+msgstr "Не удалось подключиться к серверу LDAP!"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:290
+#, no-wrap
+msgid "Creation Date"
+msgstr "Дата создания"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:65 ../plugins/mail.xml:161
+#, no-wrap
+msgid "Delete"
+msgstr "Удалить"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:39
+#, no-wrap
+msgid "Destination"
+msgstr "Назначение"
+
+#: ../lib/xhtml.php:656
+msgid "Domain"
+msgstr "Домен"
+
+#: ../www-data/main.php:339
+#, php-format
+msgid "Domain %s successfully added"
+msgstr "Домен %s добавлен"
+
+#: ../lib/xhtml.php:155
+#, php-format
+msgid "Domain (%d)"
+msgid_plural "Domains (%d)"
+msgstr[0] "%d домен"
+msgstr[1] "%d домена"
+msgstr[2] "%d доменов"
+
+#: ../www-data/main.php:412
+msgid "Domain property"
+msgstr "Свойства домена"
+
+#: ../lib/phamm.php:172
+msgid "Error: "
+msgstr "Ошибка: "
+
+#: ../lib/xhtml.php:991
+msgid "Execute command"
+msgstr "Выполнить команду"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:48
+#, no-wrap
+msgid "FAX"
+msgstr "ФАКС"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:71
+#, no-wrap
+msgid "FTP Quota Mb"
+msgstr "FTP-квота (Mб)"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:65
+#, no-wrap
+msgid "FTP Status"
+msgstr "FTP-состояние"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:202
+#, no-wrap
+msgid "Forward Active"
+msgstr "Пересылка включена"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:39
+#, no-wrap
+msgid "GID number"
+msgstr "GID-номер"
+
+#: ../www-data/main.php:99
+msgid "Generic Error: "
+msgstr "Общая ошибка: "
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:45
+#, no-wrap
+msgid "Home Directory"
+msgstr "Домашний каталог"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:40
+#, no-wrap
+msgid "Home Phone"
+msgstr "Домашний телефон"
+
+#: ../lib/common.php:482
+msgid "LDAP Error: "
+msgstr "Ошибка LDAP: "
+
+#: ../lib/xhtml.php:113
+msgid "Login"
+msgstr "Логин"
+
+#: ../lib/xhtml.php:107
+msgid "Login Name"
+msgstr "Регистрационное имя"
+
+#: ../www-data/main.php:95
+msgid "Login Username or Password not valid."
+msgstr "Неправильный логин или пароль."
+
+#: ../www-data/main.php:168
+#, php-format
+msgid "Logout %s"
+msgstr "Завершение работы %s"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:155
+#, no-wrap
+msgid "Mail Autoreply"
+msgstr "Почтовый автоответчик"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:140
+#, no-wrap
+msgid "Mailbox"
+msgstr "Почтовый ящик"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:210
+#, no-wrap
+msgid "Maildrop"
+msgstr "Maildrop"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:45
+#, no-wrap
+msgid "Max Quota"
+msgstr "Максимальная квота"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:38
+#, no-wrap
+msgid "Max number of Alias"
+msgstr "Максимальное кол-во псевдонимов"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:31
+#, no-wrap
+msgid "Max number of Mail"
+msgstr "Максимальное кол-во почты"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:44
+#, no-wrap
+msgid "Mobile"
+msgstr "Мобильный"
+
+#: ../lib/xhtml.php:737
+msgid "Modify account"
+msgstr "Изменить аккаунт"
+
+#: ../lib/xhtml.php:646
+msgid "Modify domain"
+msgstr "Изменить домен"
+
+#: ../lib/xhtml.php:907 ../lib/xhtml.php:908
+msgid "NO"
+msgstr "НЕТ"
+
+#: ../lib/xhtml.php:756
+msgid "Name"
+msgstr "Имя"
+
+#: ../www-data/main.php:476
+msgid "Name is not valid"
+msgstr "Неверное имя"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:170
+#, no-wrap
+msgid "Other Transport"
+msgstr "Другой транспорт"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:52
+#, no-wrap
+msgid "Pager"
+msgstr "Пейджер"
+
+#: ../lib/xhtml.php:109 ../lib/xhtml.php:659 ../lib/xhtml.php:750
+msgid "Password"
+msgstr "Пароль"
+
+#: ../lib/common.php:282
+msgid "Password contains special chars"
+msgstr "Пароль содержит спецсимволы"
+
+#: ../lib/common.php:279
+msgid "Password too short!"
+msgstr "Пароль слишком короткий!"
+
+#: ../lib/common.php:276
+msgid "Passwords don't match!"
+msgstr "Пароли не совпадают!"
+
+# type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:74
+#, no-wrap
+msgid "Postfix Transport"
+msgstr "Транспорт Postfix"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/proxy.xml:42
+#, no-wrap
+msgid "Proxy Host"
+msgstr "Прокси-хост"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:117
+#, no-wrap
+msgid "Quota"
+msgstr "Квота"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:51 ../plugins/mail.xml:110
+#, no-wrap
+msgid "SMTP Auth"
+msgstr "SMTP Auth"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:65 ../plugins/mail.xml:222
+#, no-wrap
+msgid "SPAM Check"
+msgstr "Проверка на спам"
+
+#: ../www-data/main.php:393
+msgid "SPAM Tags level are not set correctly!"
+msgstr "Неправильно задан уровень меток спама!"
+
+#: ../lib/xhtml.php:987
+msgid "Set"
+msgstr "Задан"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:230
+#, no-wrap
+msgid "Spam Kill Level"
+msgstr "Уровень для удаления спама"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:270
+#, no-wrap
+msgid "Spam Tag Level"
+msgstr "Уровень для пометки спама"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:250
+#, no-wrap
+msgid "Spam Tag2 Level"
+msgstr "Уровень для 2-й пометки спама"
+
+#: ../www-data/main.php:371
+msgid "Special Characters not Allowed in E-mail address"
+msgstr "В почтовых адресах спецсимволы запрещены"
+
+#: ../lib/xhtml.php:759
+msgid "Surname"
+msgstr "Фамилия"
+
+#: ../www-data/main.php:478
+msgid "Surname is not valid"
+msgstr "Неверная фамилия"
+
+#: ../www-data/main.php:239
+msgid "Syntax not valid or special chars found in domain name"
+msgstr "Неверный синтаксис или в доменном имени есть спецсимволы"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/person.xml:36
+#, no-wrap
+msgid "Telephone"
+msgstr "Телефон"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:52 ../plugins/mail.xml:147
+#, no-wrap
+msgid "UID"
+msgstr "UID"
+
+# type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:59
+#, no-wrap
+msgid "UID Number"
+msgstr "UID-номер"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:176
+#, no-wrap
+msgid "Vacation"
+msgstr "Временное отсутствие"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:197
+#, no-wrap
+msgid "Vacation End"
+msgstr "Конец периода временного отсутствия"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:187
+#, no-wrap
+msgid "Vacation Forward"
+msgstr "Пересылать во время отсутствия"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:182
+#, no-wrap
+msgid "Vacation Info"
+msgstr "Информация о временном отсутствии"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:192
+#, no-wrap
+msgid "Vacation Start"
+msgstr "Начало периода временного отсутствия"
+
+#: ../lib/xhtml.php:63 ../lib/xhtml.php:99
+#, php-format
+msgid "Ver. %s"
+msgstr "Вер. %s"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:133
+#, no-wrap
+msgid "Virtual Home"
+msgstr "Виртуальный домашний каталог"
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:58 ../plugins/mail.xml:214
+#, no-wrap
+msgid "Virus Check"
+msgstr "Антивирусная проверка"
+
+#: ../lib/phamm.php:176
+msgid "Warning: "
+msgstr "Предупреждение: "
+
+# type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/proxy.xml:36
+#, no-wrap
+msgid "Web Access"
+msgstr "Доступ через веб"
+
+#: ../lib/xhtml.php:907 ../lib/xhtml.php:908
+msgid "YES"
+msgstr "ДА"
+
+#: ../lib/common.php:73
+msgid ""
+"You will be automatically redirected to a new page within a few seconds.<br/"
+"> If this does not happen, please follow the link:"
+msgstr ""
+"Через несколько секунд вы будете автоматически перенаправлены на новую страницу.<br/"
+"> Если это не происходит, пройдите по ссылке:"
+
+#: ../www-data/main.php:757
+#, php-format
+msgid "account %s not updated!"
+msgstr "аккаунт %s не обновлён!"
+
+#: ../lib/common.php:73
+msgid "click here"
+msgstr "нажмите сюда"
+
+#: ../www-data/main.php:395
+msgid "do not activate Forward and Vacation Forward in the same time!"
+msgstr "не включайте Пересылку и Пересылку во время отсутствия одновременно"
+
+#: ../www-data/main.php:344
+#, php-format
+msgid "domain %s not added!"
+msgstr "домен %s не добавлен!"
+
+#: ../www-data/main.php:397
+msgid "please, insert a forward destination or disable Forward!"
+msgstr "укажите адрес пересылки или выключите Пересылку!"
+

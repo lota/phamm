@@ -1,0 +1,12 @@
+#! /bin/sh
+
+# phamm         Cron script to rotate phamm log files daily.
+#               phamm log do now work with syslogd
+#               so is not important to restart syslogd
+#               but could be a good idea have some days of
+#               log to control your installation
+#
+set -e
+cd /var/log
+LOG="phamm.log" 
+savelog -g adm -m 640 -u "www-data" -c 7 $LOG >/dev/null

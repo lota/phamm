@@ -1,0 +1,17 @@
+# IMPORTANT
+# the sample-mail.ldif must be already in the tree
+# to add this sample file use mod-ldap.sh in the tools directory
+# could be some problem with phpldapadmin
+dn:mail=john.doe@example.tld,vd=example.tld,o=hosting,dc=example,dc=tld
+changetype: modify
+add: ObjectClass
+objectClass: proxyAccount
+uid: john.doe
+webAccess: TRUE
+
+dn:mail=john.smith@example.tld,vd=example.tld,o=hosting,dc=example,dc=tld
+changetype: modify
+add: ObjectClass
+objectClass: proxyAccount
+uid: john.smith
+webAccess: FALSE

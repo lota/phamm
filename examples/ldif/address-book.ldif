@@ -1,0 +1,32 @@
+# LDIF Export for: mail=mirko@example.tld,vd=example.tld,o=hosting,dc=example,dc=tld
+# this is a sample entry for a complete account
+# it is only needed if you want a address book with Thunderbird
+
+dn: mail=mirko@example.tld,vd=example.tld,o=hosting,dc=example,dc=tld
+objectClass: top
+objectClass: VirtualMailAccount
+objectClass: Vacation
+objectClass: VirtualForward
+objectClass: amavisAccount
+mail: mirko@example.tld
+userPassword: {CRYPT}$1$1i1IhFKP$HYUi3KiRFLZNsFokvRuHF1
+uid: mirko.example.tld
+lastChange: 1170928183
+quota: 10
+vdHome: /home/vmail/domains
+mailbox: example.tld/mirko
+delete: FALSE
+vacationActive: FALSE
+forwardActive: FALSE
+accountActive: TRUE
+smtpAuth: FALSE
+amavisBypassVirusChecks: TRUE
+amavisBypassSpamChecks: FALSE
+mobile: +39 0987654321
+cn: Grava Mirko
+homePhone: +39 1234 56789
+telephoneNumber: +39 4321 0987654
+sn: Grava
+pager: +39 69 72437
+givenName: Mirko
+facsimileTelephoneNumber: +39 2143 329012

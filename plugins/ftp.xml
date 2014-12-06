@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plugin SYSTEM "http://www.phamm.org/DTD/phamm-plugins.dtd">
+
+<plugin name="ftp">
+	<label>FTP</label>
+	<version>
+		<number>0.0.2</number>
+		<creationDate>2005-02-19</creationDate>
+		<updatedDate>2008-09-08</updatedDate>
+		<status>beta</status>
+	</version>
+	<author>
+		<firstName>Alessandro De Zorzi</firstName>
+		<lastName>De Zorzi</lastName>
+		<mail>team@phamm.org</mail>
+		<web>http://www.phamm.org</web>
+	</author>
+	<license>GPL</license>
+	<shortDescription>Plugin to manage pure-FTP</shortDescription>
+	<longDescription>Plugin to manage pure-FTP</longDescription>
+	<parent>top</parent>
+	<color>FF4455</color>
+	<minAuthLevel>10</minAuthLevel>
+
+	<isDomainRelated>1</isDomainRelated>
+	<isPostmasterRelated>1</isPostmasterRelated>
+	<isAccountRelated>0</isAccountRelated>
+	<postmaster>
+		<objectClasses>
+			<objectClass name="posixAccount">
+				<bug>0</bug>
+			</objectClass>
+			<objectClass name="PureFTPdUser">
+				<bug>0</bug>
+			</objectClass>
+		</objectClasses>
+		<attributes>
+			<attribute name="gidNumber">
+				<prettyName>GID number</prettyName>
+				<editable>1</editable>
+				<required>1</required>
+				<minAuthLevel>10</minAuthLevel>
+			</attribute>
+			<attribute name="homeDirectory">
+				<prettyName>Home Directory</prettyName>
+				<editable>1</editable>
+				<required>1</required>
+				<default>=php.Value(%domain%,/mnt/www/,+domain_new+)</default>
+				<minAuthLevel>10</minAuthLevel>
+			</attribute>
+			<attribute name="uid">
+				<prettyName>UID</prettyName>
+				<editable>1</editable>
+				<required>1</required>
+				<default>=php.Value(%domain%,,+domain_new+)</default>
+				<minAuthLevel>10</minAuthLevel>
+			</attribute>
+			<attribute name="uidNumber">
+				<prettyName>UID Number</prettyName>
+				<editable>1</editable>
+				<required>1</required>
+				<minAuthLevel>10</minAuthLevel>
+			</attribute>
+			<attribute name="FTPStatus">
+				<prettyName>FTP Status</prettyName>
+				<table>1</table>
+				<default>enabled</default>
+				<minAuthLevel>10</minAuthLevel>
+			</attribute>
+			<attribute name="FTPQuotaMBytes">
+				<prettyName>FTP Quota Mb</prettyName>
+				<size>4</size>
+				<maxlength>4</maxlength>
+				<default>500</default>
+				<minAuthLevel>10</minAuthLevel>
+			</attribute>
+		</attributes>
+	</postmaster>
+</plugin>

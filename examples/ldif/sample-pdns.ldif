@@ -1,0 +1,52 @@
+dn: ou=dns,dc=example,dc=tld
+objectClass: top
+objectClass: organizationalUnit
+ou: dns
+description: dns zone on ldap
+
+dn: cn=dnsldap,ou=dns,dc=example,dc=tld
+objectClass: top
+objectClass: organizationalRole
+objectClass: simpleSecurityObject
+cn: dnsldap
+userPassword:: e1NTSEF9blFYSHpMeVVHK3VsNExmU2taU0NrdkwzeVAyTE03NUQ=
+
+dn: dc=example.tld,ou=dns,dc=example,dc=tld
+objectClass: top
+objectClass: dnsdomain2
+objectClass: domainrelatedobject
+dc: example.tld
+associatedDomain: example.tld
+aRecord: 192.168.12.12
+
+dn: dc=www,dc=example.tld,ou=dns,dc=example,dc=tld
+objectClass: top
+objectClass: dnsdomain2
+objectClass: domainrelatedobject
+dc: www
+associatedDomain: www.example.tld
+aRecord: 192.168.12.12
+
+dn: dc=mail,dc=example.tld,ou=dns,dc=example,dc=tld
+objectClass: top
+objectClass: dnsdomain2
+objectClass: domainrelatedobject
+dc: mail
+associatedDomain: mail.example.tld
+aRecord: 192.168.12.12
+
+dn: dc=mail2,dc=example.tld,ou=dns,dc=example,dc=tld
+objectClass: top
+objectClass: dnsdomain2
+objectClass: domainrelatedobject
+dc: mail2
+associatedDomain: mail2.example.tld
+aRecord: 192.168.12.12
+
+dn: dc=webmail,dc=example.tld,ou=dns,dc=example,dc=tld
+objectClass: top
+objectClass: dnsdomain2
+objectClass: domainrelatedobject
+dc: webmail
+associatedDomain: webmail.example.tld
+cNAMERecord: www.example.tld

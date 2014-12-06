@@ -1,0 +1,30 @@
+# acl specific for address book
+
+#  Copyright (c) 2005 Alessandro De Zorzi, Mirko Grava
+#  				<phamm@rhx.it> http://phamm.rhx.it/
+#
+#  Permission is granted to copy, distribute and/or modify this document
+#  under the terms of the GNU Free Documentation License, Version 1.2
+#  or any later version published by the Free Software Foundation;
+#  A copy of the license in DOCS.LICENSE file.
+
+# account must read his name and all attribute of a person that is in his domain
+# postmaster with editAccounts=FALSE do the same thing for his domain
+# postmaster with editAccounts=TRUE can add account/alias and edit also amavisBypassVirusChecks, quota and smtpAuth
+# vadmin could do the same as postmaster with editAccounts=TRUE for some domains
+
+access to dn.regex=".+,vd=([^,]+),o=hosting,dc=example,dc=tld$" attrs=cn,sn,givenName,telephoneNumber,homePhone,mobile,fax,pager
+	by dn="cn=admin,dc=example,dc=tld" write
+        by self write
+	by anonymous read
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read 
+        by dn.exact,expand="cn=postmaster,vd=$1,o=hosting,dc=example,dc=tld" write
+        by set.expand="user/vd & [$1]" write
+
+access to dn.regex=".+,vd=([^,]+),o=hosting,dc=example,dc=tld$" attrs=mail
+	by dn="cn=admin,dc=example,dc=tld" write
+        by self read
+	by anonymous read
+        by dn.exact="cn=phamm,o=hosting,dc=example,dc=tld" read 
+        by dn.exact,expand="cn=postmaster,vd=$1,o=hosting,dc=example,dc=tld" write
+        by set.expand="user/vd & [$1]" write

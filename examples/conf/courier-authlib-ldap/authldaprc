@@ -1,0 +1,30 @@
+#  Copyright (c) 2005 Alessandro De Zorzi, Mirko Grava
+#  				<phamm@rhx.it> http://phamm.rhx.it/
+#
+#  Permission is granted to copy, distribute and/or modify this document
+#  under the terms of the GNU Free Documentation License, Version 1.2
+#  or any later version published by the Free Software Foundation;
+#  A copy of the license in DOCS.LICENSE file.
+
+LDAP_SERVER		localhost
+# for new version of courier delete above
+# and remove comment on the next line
+## LDAP_URI		ldap://localhost
+LDAP_PORT		389
+LDAP_PROTOCOL_VERSION	3
+LDAP_BASEDN             o=hosting,dc=example,dc=tld
+LDAP_BINDDN		cn=phamm,o=hosting,dc=example,dc=tld
+LDAP_BINDPW		rhx
+LDAP_TIMEOUT		5
+LDAP_AUTHBIND		1
+LDAP_MAIL		mail
+LDAP_FILTER		(accountActive=TRUE)
+LDAP_GLOB_UID		vmail
+LDAP_GLOB_GID		vmail
+LDAP_HOMEDIR		vdHome
+LDAP_MAILDIR		mailbox
+LDAP_MAILDIRQUOTA	quota
+LDAP_FULLNAME		cn
+LDAP_CRYPTPW		userPassword
+LDAP_DEREF		never
+LDAP_TLS		0

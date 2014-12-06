@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+  "/usr/share/xml/docbook/schema/dtd/4.4/docbookx.dtd">
+ 
+<book lang="en">
+ 
+<bookinfo>
+<title>Phamm Install</title>
+<authorgroup>
+<author>
+<surname>Phamm Team</surname>
+<affiliation>
+    <address>
+    <email>team@phamm.org</email>
+    </address>
+</affiliation>
+
+</author>
+</authorgroup>
+
+<date>24/09/2008</date>
+
+<legalnotice>
+<para>Copyright &copy; 2008 Alessandro De Zorzi, Mirko Grava</para>
+<para>
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2
+or any later version published by the Free Software Foundation.
+</para>
+</legalnotice>
+
+</bookinfo>
+ 
+<chapter id="preliminary">
+<title>Preliminary</title>
+
+<!-- -->
+<sect1>
+<title>Obtain Phamm</title>
+
+<para>To obtain last version of Phamm, please visit the web site
+www.phamm.org. Files can be download directly from http://open.rhx.it/phamm/
+</para>
+
+</sect1>
+
+<!-- -->
+<sect1>
+<title>Prepare the files</title>
+
+<para>Untar the archive and put the directory phamm-X.X.X in a web accessible director (Example: /var/www/).
+<programlisting>
+tar xvfz phamm-X.X.X.tar.gz
+mv phamm /var/www/
+</programlisting>
+</para>
+
+<para>
+You can obtain to configure httpd to use Alias
+and make accessible from web only the sub-directory phamm/www-data.
+</para>
+
+</sect1>
+
+<!-- -->
+<sect1>
+<title>Requirements</title>
+
+<para>Phamm should works any web server that support PHP. Phamm Team
+tested Phamm with Apache and lighttpd. You need a OpenLDAP server 
+configured and a Webbrowser (doh!).</para>
+
+<!-- -->
+<sect2>
+<title>Optional requirements required for email</title>
+
+<itemizedlist>
+<listitem><para>postfix email server</para></listitem>
+<listitem><para>pop3/imap:  severs (that support ldap)examples: cyrus,courier. (tested with apache)</para></listitem>
+<listitem><para>gnarwl:      for autoresponding:(to first user email)</para></listitem>
+<listitem><para>amavisd:    for anti-virus/anti-spam:</para></listitem>
+<listitem><para>spamassassain</para></listitem>
+<listitem><para>clam-av or similar av-software (tested with Clam-AV)</para></listitem>
+</itemizedlist>
+
+</sect2>
+
+<!-- -->
+<sect2>
+<title>Optional requirements for ftp</title>
+
+<itemizedlist>
+<listitem><para>pure-ftpd</para></listitem>
+<listitem><para>pure-ftpd-ldap-backend</para></listitem>
+</itemizedlist>
+
+</sect2>
+
+</sect1>
+
+<!-- -->
+<sect1>
+<title>Contents</title>
+
+<para>In the examples folder you can find examples of all the
+configuration files for each server section outlined below.
+Please remember these are examples and they will have to be edited
+to suit your own personal requirements.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="ldap">
+<title>Configure LDAP Service</title>
+ 
+<sect1>
+<title>Schema</title>
+
+<para>Copy schema/phamm.schema file in your schema directory
+(ex. /etc/ldap/schema/ for Debian).
+</para>
+ 
+<para>
+Probably you need other schema files, you can copy they from
+respective projects or from http://open.rhx.it/phamm/schema/
+</para>
+
+<programlisting>
+amavis.schema
+dnsdomain2.schema
+ISPEnv2.schema
+pureftpd.schema
+radius.schema
+samba.schema
+</programlisting>
+
+
+<para>
+Copy examples/conf/slapd/slapd.conf to override your slapd.conf (ex.
+   /etc/ldap/ for Debian or /etc/openldap). Add YOUR password for the
+   cn admin with the command slappasswd.
+</para>
+
+<para>
+The slapd.conf has the loglevel set to 0. For debugging set it to 128
+   or start slapd with /usr/sbin/slapd -d1 as this will display to
+   screen and save you the trouble of searching your log files for problems.
+</para>
+
+<para>
+For improve security we suggest to use Phamm LDAP ACL definition if
+   you do not use already ACL please copy examples/conf/phamm/phamm.acl
+   in the same place of the slapd.conf (ex. /etc/ldap/ for Debian or
+   /etc/openldap) otherwise comment the line below in your slapd.conf
+   # include /etc/ldap/phamm.acl then restart LDAP service.
+</para>
+
+</sect1>
+
+<sect1>
+<title>Change phamm password</title>
+
+<para>Create the password you want for the cn phamm with slappasswd and
+   amend it in the examples/ldif/sample-mail.ldif (the default is rhx)
+   with cut and paste :).</para>
+
+</sect1>
+
+
+<sect1>
+<title>Populate</title>
+
+<programlisting>
+ldapadd -v -x -D "cn=admin,dc=example,dc=tld" -W -h localhost -f examples/ldif/sample-main.ldif
+</programlisting>
+
+<para>The password is the first one you created.</para>
+
+</sect1>
+
+
+</chapter>
+<chapter id="configuration">
+<title>Phamm configuration</title>
+ 
+<sect1>
+
+<title>Config file</title>
+
+<para>If not exists you need to create the main config file in
+phamm directory from the sample</para>
+
+<programlisting>
+cp config.inc.example.php config.inc.php
+</programlisting>
+
+<para>Then edit config.inc.php.</para>
+
+<sect2>
+<title>Config file (plugin support)</title>
+
+<para>If you wish to use the plugin, please decomment each line you
+want in $plugins[] lines:</para>
+
+<programlisting>
+$plugins = array();
+$plugins[] = "mail";
+$plugins[] = "alias";
+//$plugins[] = "ftp";
+//$plugins[] = "proxy";
+</programlisting>
+
+</sect2>
+
+</sect1>
+
+</chapter>
+
+
+<chapter id="mail">
+<title>Setting mail services</title>
+
+<para>There are a couple of excellent general examples of how to setup
+postfix and courier below these should assist with a more detailed
+discription of what you find below.</para>
+
+<para>
+http://www.postfix.org/addon.html
+http://www.faqs.org/docs/Linux-HOWTO/LDAP-Implementation-HOWTO.html#AEN747
+http://alinux.washcoll.edu/docs/plc/postfix-courier-howto.html
+</para>
+
+
+<sect1>
+<title>Config Postfix</title>
+	
+<para>Install Postfix as a full Internet email server, and then add the
+snips that are in the samples directory to the relevant parts of the
+Postfix configuration files, remember to reload postfix after making
+the changes (most postfix configuration files are found in /etc/postfix)
+ensure the user vmail and the group vmail have been added. if not add them
+and remember the gid and uid as you need it here and in courier config
+don't forget to update your transport file and the transport.db file this
+is required.</para>
+
+<programlisting>
+postmap /etc/postfix/transport
+</programlisting>
+
+<para>Test this by logging into smtp and sending a mail to yourself
+(then when you set up courier you should have the mail awaiting you) log
+with</para>
+
+<programlisting>
+/etc/init.d/postfix start; tail -f /var/log/mail.log
+</programlisting>
+</sect1>
+
+<sect1>
+<title>Config Courier</title>
+
+<para>check that authdaemonrc is using ldap as a method to authenticate
+ie (authmodulelist=ldap), add the snips from the samples folder to the relevent
+file (normally found in /etc/courier) these files are authldap
+(configuration of ldap server) test by logging into your pop or imap
+server and collecting the mail that you sent to your self in setting
+up postfix.</para>
+   
+<programlisting>
+/etc/init.d/courier-authdaemonrc start; tail -f /var/log/mail.log
+</programlisting>
+</sect1>
+
+<sect1>
+<title>Config Amavis</title>
+	
+<para>Add the amavis sample data to your amavis.conf file. restart the services and check the logs for dependancies)</para>
+</sect1>
+
+<sect1>
+<title>Config Gnarwl</title>
+
+<para>add the sample gnarwl.cfg snip to you gnarwl.cfg. (this normally
+lives in /etc/gnarwl.cfg) set debug to 3 and test. don't forget to set
+debug back again when working.</para>
+
+</sect1>
+   
+<sect1>
+
+<title>cleaner.sh script</title>
+
+<para>Edit the cleaner.sh script to reflect the your ldap layout.
+Phamm does not really delete accounts. Phamm mark them as "Deleting".
+You can use tools/cleaner.sh to do this with crond.</para>
+</sect1>
+ 
+</chapter>
+
+</book>
+

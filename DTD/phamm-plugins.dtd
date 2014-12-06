@@ -1,0 +1,90 @@
+<!-- ==========================================================================
+  This is the DTD for Phamm plugins (draft).
+
+  Copyright (c) 2005-2008 Alessandro De Zorzi <adezorzi AT rhx DOT it>
+
+  URI for the DTD:
+  http://www.phamm.org/DTD/phamm-plugins.dtd
+
+  <!ENTITY % Boolean "(0 | 1)">
+========================================================================== -->
+
+<!ELEMENT plugin (label,version,author,license,shortDescription?,
+			longDescription?,parent,color?,minAuthLevel,
+			isDomainRelated,isPostmasterRelated,isAccountRelated,
+			domain?,postmaster?,account?)>
+
+<!ATTLIST plugin name CDATA #REQUIRED>
+
+<!ELEMENT version (number,creationDate,updatedDate,status?)>
+
+<!ELEMENT author (firstName,lastName,mail,web?)>
+
+<!ELEMENT domain (objectClasses*,attributes*)>
+
+<!ELEMENT postmaster (objectClasses*,attributes*)>
+
+<!ELEMENT account (objectClasses?,attributes?)>
+
+<!ELEMENT objectClasses (objectClass*)>
+
+<!ELEMENT objectClass (bug)>
+
+<!ATTLIST objectClass name CDATA #REQUIRED>
+
+<!ELEMENT attributes (attribute*)>
+
+<!ELEMENT attribute (size | maxlength | hidden | disabled | default | type | editable | bool | text | table | reverse | multiple | required | subordinated | subordinateddelete | subordinatedReverse | hidecreation | textarea | multiplier | prefix | suffix | minAuthLevel | cron | date | tablenoedit | options | prettyName)*>
+
+<!ATTLIST attribute name CDATA #REQUIRED>
+
+<!ELEMENT options (option+)>
+
+<!ELEMENT option (value)>
+
+<!ELEMENT label (#PCDATA)>
+<!ELEMENT license (#PCDATA)>
+<!ELEMENT shortDescription (#PCDATA)>
+<!ELEMENT longDescription (#PCDATA)>
+<!ELEMENT parent (#PCDATA)>
+<!ELEMENT color (#PCDATA)>
+<!ELEMENT minAuthLevel (#PCDATA)>
+<!ELEMENT isDomainRelated (#PCDATA)>
+<!ELEMENT isPostmasterRelated (#PCDATA)>
+<!ELEMENT isAccountRelated (#PCDATA)>
+<!ELEMENT number (#PCDATA)>
+<!ELEMENT creationDate (#PCDATA)>
+<!ELEMENT updatedDate (#PCDATA)>
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT mail (#PCDATA)>
+<!ELEMENT web (#PCDATA)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT maxlength (#PCDATA)>
+<!ELEMENT hidden (#PCDATA)>
+<!ELEMENT disabled (#PCDATA)>
+<!ELEMENT default (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT editable (#PCDATA)>
+<!ELEMENT bool (#PCDATA)>
+<!ELEMENT text (#PCDATA)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT bug (#PCDATA)>
+<!ELEMENT reverse (#PCDATA)>
+<!ELEMENT multiple (#PCDATA)>
+<!ELEMENT required (#PCDATA)>
+<!ELEMENT subordinated (#PCDATA)>
+<!ELEMENT subordinateddelete (#PCDATA)>
+<!ELEMENT subordinatedReverse (#PCDATA)>
+<!ELEMENT hidecreation (#PCDATA)>
+<!ELEMENT textarea (#PCDATA)>
+<!ELEMENT multiplier (#PCDATA)>
+<!ELEMENT prefix (#PCDATA)>
+<!ELEMENT suffix (#PCDATA)>
+<!ELEMENT cron (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT tablenoedit (#PCDATA)>
+<!ATTLIST option name CDATA #REQUIRED>
+<!ELEMENT value (#PCDATA)>
+<!ELEMENT prettyName (#PCDATA)>

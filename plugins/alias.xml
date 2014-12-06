@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plugin SYSTEM "http://www.phamm.org/DTD/phamm-plugins.dtd">
+
+<plugin name="alias">
+	<label>ALIAS</label>
+	<version>
+		<number>0.0.3</number>
+		<creationDate>2006-09-22</creationDate>
+		<updatedDate>2008-09-08</updatedDate>
+		<status>stable</status>
+	</version>
+	<author>
+		<firstName>Alessandro De Zorzi</firstName>
+		<lastName>De Zorzi</lastName>
+		<mail>team@phamm.org</mail>
+		<web>http://www.phamm.org</web>
+	</author>
+	<license>GPL</license>
+	<shortDescription>Plugin to manage e-mail alias</shortDescription>
+	<longDescription>Plugin to manage e-mail alias</longDescription>
+	<parent>top</parent>
+	<color>FF4455</color>
+	<minAuthLevel>2</minAuthLevel>
+	<isDomainRelated>0</isDomainRelated>
+	<isPostmasterRelated>0</isPostmasterRelated>
+	<isAccountRelated>1</isAccountRelated>
+
+	<account>
+		<objectClasses>
+			<objectClass name="VirtualMailAlias">
+				<bug>0</bug>
+			</objectClass>
+			<objectClass name="amavisAccount">
+				<bug>0</bug>
+			</objectClass>
+		</objectClasses>
+		<attributes>
+			<attribute name="maildrop">
+				<prettyName>Destination</prettyName>
+				<table>1</table>
+				<multiple>1</multiple>
+			</attribute>
+			<attribute name="accountActive">
+				<prettyName>Active</prettyName>
+				<bool>1</bool>
+				<table>1</table>
+				<default>TRUE</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="smtpAuth">
+				<prettyName>SMTP Auth</prettyName>
+				<bool>1</bool>
+				<table>1</table>
+				<default>FALSE</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="amavisBypassVirusChecks">
+				<prettyName>Virus Check</prettyName>
+				<bool>1</bool>
+				<reverse>1</reverse>
+				<default>TRUE</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+			<attribute name="amavisBypassSpamChecks">
+				<prettyName>SPAM Check</prettyName>
+				<bool>1</bool>
+				<reverse>1</reverse>
+				<default>TRUE</default>
+				<minAuthLevel>4</minAuthLevel>
+			</attribute>
+		</attributes>
+	</account>
+</plugin>

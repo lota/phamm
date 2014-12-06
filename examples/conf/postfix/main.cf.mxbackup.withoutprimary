@@ -1,0 +1,46 @@
+# main.cf specific for phamm
+# on the primary mx for backup other domains
+
+#  Copyright (c) 2005 Alessandro De Zorzi, Mirko Grava
+#  				<phamm@rhx.it> http://phamm.rhx.it/
+#
+#  Permission is granted to copy, distribute and/or modify this document
+#  under the terms of the GNU Free Documentation License, Version 1.2
+#  or any later version published by the Free Software Foundation;
+#  A copy of the license in DOCS.LICENSE file.
+
+ldap_bind_dn = cn=phamm,o=hosting,dc=example,dc=tld
+ldap_bind_pw = rhx
+ldap_search_base = o=hosting,dc=example,dc=tld
+ldap_domain = dc=example,dc=tld
+ldap_server_host = localhost
+ldap_server_port = 389
+ldap_version = 3
+
+# MX Backup
+# find domain
+vbd_server_host = $ldap_server_host
+vbd_search_base = $ldap_search_base
+vbd_query_filter = (&(&(vd=%s)(objectClass=VirtualBackupDomain))(accountActive=TRUE)(delete=FALSE)) 
+vbd_result_attribute = vd
+vbd_cache = no
+vbd_bind = yes
+vbd_scope = one
+vbd_bind_dn = $ldap_bind_dn
+vbd_bind_pw = $ldap_bind_pw
+vbd_version = $ldap_version
+
+# MX Backup
+# find account
+vbmmap_server_host = $ldap_server_host
+vbmmap_search_base = $ldap_search_base
+vbmmap_query_filter = (&(&(objectClass=VirtualBackupMail)(mail=%s))(accountActive=TRUE))
+vbmmap_result_attribute = mail
+vbmmap_cache = no
+vbmmap_bind = yes
+vbmmap_bind_dn = $ldap_bind_dn
+vbmmap_bind_pw = $ldap_bind_pw
+vbmmap_version = $ldap_version
+
+relay_domains = $mydestination, ldap:vbd
+relay_recipient_maps = hash:/etc/postfix/relay_recipients, ldap:vbmmap
