@@ -5,13 +5,16 @@
 LOCALDIR = ../../locale
 
 all:
-	@echo Please, specify a target [pot,all-mo]
+	@echo Please, specify a target [pot,all-mo, all-po]
 
 all-mo:
 	@for dir in $(LOCALDIR) ; \
 	do \
+	    # msgcat l10n/pl_PL/*.po | msgfmt -vo l10n/pl_PL/civicrm.mo -
 	    echo Doubled word check in... ; \
 	done
+all-po:
+#for i in l10n/??_??; do msgmerge -vU $i/civicrm.po l10n/pot/civicrm.pot; done
 
 pot:
 	# Generate updated phamm.pot file
