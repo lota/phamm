@@ -12,6 +12,9 @@
   or any later version published by the Free Software Foundation;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+    * Bump to Bootstrap v3.3.1
+    * Improved getttex tools
+
 0.6.4 20141206 r.58
     * Added random_password() function
     * Updated phamm.schema
