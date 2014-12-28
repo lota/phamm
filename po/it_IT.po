@@ -466,7 +466,7 @@ msgstr "Telefono"
 #: ../public/main.php:415
 #, php-format
 msgid "The maximum number of accounts (%s) has been reached or exceeded!"
-msgstr "Massimo numero di %s (%s) raggiunto o superato!"
+msgstr "Massimo numero di account (%s) raggiunto o superato!"
 
 #: ../controllers/helpers.php:84
 #, php-format

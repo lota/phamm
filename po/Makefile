@@ -8,14 +8,12 @@ all:
 	@echo Please, specify a target [pot,all-mo, all-po]
 
 all-mo:
-	@for dir in $(LOCALDIR) ; \
-	do \
-	    # msgcat l10n/pl_PL/*.po | msgfmt -vo l10n/pl_PL/civicrm.mo -
-	    echo Doubled word check in... ; \
+	for lang in `ls -1 ??_??.po` ; do \
+	  DESTDIR=`echo $$lang| cut -d \. -f 1`; \
+	  msgfmt -v $$lang -o ../locales/$$DESTDIR/LC_MESSAGES/messages.mo; \
 	done
 all-po:
 	for lang in `ls -1 ??_??.po` ; do \
-	  echo $$lang ; \
 	  msgmerge -vU $$lang phamm.pot; \
 	done
 pot:
