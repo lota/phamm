@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phamm 0.6.4\n"
-"POT-Creation-Date: 2014-12-28 10:56+0100\n"
+"POT-Creation-Date: 2014-12-28 11:13+0100\n"
 "PO-Revision-Date: 2008-09-07 18:38+0300\n"
 "Last-Translator: Alessandro De Zorzi <lota@nonlontano.it>\n"
 "MIME-Version: 1.0\n"
