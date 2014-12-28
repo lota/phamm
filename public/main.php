@@ -412,7 +412,7 @@ case "add_account" :
 	if (!$syntax)
 	    phamm_print_message('error',_("Special Characters not Allowed in E-mail address"));
 	if ($exceeds_max_account)
-	    phamm_print_message('warning',sprintf("The maximum number of accounts (%s) has been reached or exceeded!", $max_accounts_allowed));
+	    phamm_print_message('warning',sprintf(_("The maximum number of accounts (%s) has been reached or exceeded!"), $max_accounts_allowed));
         phamm_print_xhtml ( form_add_account ($_POST["account_new"]) );
     }
 

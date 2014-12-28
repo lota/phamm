@@ -14,8 +14,10 @@ all-mo:
 	    echo Doubled word check in... ; \
 	done
 all-po:
-#for i in l10n/??_??; do msgmerge -vU $i/civicrm.po l10n/pot/civicrm.pot; done
-
+	for lang in `ls -1 ??_??.po` ; do \
+	  echo $$lang ; \
+	  msgmerge -vU $$lang phamm.pot; \
+	done
 pot:
 	# Generate updated phamm.pot file
 	# cp messages_header phamm.pot

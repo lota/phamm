@@ -6,505 +6,605 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phamm 0.5.14\n"
-"POT-Creation-Date: 2008-10-15 12:50+0300\n"
+"POT-Creation-Date: 2014-12-28 11:01+0100\n"
 "PO-Revision-Date: 2009-02-01 19:03+0100\n"
 "Last-Translator: Zsolt Jonas <zsolt.jonas@naxonet.hu>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 7bit\n"
 
-#: ../www-data/main.php:204
-#, php-format
-msgid "%s modified"
-msgstr "%s módosítva"
-
-#: ../www-data/main.php:605
+#: ../public/main.php:658
 #, php-format
 msgid "%s not added!"
 msgstr "%s nincs hozzáadva!"
 
-#: ../lib/xhtml.php:984
+#: ../views/helpers.php:1058
 msgid "...execute a command"
 msgstr "...parancs futtatása"
 
-#: ../lib/xhtml.php:750
+#: ../views/helpers.php:809
 msgid "Account"
 msgstr "Postafiók"
 
-#: ../www-data/main.php:599
+#: ../public/main.php:652
 #, php-format
 msgid "Account %s successfully added"
 msgstr "%s postafiók sikeresen hozzáadva"
 
-#: ../lib/xhtml.php:281
+#: ../views/helpers.php:295
 #, php-format
-msgid "Account (%d)"
-msgid_plural "Accounts (%d)"
-msgstr[0] "Postafiók (%d)"
-msgstr[1] "Postafiókok (%d)"
+msgid "Account <span class=\"badge\">%d/"
+msgid_plural "Accounts <span class=\"badge\">%d/"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../www-data/main.php:369
+#: ../views/helpers.php:297
+#, php-format
+msgid "Account <span class=\"badge\">%d</span>"
+msgid_plural "Accounts <span class=\"badge\">%d</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../public/main.php:411
 msgid "Account or Alias already exists"
 msgstr "Postafiók vagy álnév (alias) már létezik"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/alias.xml:44 ../plugins/mail.xml:52 ../plugins/mail.xml:125
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:44 ../plugins/mail.xml:59 ../plugins/mail.xml:132
 #, no-wrap
 msgid "Active"
 msgstr "Aktív"
 
-#: ../lib/xhtml.php:1110
+#: ../views/helpers.php:1215
 msgid "Add catch-all address"
 msgstr "Gyűjtő (catch-all) postafiók hozzáadása"
 
-#: ../lib/xhtml.php:718 ../lib/xhtml.php:742
+#: ../views/helpers.php:779 ../views/helpers.php:804
 msgid "Add new account"
 msgstr "Új postafiók hozzáadása"
 
-#: ../lib/xhtml.php:380 ../lib/xhtml.php:649
+#: ../views/helpers.php:399 ../views/helpers.php:707
 msgid "Add new domain"
 msgstr "Új domain hozzáadása"
 
-#: ../lib/xhtml.php:842
+#: ../views/helpers.php:917
 msgid "All"
 msgstr "Mind"
 
-#: ../lib/xhtml.php:826
+#: ../views/helpers.php:897
 msgid "All domains"
 msgstr "Összes domain"
 
-#: ../www-data/main.php:110
+#: ../public/main.php:372
+#, php-format
+msgid "An Unexpected Error Occurred during %s Addition!"
+msgstr ""
+
+#: ../public/main.php:113
 msgid "Bye!"
 msgstr "Viszlát!"
 
 # type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:84
+#. type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:91
 #, no-wrap
 msgid "Can edit Accounts"
 msgstr "Szerkeszthető postafiókok"
 
 # type: Content of: <plugin><domain><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:59
+#. type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:66
 #, no-wrap
 msgid "Can edit Anti-Virus"
 msgstr "Módosítható az Anti-Vírus állapota"
 
-#: ../www-data/main.php:97
+#: ../public/main.php:100
 msgid "Can't contact LDAP server"
 msgstr "Nem lehet kapcsolódni az LDAP kiszolgálóhoz"
 
-#: ../www-data/main.php:424
+#: ../public/main.php:471
 msgid "Catch all"
 msgstr "Gyűjtő postafiók"
 
-#: ../www-data/main.php:422
+#: ../public/main.php:469
 msgid "Catch all active"
 msgstr "Gyűjtó postafiók aktív"
 
-#: ../lib/xhtml.php:1097
+#: ../views/helpers.php:1202
 msgid "Catch-all"
 msgstr "Gyűjtő postafiók címe"
 
-#: ../www-data/main.php:221
+#: ../public/main.php:240
 msgid "Changes have not performed"
 msgstr "A változások végrehajtása meghiusúlt"
 
-#: ../lib/common.php:485
+#: ../lib/ldap.php:249
 msgid "Code "
 msgstr "Kód "
 
-#: ../lib/xhtml.php:283
+#: ../views/helpers.php:299
 msgid "Common Name"
 msgstr "Megjelenített név"
 
-#: ../lib/xhtml.php:663 ../lib/xhtml.php:756
+#: ../views/helpers.php:724 ../views/helpers.php:821
 msgid "Confirm Password"
 msgstr "Jelszó megerősítése"
 
-#: ../www-data/main.php:72
+#: ../public/main.php:73
 msgid "Connection to LDAP Server Failed!"
 msgstr "Hiba az LDAP kiszolgálóhoz történő kapcsolódása közben!"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:290
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:298
 #, no-wrap
 msgid "Creation Date"
 msgstr "Létrehozva"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:65 ../plugins/mail.xml:161
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:72 ../plugins/mail.xml:168
 #, no-wrap
 msgid "Delete"
 msgstr "Törlés"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
 #: ../plugins/alias.xml:39
 #, no-wrap
 msgid "Destination"
 msgstr "Cél"
 
-#: ../lib/xhtml.php:657
+#: ../views/helpers.php:712
 msgid "Domain"
 msgstr "Domain"
 
-#: ../www-data/main.php:339
+#: ../public/main.php:362
 #, php-format
 msgid "Domain %s successfully added"
 msgstr "%s domain sikeresen hozzáadva"
 
-#: ../lib/xhtml.php:155
+#: ../views/helpers.php:167
 #, php-format
-msgid "Domain (%d)"
-msgid_plural "Domains (%d)"
-msgstr[0] "Domain (%d)"
-msgstr[1] "Domain-ek (%d)"
+msgid "Domain <span class=\"badge\">%d</span>"
+msgid_plural "Domains <span class=\"badge\">%d</span>"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../www-data/main.php:412
+#: ../public/main.php:457
 msgid "Domain property"
 msgstr "Domain beállítás"
 
-#: ../lib/phamm.php:172
+#: ../views/helpers.php:109
+msgid "Enter domain or e-mail"
+msgstr ""
+
+#: ../views/helpers.php:1362
 msgid "Error: "
 msgstr "Hiba: "
 
-#: ../lib/xhtml.php:994
+#: ../views/helpers.php:1077
 msgid "Execute command"
 msgstr "Parancs futtatása"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
 #: ../plugins/person.xml:48
 #, no-wrap
 msgid "FAX"
 msgstr "FAX"
 
 # type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#. type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
 #: ../plugins/ftp.xml:71
 #, no-wrap
 msgid "FTP Quota Mb"
 msgstr "FTP Kvóta (MB)"
 
 # type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#. type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
 #: ../plugins/ftp.xml:65
 #, no-wrap
 msgid "FTP Status"
 msgstr "FTP állapot"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:202
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:211
 #, no-wrap
 msgid "Forward Active"
 msgstr "Továbbítás aktív"
 
 # type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#. type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
 #: ../plugins/ftp.xml:39
 #, no-wrap
 msgid "GID number"
 msgstr "GID szám"
 
-#: ../www-data/main.php:99
+#: ../public/main.php:102
 msgid "Generic Error: "
 msgstr "Általános hiba: "
 
 # type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#. type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
 #: ../plugins/ftp.xml:45
 #, no-wrap
 msgid "Home Directory"
 msgstr "Home könyvtár"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
 #: ../plugins/person.xml:40
 #, no-wrap
 msgid "Home Phone"
 msgstr "Otthoni telefonszám"
 
-#: ../lib/common.php:485
+#: ../lib/ldap.php:249
 msgid "LDAP Error: "
 msgstr "LDAP hiba: "
 
-#: ../lib/xhtml.php:113
+#: ../views/helpers.php:117
 msgid "Login"
 msgstr "Belépés"
 
-#: ../lib/xhtml.php:107
+#: ../views/helpers.php:108
 msgid "Login Name"
 msgstr "Belépési azonosító"
 
-#: ../www-data/main.php:95
+#: ../public/main.php:98
 msgid "Login Username or Password not valid."
 msgstr "Hibás belépési azonosító vagy jelszó."
 
-#: ../www-data/main.php:168
+#: ../public/main.php:184
 #, php-format
 msgid "Logout %s"
 msgstr "Kilépés (%s)"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:155
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:162
 #, no-wrap
 msgid "Mail Autoreply"
 msgstr "Automatikus válaszüzenet"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:140
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:147
 #, no-wrap
 msgid "Mailbox"
 msgstr "Postaláda"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:210
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:218
 #, no-wrap
 msgid "Maildrop"
 msgstr "Levél kézbesítő"
 
 # type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#. type: Content of: <plugin><domain><attributes><attribute><prettyName>
 #: ../plugins/mail.xml:45
 #, no-wrap
 msgid "Max Quota"
 msgstr "Max kvóta"
 
+#. type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:52
+#, no-wrap
+msgid "Max Smtp Auth"
+msgstr ""
+
 # type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#. type: Content of: <plugin><domain><attributes><attribute><prettyName>
 #: ../plugins/mail.xml:38
 #, no-wrap
 msgid "Max number of Alias"
 msgstr "Max álnevek (alias) száma"
 
 # type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#. type: Content of: <plugin><domain><attributes><attribute><prettyName>
 #: ../plugins/mail.xml:31
 #, no-wrap
 msgid "Max number of Mail"
 msgstr "Max postafiókok száma"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
 #: ../plugins/person.xml:44
 #, no-wrap
 msgid "Mobile"
 msgstr "Mobil"
 
-#: ../lib/xhtml.php:740
+#: ../views/helpers.php:802
 msgid "Modify account"
 msgstr "Postafiók módosítása"
 
-#: ../lib/xhtml.php:647
+#: ../views/helpers.php:705
 msgid "Modify domain"
 msgstr "Domain módosítása"
 
-#: ../lib/xhtml.php:910 ../lib/xhtml.php:911
+#: ../views/helpers.php:979 ../views/helpers.php:980
 msgid "NO"
 msgstr "NEM"
 
-#: ../lib/xhtml.php:759
+#: ../views/helpers.php:824
 msgid "Name"
 msgstr "Keresztnév"
 
-#: ../www-data/main.php:476
+#: ../public/main.php:525
 msgid "Name is not valid"
 msgstr "Hibás keresztnév"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:170
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:177
 #, no-wrap
 msgid "Other Transport"
 msgstr "Más továbbító (transport)"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
 #: ../plugins/person.xml:52
 #, no-wrap
 msgid "Pager"
 msgstr "Személyhívó"
 
-#: ../lib/xhtml.php:109 ../lib/xhtml.php:660 ../lib/xhtml.php:753
+#: ../views/helpers.php:113 ../views/helpers.php:114 ../views/helpers.php:721
+#: ../views/helpers.php:818
 msgid "Password"
 msgstr "Jelszó"
 
-#: ../lib/common.php:285
+#: ../controllers/helpers.php:159
 msgid "Password contains special chars"
 msgstr "A jelszó speciális karaktereket is tartalmaz"
 
-#: ../lib/common.php:282
+#: ../controllers/helpers.php:156
 msgid "Password too short!"
 msgstr "A jelszó túl rövid!"
 
-#: ../lib/common.php:279
+#: ../controllers/helpers.php:153
 msgid "Passwords don't match!"
 msgstr "A beírt jelszavak nem egyeznek!"
 
 # type: Content of: <plugin><domain><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:74
+#. type: Content of: <plugin><domain><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:81
 #, no-wrap
 msgid "Postfix Transport"
 msgstr "Postfix továbbító (transport)"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
 #: ../plugins/proxy.xml:42
 #, no-wrap
 msgid "Proxy Host"
 msgstr "Proxy kiszolgáló"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:117
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:124
 #, no-wrap
 msgid "Quota"
 msgstr "Kvóta"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/alias.xml:51 ../plugins/mail.xml:110
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:51 ../plugins/mail.xml:117
 #, no-wrap
 msgid "SMTP Auth"
 msgstr "SMTP azonosítás"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/alias.xml:65 ../plugins/mail.xml:222
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:65 ../plugins/mail.xml:230
 #, no-wrap
 msgid "SPAM Check"
 msgstr "SPAM szűrés"
 
-#: ../www-data/main.php:393
+#: ../public/main.php:437
 msgid "SPAM Tags level are not set correctly!"
 msgstr "SPAM jelölési szint nem helyes!"
 
-#: ../lib/xhtml.php:990
+#: ../views/helpers.php:1064
 msgid "Set"
 msgstr "Beállít"
 
+#: ../views/helpers.php:117
+msgid "Sign in"
+msgstr ""
+
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:230
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:238
 #, no-wrap
 msgid "Spam Kill Level"
 msgstr "Spam eldobási szint (Kill)"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:270
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:278
 #, no-wrap
 msgid "Spam Tag Level"
 msgstr "Spam jelölési szint (Tag)"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:250
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:258
 #, no-wrap
 msgid "Spam Tag2 Level"
 msgstr "Spam megjelölési szint (Tag2)"
 
-#: ../www-data/main.php:371
+#: ../public/main.php:413
 msgid "Special Characters not Allowed in E-mail address"
 msgstr "Speciális karakterek nem szerepelhetnek az e-mail címben"
 
-#: ../lib/xhtml.php:762
+#: ../views/helpers.php:827
 msgid "Surname"
 msgstr "Vezetéknév"
 
-#: ../www-data/main.php:478
+#: ../public/main.php:527
 msgid "Surname is not valid"
 msgstr "Hibás vezetéknév"
 
-#: ../www-data/main.php:239
+#: ../public/main.php:257
 msgid "Syntax not valid or special chars found in domain name"
 msgstr "Hibás vagy nem megengedett karaktereket tartalmazó domain név"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
 #: ../plugins/person.xml:36
 #, no-wrap
 msgid "Telephone"
 msgstr "Telefon"
 
+#: ../public/main.php:415
+#, php-format
+msgid "The maximum number of accounts (%s) has been reached or exceeded!"
+msgstr ""
+
+#: ../controllers/helpers.php:84
+#, php-format
+msgid "The maximum number of attribute %s (%s) has been reached or exceeded!"
+msgstr ""
+
+#: ../views/helpers.php:459
+#, php-format
+msgid ""
+"The maximum number of attribute %s (%s) has been reached or exceeded. "
+"Attribute has been disabled!"
+msgstr ""
+
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/ftp.xml:52 ../plugins/mail.xml:147
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/ftp.xml:52 ../plugins/mail.xml:154
 #, no-wrap
 msgid "UID"
 msgstr "UID"
 
 # type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
+#. type: Content of: <plugin><postmaster><attributes><attribute><prettyName>
 #: ../plugins/ftp.xml:59
 #, no-wrap
 msgid "UID Number"
 msgstr "UID szám"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:176
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:183
 #, no-wrap
 msgid "Vacation"
 msgstr "Távollét"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:197
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:205
 #, no-wrap
 msgid "Vacation End"
 msgstr "Távollét vége"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:187
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:194
 #, no-wrap
 msgid "Vacation Forward"
 msgstr "Távollét alatti továbbítás"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:182
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:189
 #, no-wrap
 msgid "Vacation Info"
 msgstr "Távolléti üzenet"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:192
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:199
 #, no-wrap
 msgid "Vacation Start"
 msgstr "Távollét kezdete"
 
-#: ../lib/xhtml.php:63 ../lib/xhtml.php:99
+#: ../views/helpers.php:65 ../views/helpers.php:124
 #, php-format
 msgid "Ver. %s"
 msgstr "Változat: %s"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/mail.xml:133
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/mail.xml:140
 #, no-wrap
 msgid "Virtual Home"
 msgstr "Postafiókok könyvtára"
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
-#: ../plugins/alias.xml:58 ../plugins/mail.xml:214
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
+#: ../plugins/alias.xml:58 ../plugins/mail.xml:222
 #, no-wrap
 msgid "Virus Check"
 msgstr "Vírus ellenőrzés"
 
-#: ../lib/phamm.php:176
+#: ../views/helpers.php:1367
 msgid "Warning: "
 msgstr "Figyelem: "
 
 # type: Content of: <plugin><account><attributes><attribute><prettyName>
+#. type: Content of: <plugin><account><attributes><attribute><prettyName>
 #: ../plugins/proxy.xml:36
 #, no-wrap
 msgid "Web Access"
 msgstr "Web hozzáférés"
 
-#: ../lib/xhtml.php:910 ../lib/xhtml.php:911
+#: ../views/helpers.php:979 ../views/helpers.php:980
 msgid "YES"
 msgstr "IGEN"
 
-#: ../lib/common.php:73
+#: ../views/helpers.php:1433
 msgid ""
 "You will be automatically redirected to a new page within a few seconds.<br/"
 "> If this does not happen, please follow the link:"
 msgstr ""
-"Pár másodperc múlva átirányítunk egy új oldalra<br/"
-"> Ha ez nem történik meg, akkor "
+"Pár másodperc múlva átirányítunk egy új oldalra<br/> Ha ez nem történik meg, "
+"akkor "
 
-#: ../www-data/main.php:763
+#: ../public/main.php:820
 #, php-format
 msgid "account %s not updated!"
 msgstr "%s postafiók nincs frissítve!"
 
-#: ../lib/common.php:73
+#: ../views/helpers.php:1433
 msgid "click here"
 msgstr "kattints ide"
 
-#: ../www-data/main.php:395
+#: ../public/main.php:439
 msgid "do not activate Forward and Vacation Forward in the same time!"
-msgstr "ne engedélyezd egyszerre a Továbbítás és a Távollét Alatti Továbbítás funkciót"
+msgstr ""
+"ne engedélyezd egyszerre a Továbbítás és a Távollét Alatti Továbbítás "
+"funkciót"
 
-#: ../www-data/main.php:344
+#: ../public/main.php:367
 #, php-format
 msgid "domain %s not added!"
 msgstr "%s domain nincs hozzáadva!"
 
-#: ../www-data/main.php:397
+#: ../public/main.php:223
+#, php-format
+msgid "modifying %s"
+msgstr ""
+
+#: ../public/main.php:441
 msgid "please, insert a forward destination or disable Forward!"
 msgstr "kérlek, állíts be továbbítási címet vagy kapcsold ki a Továbbítást!"
+
+#~ msgid "%s modified"
+#~ msgstr "%s módosítva"
+
+#~ msgid "Account (%d)"
+#~ msgid_plural "Accounts (%d)"
+#~ msgstr[0] "Postafiók (%d)"
+#~ msgstr[1] "Postafiókok (%d)"
+
+#~ msgid "Domain (%d)"
+#~ msgid_plural "Domains (%d)"
+#~ msgstr[0] "Domain (%d)"
+#~ msgstr[1] "Domain-ek (%d)"
