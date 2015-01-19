@@ -67,7 +67,30 @@ function page_end()
     }
     $tag .= '</div>'."\n";
 
+    $tag .= '<a href="#" class="confirm">Prova</a>';
+
     $tag .= '</div><!-- /container -->'."\n";
+    $tag .= "\t".'<!-- JS dependencies -->'."\n";
+    $tag .= "\t".'<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>'."\n";
+    $tag .= "\t".'<script src="js/bootstrap.min.js"></script>'."\n";
+    $tag .= "\t".'<!-- bootbox code -->'."\n";
+    $tag .= "\t".'<script src="js/bootbox.min.js"></script>'."\n";
+    $tag .= '<script>'."\n";
+    $tag .= '$(document).on("click", ".confirm", function(e) {'."\n";
+    #$tag .= 'var link = $(this).attr("href"); // "get" the intended link in a var'."\n";
+    $tag .= 'e.preventDefault();'."\n";
+    $tag .= 'bootbox.confirm("Are you sure?", function(result) {'."\n";
+    #$tag .= 'if (result) {'."\n";
+    #$tag .= 'document.location.href = link;  // if result, "set" the document location'."\n";
+   # $tag .= '}'."\n";
+   # $tag .= 'else {}'."\n";
+    #$tag .= 'bootbox.show("Confirm result: "+result);'."\n";
+    $tag .= '});'."\n";
+    #$tag .= 'bootbox.alert("Hello world!", function() {'."\n";
+    #$tag .= 'console.log("Alert Callback");'."\n";
+    #$tag .= '});'."\n";
+    $tag .= '});'."\n";
+    $tag .= '</script>'."\n";
     $tag .= '</body>'."\n";
     $tag .= '</html>'."\n";
 
@@ -1106,8 +1129,8 @@ function tof_icon($table,$value,$tof_action,$reverse=null,$cron=null)
     endswitch;
 
     $tag = '';
-    $tag .= '<a href="?'.$table.'&amp;action='.$tof_action.'">';
-    $tag .= '<span class="label '.$bt_class.'">'.strtoupper($value).'</span>';
+    $tag .= '<a href="?'.$table.'&amp;action='.$tof_action.'" class="confirm" >'; // @todo
+    $tag .= '<span class="confirm label '.$bt_class.'">'.strtoupper($value).'</span>';
     $tag .= '</a>';
 
     return $tag;
