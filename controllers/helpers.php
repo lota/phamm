@@ -185,7 +185,9 @@ function phamm_password_hash($password_clear)
     switch($enc_type)
     {
     case 'crypt':
-        $salt = CRYPT_SALT;
+
+        $salt = (defined(CRYPT_SALT) ? CRYPT_SALT : 'random');
+
         switch (strtolower($salt))
         {
         case 'password':
