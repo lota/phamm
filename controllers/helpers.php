@@ -185,8 +185,19 @@ function phamm_password_hash($password_clear)
     switch($enc_type)
     {
     case 'crypt':
-        $password_hash = '{CRYPT}'.crypt($password_clear);
-        break;
+        $salt = CRYPT_SALT;
+        switch (strtolower($salt))
+        {
+        case 'password':
+            $password_hash = '{CRYPT}'.crypt($password_clear, substr($password_clear,0,2));
+            break;
+        case 'random':
+            $password_hash = '{CRYPT}'.crypt($password_clear, random_password(2));
+            break;
+        default:
+            $password_hash = '{CRYPT}'.crypt($password_clear, $salt);
+        }
+        
 
     case 'md5':
 	$password_hash = '';

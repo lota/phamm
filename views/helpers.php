@@ -719,10 +719,10 @@ function form_add_domain_2 ($domain_new, $action, $values, $values_postmaster)
     $tag .= '<table class="table table-bordered">'."\n";
 
     $tag .= '<tr class="warning"><td>'._("Password").'</td>'."\n";
-    $tag .= '<td><input type="password" class="form-control" name="password1" value="" size="15" maxlength="15" /></td></tr>'."\n";
+    $tag .= '<td><input type="password" class="form-control" name="password1" value="" size="50" maxlength="50" /></td></tr>'."\n";
 
     $tag .= '<tr class="warning"><td>'._("Confirm Password").'</td>'."\n";
-    $tag .= '<td><input type="password" class="form-control" name="password2" value="" size="15" maxlength="15" /></td></tr>'."\n";
+    $tag .= '<td><input type="password" class="form-control" name="password2" value="" size="50" maxlength="50" /></td></tr>'."\n";
     
     foreach ($pv as $name => $p_value)
     {
@@ -816,10 +816,10 @@ function form_add_account_2 ($account_new, $action, $values, $disabled=array())
     $tag .= '<table class="table table-bordered">'."\n";
 
     $tag .= '<tr class="warning"><td>'._("Password").'</td>'."\n";
-    $tag .= '<td><input type="password" class="form-control" name="password1" value="" size="15" maxlength="15" /></td></tr>'."\n";
+    $tag .= '<td><input type="password" class="form-control" name="password1" value="" size="50" maxlength="50" /></td></tr>'."\n";
 
     $tag .= '<tr class="warning"><td>'._("Confirm Password").'</td>'."\n";
-    $tag .= '<td><input type="password" class="form-control" name="password2" value="" size="15" maxlength="15" /></td></tr>'."\n";
+    $tag .= '<td><input type="password" class="form-control" name="password2" value="" size="50" maxlength="50" /></td></tr>'."\n";
 
     $tag .= '<tr class="warning"><td>'._("Name").' *</td>'."\n";
     $tag .= '<td><input type="text" class="form-control" name="givenname" value="'.stripslashes($givenName).'" size="15" maxlength="50" /></td></tr>'."\n";

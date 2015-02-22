@@ -174,6 +174,12 @@ define ('LOG_FILE','/var/log/phamm.log');
 // Standard LDAP encryption type [CRYPT,MD5,CLEAR]
 define ('ENC_TYPE','CRYPT');
 
+// Standard Crypt salt [RANDOM, PASSWORD, SALT]
+//   RANDOM - Choose a random salt
+//   PASSWORD - Guess salt by password
+//   Anything else - Use this phrase as a salt
+define ('CRYPT_SALT', 'RANDOM');
+
 // Phamm autogenerate UID from e-mail
 // set char used instead @ (default=.)
 // i.e. info@example.com produce UID=info.example.com
