@@ -158,7 +158,7 @@ elseif($login->login_check())
 	$domain = $_SESSION["phamm"]["domain"];
     
     // Create domain object
-    if (isset($domain))
+    if (isset($domain) && !empty($domain))
     {
 	$domain_obj = new PhammLdap();
 	$domain_val = $domain_obj->phamm_self_values ('vd='.$domain.','.LDAP_BASE, $filter="(vd=$domain)");
