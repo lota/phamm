@@ -155,9 +155,6 @@ function wrong_pw ($password1,$password2,$length=PASSWORD_MIN_LENGHT)
     elseif ( strlen($password1) < $length )
 	$error_msg = _("Password too short!");
 
-    elseif ( !check_syntax ('password',$password1) && $length > 0)
-	$error_msg = _("Password contains special chars");
-
     if (isset($error_msg))
         return $error_msg;
 
@@ -202,11 +199,7 @@ function phamm_password_hash($password_clear)
         
 
     case 'md5':
-	$password_hash = '';
-        $md5_hash = md5($password_clear);
-	for ( $i = 0; $i < 32; $i += 2 )
-	    $password_hash .= chr( hexdec( $md5_hash{ $i + 1 } ) + hexdec( $md5_hash{ $i } ) * 16 );
-	$password_hash = '{MD5}'.base64_encode($password_hash);
+	$password_hash = '{MD5}'.base64_encode(pack('H*',md5($password_clear)));
         break;
 
     case 'clear':
