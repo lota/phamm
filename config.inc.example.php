@@ -49,6 +49,9 @@ define ('SUFFIX','dc=example,dc=tld');
 // The admin bind dn (could be rootdn)
 define ('BINDDN','cn=admin,dc=example,dc=tld');
 
+// Another additional bind dn (optional)
+define ('BINDDN_EXTRA','cn=adminplus,dc=example,dc=tld');
+
 // The Phamm container
 define ('LDAP_BASE','o=hosting,dc=example,dc=tld');
 

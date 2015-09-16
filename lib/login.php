@@ -69,7 +69,7 @@ class PhammLogin
         }
 
         // Manager
-        elseif ('cn='.$login_username.','.SUFFIX == BINDDN)
+        elseif (in_array('cn='.$login_username.','.SUFFIX, array(BINDDN,BINDDN_EXTRA)))
         {
             $proposed["dn"] = 'cn='.$login_username.','.SUFFIX;
             $proposed["level"] = 10;
