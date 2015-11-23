@@ -447,17 +447,42 @@ function form_template($p_name,$attributes,$myvalues,$skip_table=null)
 	$max_key = strtolower('max'.$key);
 	if (isset ($domain_values[0][$max_key][0]))
 	{
-	  // Disable value is possible from TRUE to FALSE
-	  if (!isset($myvalues[0][$name][0]) || $myvalues[0][$name][0] == 'FALSE') :
+	  // Disable value is possible only from TRUE to FALSE
+	  if (isset($myvalues[0][$name][0]) || $myvalues[0][$name][0] == 'FALSE') :
 
 	  $max_val = $domain_values[0][$max_key][0];
 	  
-	  $active_val = PhammLdap::phamm_self_values ($dn_domain,'(&(objectClass=*)('.$key.'=TRUE))');
+	    // For Bool attrbute only check the sum of total account with attribute set TRUE
+	    if ($attr["BOOL"] == 1)
+	    {
+		$active_val = PhammLdap::phamm_self_values ($dn_domain,'(&(objectClass=*)('.$key.'=TRUE))');
+		$current_val_count = $active_val["count"];
+	    }
+	    
+	    // For other attributes sum the values
+	    else
+	    {
+		$active_val = PhammLdap::phamm_search ('vd='.$domain.','.LDAP_BASE,'(&(objectClass=VirtualMailAccount))',array($key));
+	    
+		$total_key = 0;
+		foreach ($active_val as $one_val)
+		{
+		    if ($one__val[$key][0])
+		    {
+			if ('quota' == $key)
+			    $total_key = ($total_key + $one_val[$key][0] - 2000*1024*1024)/1024/1024;
+			else
+			    $total_key = ($total_key + $one_val[$key][0]);
+		    }
+		}
 
-	  if ($active_val["count"] >= $max_val)
+		$current_val_count = $total_key;
+	    }
+
+	  if ($current_val_count >= $max_val)
 	  {
 	    phamm_print_message('info',sprintf(_("The maximum number of attribute %s (%s) has been reached or exceeded. Attribute has been disabled!"), $key, $max_val));
-	    $disabled = 'TRUE';
+		    $disabled = 'disabled="disabled"';
 	  }
 	  endif;
 	}  
