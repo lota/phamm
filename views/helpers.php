@@ -467,14 +467,15 @@ function form_template($p_name,$attributes,$myvalues,$skip_table=null)
 		$total_key = 0;
 		foreach ($active_val as $one_val)
 		{
-		    if ($one__val[$key][0])
+		    if ($one_val[$key][0])
 		    {
-			if ('quota' == $key)
-			    $total_key = ($total_key + $one_val[$key][0] - 2000*1024*1024)/1024/1024;
-			else
-			    $total_key = ($total_key + $one_val[$key][0]);
+			$total_key = ($total_key + $one_val[$key][0]);
 		    }
 		}
+
+		// @todo
+		if ('quota' == $key)
+			$total_key = ($total_key/1024/1024 - $active_val['count'] * 2000);
 
 		$current_val_count = $total_key;
 	    }
