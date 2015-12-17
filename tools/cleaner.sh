@@ -16,12 +16,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 
-LDAP_BASE="o=hosting,dc=example,dc=tld"
-admin="cn=admin"
-SUFFIX="dc=example,dc=tld"
-ROOTPW="rhx"
-BINDDN="cn=phamm,o=hosting,dc=example,dc=tld"
+LDAPURI="ldap://ldap.example.com:389/"
+BINDDN="cn=admin,dc=example,dc=tld"
 BINDPW="rhx"
+LDAP_BASE="o=hosting,dc=example,dc=tld"
 OUTPUT="$HOME/bin/lista"
 
 if [ ! -d ~/bin ]; then
@@ -34,7 +32,7 @@ fi
 
 touch $OUTPUT
 # find mail to delete
-ldapsearch -D $BINDDN -w $BINDPW -b $LDAP_BASE -x -LLL "(&(objectClass=VirtualMailAccount)(delete=TRUE))" mailbox > ~/tmp/mb$$
+ldapsearch -H $LDAPURI -D $BINDDN -w $BINDPW -b $LDAP_BASE -x -LLL "(&(objectClass=VirtualMailAccount)(delete=TRUE))" mailbox > ~/tmp/mb$$
 # create file for awk
 sed \
 -e ':a' \
@@ -44,13 +42,13 @@ sed \
 
 cat ~/tmp/mb$$.1 | awk '{
 			if ($1 == "dn:")
-			{ print "ldapdelete -D \"'$admin','$SUFFIX'\" -w \"'$ROOTPW'\" -x \""$2"\"" > "'$OUTPUT'" }
+			{ print "ldapdelete -H \"'$LDAPURI'\" -D \"'$BINDDN'\" -w \"'$BINDPW'\" -x \""$2"\"" > "'$OUTPUT'" }
 			if ($1 == "mailbox:")
 			{ print "rm -rf ~/domains/" $2 > "'$OUTPUT'" } 
 			}'
 
 # find domain to delete
-ldapsearch -D $BINDDN -w $BINDPW -b $LDAP_BASE -x -LLL "(&(objectClass=VirtualDomain)(delete=TRUE))" vd > ~/tmp/vd$$
+ldapsearch -H $LDAPURI -D $BINDDN -w $BINDPW -b $LDAP_BASE -x -LLL "(&(objectClass=VirtualDomain)(delete=TRUE))" vd > ~/tmp/vd$$
 # create file for awk
 sed \
 -e ':a' \
@@ -60,7 +58,7 @@ sed \
 
 cat ~/tmp/vd$$ | awk '{
 			if ($1 == "dn:")
-			{ print "ldapdelete -D \"'$admin','$SUFFIX'\" -w \"'$ROOTPW'\" -x -r \""$2"\"" > "'$OUTPUT'" }
+			{ print "ldapdelete -H \"'$LDAPURI'\" -D \"'$BINDDN'\" -w \"'$BINDPW'\" -x -r \""$2"\"" > "'$OUTPUT'" }
 			if ($1 == "vd:")
 			{ print "rm -rf ~/domains/" $2 > "'$OUTPUT'" } 
 			}'
