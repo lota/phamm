@@ -2,7 +2,7 @@
 ;;; Phamm - CHANGELOG
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   
-  Copyright (c) 2005-2015 Alessandro De Zorzi, Mirko Grava
+  Copyright (c) 2005-2016 Alessandro De Zorzi, Mirko Grava
   <team@phamm.org> http://www.phamm.org/
   
   Project sponsored by RHX Srl - www.rhx.it
@@ -12,9 +12,11 @@
   or any later version published by the Free Software Foundation;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+0.6.5 20160106 r.
     * Bump to Bootstrap v3.3.1
     * Improved getttex tools
     * Added max* attribute support for non BOOL attributes
+    * Improved cleaner.sh
 
 0.6.4 20141206 r.58
     * Added random_password() function

@@ -1,8 +1,8 @@
 <?php
 /*
  * Phamm - http://www.phamm.org - <team AT phamm DOT org>
- * Copyright (C) 2004,2008 Alessandro De Zorzi and Mirko Grava
- * Project sponsored by RHX Studio Snc - www.rhx.it
+ * Copyright (C) 2004-2016 Alessandro De Zorzi and Mirko Grava
+ * Project sponsored by RHX Srl - www.rhx.it
  *  
  * Phamm is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
