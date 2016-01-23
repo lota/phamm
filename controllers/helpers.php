@@ -196,6 +196,7 @@ function phamm_password_hash($password_clear)
         default:
             $password_hash = '{CRYPT}'.crypt($password_clear, $salt);
         }
+        break;
         
 
     case 'md5':
