@@ -12,6 +12,9 @@
   or any later version published by the Free Software Foundation;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+0.6.6 (not released yet!)
+    * Fixed bug related to crypt password hash (Thanks to steveblamey)
+
 0.6.5 20160106
     * Bump to Bootstrap v3.3.1
     * Improved getttex tools
