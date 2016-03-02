@@ -191,3 +191,9 @@ define ('CHR_UID_ACCOUNT','.');
 // Permit login without @domain (use it with carefull)
 // define ('DEFAULT_DOMAIN','example.tld');
 
+// If you wish skip count for max* attributes for certain mail account
+// Use * to skip for all account
+// Examples:
+//	      '*' will be interpreted as '*@*'
+//	      'www' will be interpreted as 'www@*'
+// $skip_max_count_prefix = array('www');

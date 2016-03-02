@@ -77,8 +77,16 @@ function group_actions ($command,$values)
 	      {
 		$max_val = $domain_values[0][$max_key][0];
       
-		$active_val = PhammLdap::phamm_self_values ($dn_domain,'(&(objectClass=*)('.$k_entry.'=TRUE))');
-		
+                if (isset($skip_max_count_prefix))
+                {       
+                        $skip_prefix_filter = '';
+                        foreach ($skip_max_count_prefix as $skip_prefix)
+                                $skip_prefix_filter .= '(!(mail='.$skip_prefix.'@*))';
+                        $active_val = PhammLdap::phamm_self_values ($dn_domain,'(&(objectClass=*)('.$k_entry.'=TRUE)'.$skip_prefix_filter.')');
+                }
+                else
+                        $active_val = PhammLdap::phamm_self_values ($dn_domain,'(&(objectClass=*)('.$k_entry.'=TRUE))');
+
 		if ($active_val["count"] >= $max_val)
 		{
 		  phamm_print_message('warning',sprintf(_("The maximum number of attribute %s (%s) has been reached or exceeded!"), $k_entry, $max_val));
