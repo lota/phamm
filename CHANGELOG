@@ -14,6 +14,7 @@
 
 0.6.6 (not released yet!)
     * Fixed bug related to crypt password hash (Thanks to steveblamey)
+    * Added skip_max_count_prefix
 
 0.6.5 20160106
     * Bump to Bootstrap v3.3.1
