@@ -37,6 +37,8 @@
 
 function group_actions ($command,$values)
 {
+    global $skip_max_count_prefix;
+
     // Set initial return value
     $r = false;
 
