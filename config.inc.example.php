@@ -197,3 +197,7 @@ define ('CHR_UID_ACCOUNT','.');
 //	      '*' will be interpreted as '*@*'
 //	      'www' will be interpreted as 'www@*'
 // $skip_max_count_prefix = array('www');
+
+// Delete account immediately (if unset or false, Phamm simply change attribute delete=TRUE)
+define ('DELETE_ACCOUNT_IMMEDIATELY', false);
+

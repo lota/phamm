@@ -99,8 +99,13 @@ function group_actions ($command,$values)
 	      endif;
 	    }
 
+	    // DELETE_ACCOUNT_IMMEDIATELY backward compatibility
+	    if (!defined(DELETE_ACCOUNT_IMMEDIATELY))
+		define('DELETE_ACCOUNT_IMMEDIATELY', false);
+	    
+
 	    // Delete immediate if VirtualMailAlias
-	    if (isset($entry["delete"]) && $is_alias)
+	    if (isset($entry["delete"]) && ($is_alias || true == DELETE_ACCOUNT_IMMEDIATELY))
 		$r = PhammLdap::phamm_delete($dn,$recursive=false);
 	    // Change single value
 	    else
