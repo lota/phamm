@@ -102,7 +102,6 @@ function group_actions ($command,$values)
 	    // DELETE_ACCOUNT_IMMEDIATELY backward compatibility
 	    if (!defined(DELETE_ACCOUNT_IMMEDIATELY))
 		define('DELETE_ACCOUNT_IMMEDIATELY', false);
-	    
 
 	    // Delete immediate if VirtualMailAlias
 	    if (isset($entry["delete"]) && ($is_alias || true == DELETE_ACCOUNT_IMMEDIATELY))
@@ -124,9 +123,17 @@ case "domain" :
 
         // (string) needed for TRUE and FALSE not real boolean...
         $entry[$ga[1]]		= (string)$ga[2];
+	
+	// DELETE_ACCOUNT_IMMEDIATELY backward compatibility
+	if (!defined(DELETE_ACCOUNT_IMMEDIATELY))
+	    define('DELETE_ACCOUNT_IMMEDIATELY', false);
 
+	// Delete immediate if VirtualMailAlias
+	if (isset($entry["delete"]) && true == DELETE_ACCOUNT_IMMEDIATELY)
+	    $r = PhammLdap::phamm_delete($dn,true);
         // Change single value
-        $r = PhammLdap::phamm_modify ($dn,$entry);
+	else
+	    $r = PhammLdap::phamm_modify ($dn,$entry);
     }
 
     break;

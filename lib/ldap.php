@@ -223,17 +223,25 @@ class PhammLdap
         {
             //searching for sub entries
             $sr=ldap_list($connect,$dn,"ObjectClass=*",array(""));
+  
             $info = ldap_get_entries($connect, $sr);
+
+	    if ($info['count'] > 0) :
             for($i=0; $i<$info['count']; $i++)
             {
                 //deleting recursively sub entries
-                $result=myldap_delete($connect,$info[$i]['dn'],$recursive);
+                //$result=self::phamm_delete($connect,$info[$i]['dn'],false);
+		// Delete only the first child level
+                $result=ldap_delete($connect,$info[$i]['dn']);
+
                 if(!$result)
                 {
                     //return result code, if delete fails
                     return($result);
                 }
             }
+	    endif;
+
             return(ldap_delete($connect,$dn));
         }
     }
@@ -248,5 +256,6 @@ class PhammLdap
 
             return _("LDAP Error: ").ldap_error($connect).' ('._("Code ").ldap_errno($connect).')';
         }
+
 //
 }
