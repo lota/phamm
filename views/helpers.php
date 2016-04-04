@@ -68,6 +68,9 @@ function page_end()
     $tag .= '</div>'."\n";
 
     $tag .= '</div><!-- /container -->'."\n";
+    $tag .= '<script src="js/jquery.min.js"></script>'."\n";
+    $tag .= '<script src="js/bootstrap.min.js"></script>'."\n";
+    $tag .= '<script src="js/bootstrap-confirmation.min.js"></script>'."\n";
     $tag .= '</body>'."\n";
     $tag .= '</html>'."\n";
 
@@ -1131,8 +1134,14 @@ function tof_icon($table,$value,$tof_action,$reverse=null,$cron=null)
     break;
     endswitch;
 
+    // Require confirmation if action contain DELETE
+    if (strpos(strtolower($tof_action), 'delete') !== false)
+    {
+      $confirmation = 'data-toggle="confirmation"';
+    }
+
     $tag = '';
-    $tag .= '<a href="?'.$table.'&amp;action='.$tof_action.'">';
+    $tag .= '<a '.$confirmation.' href="?'.$table.'&amp;action='.$tof_action.'">';
     $tag .= '<span class="label '.$bt_class.'">'.strtoupper($value).'</span>';
     $tag .= '</a>';
 
