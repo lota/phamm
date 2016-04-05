@@ -283,14 +283,14 @@ case "insert_domain" :
 	$log->phamm_log ($pn,$_SESSION["login"]["username"],$action.' '.$domain_new.' '.$wrong_pw_msg,0);
     }
 
-
     else
     {
         $entry["objectclass"][0]	= "top";
         $entry["objectclass"][1]	= "VirtualDomain";
         $entry["objectclass"][2]	= "inetLocalMailRecipient";
 
-        $entry["vd"]				= $domain_new;
+	// Normalize domain in Lower Case
+        $entry["vd"]			= strtolower($domain_new);
         $entry["lastChange"]		= time();
     
 	// Merge static values with domain values
@@ -551,7 +551,8 @@ case "insert_account" :
             }
         }
 
-        $mail = $account_new;
+	// Normalize e-mail in Lower Case
+        $mail = strtolower($account_new);
         
 	// in mail.xml
 	//$uid = str_replace ( '@', CHR_UID_ACCOUNT, $mail);
