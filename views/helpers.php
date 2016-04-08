@@ -71,6 +71,15 @@ function page_end()
     $tag .= '<script src="js/jquery.min.js"></script>'."\n";
     $tag .= '<script src="js/bootstrap.min.js"></script>'."\n";
     $tag .= '<script src="js/bootstrap-confirmation.min.js"></script>'."\n";
+?>
+<script>
+function confirmDelete(element) {
+	if (!confirm("Are you shure?")) return;
+
+	window.location.href = element.getAttribute('data-href');
+}
+</script>
+<?php
     $tag .= '</body>'."\n";
     $tag .= '</html>'."\n";
 
@@ -1141,7 +1150,14 @@ function tof_icon($table,$value,$tof_action,$reverse=null,$cron=null)
     }
 
     $tag = '';
-    $tag .= '<a '.$confirmation.' href="?'.$table.'&amp;action='.$tof_action.'">';
+	if (strpos(strtolower($tof_action), 'delete') !== false)
+    	{
+    		$tag .= '<a '.$confirmation.' data-href="?'.$table.'&amp;action='.$tof_action.'" onclick="confirmDelete(this)" href="javascript:;">';
+	}
+	else
+	{
+    		$tag .= '<a '.$confirmation.' href="?'.$table.'&amp;action='.$tof_action.'">';
+	}
     $tag .= '<span class="label '.$bt_class.'">'.strtoupper($value).'</span>';
     $tag .= '</a>';
 
