@@ -6,39 +6,39 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phamm 0.5.14\n"
-"POT-Creation-Date: 2014-12-28 11:01+0100\n"
+"POT-Creation-Date: 2016-04-11 11:46+0200\n"
 "PO-Revision-Date: 2009-02-01 19:03+0100\n"
 "Last-Translator: Zsolt Jonas <zsolt.jonas@naxonet.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 7bit\n"
 
-#: ../public/main.php:658
+#: ../public/main.php:659
 #, php-format
 msgid "%s not added!"
 msgstr "%s nincs hozzáadva!"
 
-#: ../views/helpers.php:1058
+#: ../views/helpers.php:1093
 msgid "...execute a command"
 msgstr "...parancs futtatása"
 
-#: ../views/helpers.php:809
+#: ../views/helpers.php:844
 msgid "Account"
 msgstr "Postafiók"
 
-#: ../public/main.php:652
+#: ../public/main.php:653
 #, php-format
 msgid "Account %s successfully added"
 msgstr "%s postafiók sikeresen hozzáadva"
 
-#: ../views/helpers.php:295
+#: ../views/helpers.php:304
 #, php-format
 msgid "Account <span class=\"badge\">%d/"
 msgid_plural "Accounts <span class=\"badge\">%d/"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../views/helpers.php:297
+#: ../views/helpers.php:306
 #, php-format
 msgid "Account <span class=\"badge\">%d</span>"
 msgid_plural "Accounts <span class=\"badge\">%d</span>"
@@ -56,29 +56,33 @@ msgstr "Postafiók vagy álnév (alias) már létezik"
 msgid "Active"
 msgstr "Aktív"
 
-#: ../views/helpers.php:1215
+#: ../views/helpers.php:1263
 msgid "Add catch-all address"
 msgstr "Gyűjtő (catch-all) postafiók hozzáadása"
 
-#: ../views/helpers.php:779 ../views/helpers.php:804
+#: ../views/helpers.php:814 ../views/helpers.php:839
 msgid "Add new account"
 msgstr "Új postafiók hozzáadása"
 
-#: ../views/helpers.php:399 ../views/helpers.php:707
+#: ../views/helpers.php:408 ../views/helpers.php:742
 msgid "Add new domain"
 msgstr "Új domain hozzáadása"
 
-#: ../views/helpers.php:917
+#: ../views/helpers.php:952
 msgid "All"
 msgstr "Mind"
 
-#: ../views/helpers.php:897
+#: ../views/helpers.php:932
 msgid "All domains"
 msgstr "Összes domain"
 
 #: ../public/main.php:372
 #, php-format
 msgid "An Unexpected Error Occurred during %s Addition!"
+msgstr ""
+
+#: ../views/helpers.php:76
+msgid "Are you shure want delete this element?"
 msgstr ""
 
 #: ../public/main.php:113
@@ -111,7 +115,7 @@ msgstr "Gyűjtő postafiók"
 msgid "Catch all active"
 msgstr "Gyűjtó postafiók aktív"
 
-#: ../views/helpers.php:1202
+#: ../views/helpers.php:1250
 msgid "Catch-all"
 msgstr "Gyűjtő postafiók címe"
 
@@ -119,15 +123,15 @@ msgstr "Gyűjtő postafiók címe"
 msgid "Changes have not performed"
 msgstr "A változások végrehajtása meghiusúlt"
 
-#: ../lib/ldap.php:249
+#: ../lib/ldap.php:257
 msgid "Code "
 msgstr "Kód "
 
-#: ../views/helpers.php:299
+#: ../views/helpers.php:308
 msgid "Common Name"
 msgstr "Megjelenített név"
 
-#: ../views/helpers.php:724 ../views/helpers.php:821
+#: ../views/helpers.php:759 ../views/helpers.php:856
 msgid "Confirm Password"
 msgstr "Jelszó megerősítése"
 
@@ -156,7 +160,7 @@ msgstr "Törlés"
 msgid "Destination"
 msgstr "Cél"
 
-#: ../views/helpers.php:712
+#: ../views/helpers.php:747
 msgid "Domain"
 msgstr "Domain"
 
@@ -165,7 +169,7 @@ msgstr "Domain"
 msgid "Domain %s successfully added"
 msgstr "%s domain sikeresen hozzáadva"
 
-#: ../views/helpers.php:167
+#: ../views/helpers.php:176
 #, php-format
 msgid "Domain <span class=\"badge\">%d</span>"
 msgid_plural "Domains <span class=\"badge\">%d</span>"
@@ -176,15 +180,15 @@ msgstr[1] ""
 msgid "Domain property"
 msgstr "Domain beállítás"
 
-#: ../views/helpers.php:109
+#: ../views/helpers.php:118
 msgid "Enter domain or e-mail"
 msgstr ""
 
-#: ../views/helpers.php:1362
+#: ../views/helpers.php:1410
 msgid "Error: "
 msgstr "Hiba: "
 
-#: ../views/helpers.php:1077
+#: ../views/helpers.php:1112
 msgid "Execute command"
 msgstr "Parancs futtatása"
 
@@ -241,15 +245,15 @@ msgstr "Home könyvtár"
 msgid "Home Phone"
 msgstr "Otthoni telefonszám"
 
-#: ../lib/ldap.php:249
+#: ../lib/ldap.php:257
 msgid "LDAP Error: "
 msgstr "LDAP hiba: "
 
-#: ../views/helpers.php:117
+#: ../views/helpers.php:126
 msgid "Login"
 msgstr "Belépés"
 
-#: ../views/helpers.php:108
+#: ../views/helpers.php:117
 msgid "Login Name"
 msgstr "Belépési azonosító"
 
@@ -317,19 +321,19 @@ msgstr "Max postafiókok száma"
 msgid "Mobile"
 msgstr "Mobil"
 
-#: ../views/helpers.php:802
+#: ../views/helpers.php:837
 msgid "Modify account"
 msgstr "Postafiók módosítása"
 
-#: ../views/helpers.php:705
+#: ../views/helpers.php:740
 msgid "Modify domain"
 msgstr "Domain módosítása"
 
-#: ../views/helpers.php:979 ../views/helpers.php:980
+#: ../views/helpers.php:1014 ../views/helpers.php:1015
 msgid "NO"
 msgstr "NEM"
 
-#: ../views/helpers.php:824
+#: ../views/helpers.php:859
 msgid "Name"
 msgstr "Keresztnév"
 
@@ -351,20 +355,16 @@ msgstr "Más továbbító (transport)"
 msgid "Pager"
 msgstr "Személyhívó"
 
-#: ../views/helpers.php:113 ../views/helpers.php:114 ../views/helpers.php:721
-#: ../views/helpers.php:818
+#: ../views/helpers.php:122 ../views/helpers.php:123 ../views/helpers.php:756
+#: ../views/helpers.php:853
 msgid "Password"
 msgstr "Jelszó"
 
-#: ../controllers/helpers.php:159
-msgid "Password contains special chars"
-msgstr "A jelszó speciális karaktereket is tartalmaz"
-
-#: ../controllers/helpers.php:156
+#: ../controllers/helpers.php:178
 msgid "Password too short!"
 msgstr "A jelszó túl rövid!"
 
-#: ../controllers/helpers.php:153
+#: ../controllers/helpers.php:175
 msgid "Passwords don't match!"
 msgstr "A beírt jelszavak nem egyeznek!"
 
@@ -407,11 +407,11 @@ msgstr "SPAM szűrés"
 msgid "SPAM Tags level are not set correctly!"
 msgstr "SPAM jelölési szint nem helyes!"
 
-#: ../views/helpers.php:1064
+#: ../views/helpers.php:1099
 msgid "Set"
 msgstr "Beállít"
 
-#: ../views/helpers.php:117
+#: ../views/helpers.php:126
 msgid "Sign in"
 msgstr ""
 
@@ -440,7 +440,7 @@ msgstr "Spam megjelölési szint (Tag2)"
 msgid "Special Characters not Allowed in E-mail address"
 msgstr "Speciális karakterek nem szerepelhetnek az e-mail címben"
 
-#: ../views/helpers.php:827
+#: ../views/helpers.php:862
 msgid "Surname"
 msgstr "Vezetéknév"
 
@@ -464,12 +464,12 @@ msgstr "Telefon"
 msgid "The maximum number of accounts (%s) has been reached or exceeded!"
 msgstr ""
 
-#: ../controllers/helpers.php:84
+#: ../controllers/helpers.php:94
 #, php-format
 msgid "The maximum number of attribute %s (%s) has been reached or exceeded!"
 msgstr ""
 
-#: ../views/helpers.php:459
+#: ../views/helpers.php:494
 #, php-format
 msgid ""
 "The maximum number of attribute %s (%s) has been reached or exceeded. "
@@ -525,7 +525,7 @@ msgstr "Távolléti üzenet"
 msgid "Vacation Start"
 msgstr "Távollét kezdete"
 
-#: ../views/helpers.php:65 ../views/helpers.php:124
+#: ../views/helpers.php:65 ../views/helpers.php:133
 #, php-format
 msgid "Ver. %s"
 msgstr "Változat: %s"
@@ -544,7 +544,7 @@ msgstr "Postafiókok könyvtára"
 msgid "Virus Check"
 msgstr "Vírus ellenőrzés"
 
-#: ../views/helpers.php:1367
+#: ../views/helpers.php:1415
 msgid "Warning: "
 msgstr "Figyelem: "
 
@@ -555,11 +555,11 @@ msgstr "Figyelem: "
 msgid "Web Access"
 msgstr "Web hozzáférés"
 
-#: ../views/helpers.php:979 ../views/helpers.php:980
+#: ../views/helpers.php:1014 ../views/helpers.php:1015
 msgid "YES"
 msgstr "IGEN"
 
-#: ../views/helpers.php:1433
+#: ../views/helpers.php:1481
 msgid ""
 "You will be automatically redirected to a new page within a few seconds.<br/"
 "> If this does not happen, please follow the link:"
@@ -567,12 +567,12 @@ msgstr ""
 "Pár másodperc múlva átirányítunk egy új oldalra<br/> Ha ez nem történik meg, "
 "akkor "
 
-#: ../public/main.php:820
+#: ../public/main.php:821
 #, php-format
 msgid "account %s not updated!"
 msgstr "%s postafiók nincs frissítve!"
 
-#: ../views/helpers.php:1433
+#: ../views/helpers.php:1481
 msgid "click here"
 msgstr "kattints ide"
 
@@ -595,6 +595,9 @@ msgstr ""
 #: ../public/main.php:441
 msgid "please, insert a forward destination or disable Forward!"
 msgstr "kérlek, állíts be továbbítási címet vagy kapcsold ki a Továbbítást!"
+
+#~ msgid "Password contains special chars"
+#~ msgstr "A jelszó speciális karaktereket is tartalmaz"
 
 #~ msgid "%s modified"
 #~ msgstr "%s módosítva"

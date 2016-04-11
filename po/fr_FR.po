@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phamm 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-28 11:01+0100\n"
+"POT-Creation-Date: 2016-04-11 11:46+0200\n"
 "PO-Revision-Date: 2009-07-11 19:30+0100\n"
 "Last-Translator: Aldo Reset <aldo@placenet.org>\n"
 "Language-Team: \n"
@@ -17,32 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../public/main.php:658
+#: ../public/main.php:659
 #, php-format
 msgid "%s not added!"
 msgstr "%s non ajouté"
 
-#: ../views/helpers.php:1058
+#: ../views/helpers.php:1093
 msgid "...execute a command"
 msgstr "...execute une commande"
 
-#: ../views/helpers.php:809
+#: ../views/helpers.php:844
 msgid "Account"
 msgstr "Compte"
 
-#: ../public/main.php:652
+#: ../public/main.php:653
 #, php-format
 msgid "Account %s successfully added"
 msgstr "Compte %s ajouté avec succès"
 
-#: ../views/helpers.php:295
+#: ../views/helpers.php:304
 #, php-format
 msgid "Account <span class=\"badge\">%d/"
 msgid_plural "Accounts <span class=\"badge\">%d/"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../views/helpers.php:297
+#: ../views/helpers.php:306
 #, php-format
 msgid "Account <span class=\"badge\">%d</span>"
 msgid_plural "Accounts <span class=\"badge\">%d</span>"
@@ -60,23 +60,23 @@ msgstr "Le compte ou l'alias existe déjà"
 msgid "Active"
 msgstr "Actif"
 
-#: ../views/helpers.php:1215
+#: ../views/helpers.php:1263
 msgid "Add catch-all address"
 msgstr "Ajouter un CatchAll"
 
-#: ../views/helpers.php:779 ../views/helpers.php:804
+#: ../views/helpers.php:814 ../views/helpers.php:839
 msgid "Add new account"
 msgstr "Créer un Compte"
 
-#: ../views/helpers.php:399 ../views/helpers.php:707
+#: ../views/helpers.php:408 ../views/helpers.php:742
 msgid "Add new domain"
 msgstr "Créer un domaine"
 
-#: ../views/helpers.php:917
+#: ../views/helpers.php:952
 msgid "All"
 msgstr "Tous"
 
-#: ../views/helpers.php:897
+#: ../views/helpers.php:932
 msgid "All domains"
 msgstr "Tous les domaines"
 
@@ -84,6 +84,10 @@ msgstr "Tous les domaines"
 #, php-format
 msgid "An Unexpected Error Occurred during %s Addition!"
 msgstr "Une erreur inattendue est survenue lors de l'ajout de %s!"
+
+#: ../views/helpers.php:76
+msgid "Are you shure want delete this element?"
+msgstr ""
 
 #: ../public/main.php:113
 msgid "Bye!"
@@ -115,7 +119,7 @@ msgstr "CatchAll"
 msgid "Catch all active"
 msgstr "CatchAll Actif"
 
-#: ../views/helpers.php:1202
+#: ../views/helpers.php:1250
 msgid "Catch-all"
 msgstr "CatchAll"
 
@@ -123,15 +127,15 @@ msgstr "CatchAll"
 msgid "Changes have not performed"
 msgstr "Les modifications n'ont pu être effectuées"
 
-#: ../lib/ldap.php:249
+#: ../lib/ldap.php:257
 msgid "Code "
 msgstr "Code "
 
-#: ../views/helpers.php:299
+#: ../views/helpers.php:308
 msgid "Common Name"
 msgstr "Nom Commun"
 
-#: ../views/helpers.php:724 ../views/helpers.php:821
+#: ../views/helpers.php:759 ../views/helpers.php:856
 msgid "Confirm Password"
 msgstr "Confirmer le mot de Passe"
 
@@ -160,7 +164,7 @@ msgstr "Supprimer"
 msgid "Destination"
 msgstr "Destination"
 
-#: ../views/helpers.php:712
+#: ../views/helpers.php:747
 msgid "Domain"
 msgstr "Domaine"
 
@@ -169,7 +173,7 @@ msgstr "Domaine"
 msgid "Domain %s successfully added"
 msgstr "Domaine %s crée avec succès"
 
-#: ../views/helpers.php:167
+#: ../views/helpers.php:176
 #, php-format
 msgid "Domain <span class=\"badge\">%d</span>"
 msgid_plural "Domains <span class=\"badge\">%d</span>"
@@ -180,15 +184,15 @@ msgstr[1] ""
 msgid "Domain property"
 msgstr "Propriété du Domaine"
 
-#: ../views/helpers.php:109
+#: ../views/helpers.php:118
 msgid "Enter domain or e-mail"
 msgstr ""
 
-#: ../views/helpers.php:1362
+#: ../views/helpers.php:1410
 msgid "Error: "
 msgstr "Erreur:"
 
-#: ../views/helpers.php:1077
+#: ../views/helpers.php:1112
 msgid "Execute command"
 msgstr "Execute commande"
 
@@ -245,15 +249,15 @@ msgstr "Répertoire Racine"
 msgid "Home Phone"
 msgstr "Téléphone"
 
-#: ../lib/ldap.php:249
+#: ../lib/ldap.php:257
 msgid "LDAP Error: "
 msgstr "Erreur LDAP"
 
-#: ../views/helpers.php:117
+#: ../views/helpers.php:126
 msgid "Login"
 msgstr "Login"
 
-#: ../views/helpers.php:108
+#: ../views/helpers.php:117
 msgid "Login Name"
 msgstr "Nom Login"
 
@@ -321,19 +325,19 @@ msgstr "Nombre Max de Mail"
 msgid "Mobile"
 msgstr "Portable"
 
-#: ../views/helpers.php:802
+#: ../views/helpers.php:837
 msgid "Modify account"
 msgstr "Modifier compte"
 
-#: ../views/helpers.php:705
+#: ../views/helpers.php:740
 msgid "Modify domain"
 msgstr "Modifier domaine"
 
-#: ../views/helpers.php:979 ../views/helpers.php:980
+#: ../views/helpers.php:1014 ../views/helpers.php:1015
 msgid "NO"
 msgstr "NON"
 
-#: ../views/helpers.php:824
+#: ../views/helpers.php:859
 msgid "Name"
 msgstr "Nom"
 
@@ -355,20 +359,16 @@ msgstr "Autre Transport"
 msgid "Pager"
 msgstr "Pager"
 
-#: ../views/helpers.php:113 ../views/helpers.php:114 ../views/helpers.php:721
-#: ../views/helpers.php:818
+#: ../views/helpers.php:122 ../views/helpers.php:123 ../views/helpers.php:756
+#: ../views/helpers.php:853
 msgid "Password"
 msgstr "Mot de Passe"
 
-#: ../controllers/helpers.php:159
-msgid "Password contains special chars"
-msgstr "Mot de passe contient des caractères spéciaux"
-
-#: ../controllers/helpers.php:156
+#: ../controllers/helpers.php:178
 msgid "Password too short!"
 msgstr "Mot de passe trop court!"
 
-#: ../controllers/helpers.php:153
+#: ../controllers/helpers.php:175
 msgid "Passwords don't match!"
 msgstr "Les Mot de passe ne correspondent pas"
 
@@ -411,11 +411,11 @@ msgstr "Vérification SPAM"
 msgid "SPAM Tags level are not set correctly!"
 msgstr "Les Tags du SPAM ne sont pas corrects!"
 
-#: ../views/helpers.php:1064
+#: ../views/helpers.php:1099
 msgid "Set"
 msgstr "Initialiser"
 
-#: ../views/helpers.php:117
+#: ../views/helpers.php:126
 msgid "Sign in"
 msgstr ""
 
@@ -444,7 +444,7 @@ msgstr "Niveau de TAG2 du SPAM"
 msgid "Special Characters not Allowed in E-mail address"
 msgstr "Les Caractères spéciaux ne sont pas autorisés dans une adresse mail"
 
-#: ../views/helpers.php:827
+#: ../views/helpers.php:862
 msgid "Surname"
 msgstr "Prénom"
 
@@ -468,12 +468,12 @@ msgstr "Téléphone"
 msgid "The maximum number of accounts (%s) has been reached or exceeded!"
 msgstr ""
 
-#: ../controllers/helpers.php:84
+#: ../controllers/helpers.php:94
 #, php-format
 msgid "The maximum number of attribute %s (%s) has been reached or exceeded!"
 msgstr ""
 
-#: ../views/helpers.php:459
+#: ../views/helpers.php:494
 #, php-format
 msgid ""
 "The maximum number of attribute %s (%s) has been reached or exceeded. "
@@ -529,7 +529,7 @@ msgstr "Info Répondeur"
 msgid "Vacation Start"
 msgstr "Début Répondeur"
 
-#: ../views/helpers.php:65 ../views/helpers.php:124
+#: ../views/helpers.php:65 ../views/helpers.php:133
 #, php-format
 msgid "Ver. %s"
 msgstr "Version %s"
@@ -548,7 +548,7 @@ msgstr "Répertoire virtuel"
 msgid "Virus Check"
 msgstr "Vérifier Virus"
 
-#: ../views/helpers.php:1367
+#: ../views/helpers.php:1415
 msgid "Warning: "
 msgstr "Attention:"
 
@@ -559,11 +559,11 @@ msgstr "Attention:"
 msgid "Web Access"
 msgstr "Accès Web"
 
-#: ../views/helpers.php:979 ../views/helpers.php:980
+#: ../views/helpers.php:1014 ../views/helpers.php:1015
 msgid "YES"
 msgstr "OUI"
 
-#: ../views/helpers.php:1433
+#: ../views/helpers.php:1481
 msgid ""
 "You will be automatically redirected to a new page within a few seconds.<br/"
 "> If this does not happen, please follow the link:"
@@ -571,12 +571,12 @@ msgstr ""
 "Vous allez être rédirigé automatiquement vers une nouvelle page dans "
 "quelques secondes.<br/> si cela n'arrivait pas, suivez ce lien:"
 
-#: ../public/main.php:820
+#: ../public/main.php:821
 #, php-format
 msgid "account %s not updated!"
 msgstr "compte %s non"
 
-#: ../views/helpers.php:1433
+#: ../views/helpers.php:1481
 msgid "click here"
 msgstr "Cliquez Ici"
 
@@ -597,6 +597,9 @@ msgstr ""
 #: ../public/main.php:441
 msgid "please, insert a forward destination or disable Forward!"
 msgstr "Inserer une destination ou desactiver le renvoi!"
+
+#~ msgid "Password contains special chars"
+#~ msgstr "Mot de passe contient des caractères spéciaux"
 
 #~ msgid "%s modified"
 #~ msgstr "%s modifié"
