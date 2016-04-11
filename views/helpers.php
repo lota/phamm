@@ -71,15 +71,12 @@ function page_end()
     $tag .= '<script src="js/jquery.min.js"></script>'."\n";
     $tag .= '<script src="js/bootstrap.min.js"></script>'."\n";
     $tag .= '<script src="js/bootstrap-confirmation.min.js"></script>'."\n";
-?>
-<script>
-function confirmDelete(element) {
-	if (!confirm("Are you shure?")) return;
-
-	window.location.href = element.getAttribute('data-href');
-}
-</script>
-<?php
+    $tag .= '<script>'."\n";
+    $tag .= 'function confirmDelete(element) {'."\n";
+    $tag .= 'if (!confirm("'._("Are you shure want delete this element?").'")) return;'."\n";
+    $tag .= "window.location.href = element.getAttribute('data-href');"."\n";
+    $tag .= '}'."\n";
+    $tag .= '</script>'."\n";
     $tag .= '</body>'."\n";
     $tag .= '</html>'."\n";
 
