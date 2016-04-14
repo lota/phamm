@@ -48,13 +48,6 @@
 				<maxlength>4</maxlength>
 				<default>100</default>
 			</attribute>
-			<attribute name="maxSmtpAuth">
-				<prettyName>Max Smtp Auth</prettyName>
-				<size>4</size>
-				<hidden>1</hidden>
-				<maxlength>4</maxlength>
-				<default>-1</default>
-			</attribute>
 			<attribute name="accountActive">
 				<prettyName>Active</prettyName>
 				<bool>1</bool>
