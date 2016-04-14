@@ -111,6 +111,7 @@ class PhammLogin
 
     function login_try($connect, $proposed, $login_password,$login_username)
     {
+	print_r($proposed["dn"], $login_password);
         $r = ldap_bind($connect, $proposed["dn"], $login_password);
 
         if ($r)
