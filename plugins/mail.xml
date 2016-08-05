@@ -125,7 +125,7 @@
 				<table>1</table>
 				<default>1000</default>
 				<multiplier>1048576</multiplier>
-				<suffix>S</suffix>
+				<suffix></suffix>
 				<minAuthLevel>4</minAuthLevel>
 			</attribute>
 			<attribute name="accountActive">
