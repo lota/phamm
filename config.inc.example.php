@@ -134,7 +134,7 @@ $plugins_exclusion = array("mail","alias");
 // *============================*
 
 // Phamm Version (+ indicate a SVN version)
-define ('VERSION','0.6.5');
+define ('VERSION','0.6.6');
 
 // Useful if you want hide the version [0,1]
 define ('HIDE_VERSION',0);
