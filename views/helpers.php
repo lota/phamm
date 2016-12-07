@@ -1459,8 +1459,7 @@ function refresh ($url, $force_meta = false, $seconds = 0)
         $PROTOCOL = 'http';
 
     // HTTP/1.1 requires an absolute URI
-    $uri = ereg ( '^http', $url ) ? $url : "$PROTOCOL://".
-           $_SERVER['HTTP_HOST'];
+    $uri = preg_match ( '/^http/', $url ) ? $url : "$PROTOCOL://".$_SERVER['HTTP_HOST'];
 
     // Server Root Check
     if(dirname ($_SERVER['PHP_SELF']) != '' && dirname ($_SERVER['PHP_SELF']) != '/')

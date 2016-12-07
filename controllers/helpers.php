@@ -314,7 +314,7 @@ function check_syntax ($type,$arg,$length="0")
     // IP Address
     if ($type == 'ip')
     {
-        if (!ereg ("^([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$", $arg))
+	if (!preg_match ("/^([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$/", $arg))
         {
             return FALSE;
         }
@@ -337,11 +337,10 @@ function check_syntax ($type,$arg,$length="0")
     // DOMAIN
     elseif ($type == 'domain')
     {
-        if (!eregi("^([0-9a-z][0-9a-z-]+\.)+[a-z]{2,7}$", $arg))
+	if (!preg_match ("/^([0-9a-z][0-9a-z-]+\.)+[a-z]{2,7}$/i", $arg))
         {
             return FALSE;
         }
-
         else
         {
             return TRUE;
@@ -351,11 +350,10 @@ function check_syntax ($type,$arg,$length="0")
     // ALIAS and ACCOUNT
     elseif ($type == 'account')
     {
-        if (!eregi("^[\._a-z0-9-]+$", $arg))
+	if (!preg_match ("/^[\._a-z0-9-]+$/i", $arg))
         {
             return FALSE;
         }
-
         else
         {
             return TRUE;
@@ -365,20 +363,27 @@ function check_syntax ($type,$arg,$length="0")
     // Password
     elseif ($type == 'password')
     {
-        if (!eregi("^[\._a-z0-9-]+$", $arg))
+	if (!preg_match ("/^[\._a-z0-9-]+$/i", $arg))
+	{
             return false;
-
-        return true;
+	}
+	else
+	{
+	    return true;
+	}
     }
 
     // Email
     elseif ($type == 'email')
     {
-        if (!eregi("^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.)+[a-z]{2,4}$", $arg))
+	if (!preg_match ("/^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.)+[a-z]{2,4}$/i", $arg))
+	{
             return false;
-
-        return true;
-
+	}
+	else
+	{
+	    return true;
+	}
     }
 
     // Name
