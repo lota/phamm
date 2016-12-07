@@ -206,14 +206,15 @@ function phamm_password_hash($password_clear)
     case 'crypt':
 
         $salt = (defined(CRYPT_SALT) ? CRYPT_SALT : 'random');
+        $salt_lenght = (defined(SALT_LENGTH) ? SALT_LENGTH : PASSWORD_MIN_LENGHT);
 
         switch (strtolower($salt))
         {
         case 'password':
-            $password_hash = '{CRYPT}'.crypt($password_clear, substr($password_clear,0,SALT_LENGTH));
+            $password_hash = '{CRYPT}'.crypt($password_clear, substr($password_clear,0,$salt_lenght));
             break;
         case 'random':
-            $password_hash = '{CRYPT}'.crypt($password_clear, random_password(SALT_LENGTH));
+            $password_hash = '{CRYPT}'.crypt($password_clear, random_password($salt_lenght));
             break;
         default:
             $password_hash = '{CRYPT}'.crypt($password_clear, $salt);
