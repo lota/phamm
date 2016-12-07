@@ -183,6 +183,9 @@ define ('ENC_TYPE','CRYPT');
 //   Anything else - Use this phrase as a salt
 define ('CRYPT_SALT', 'RANDOM');
 
+// salt string length, must greater than or equal to PASSWORD_MIN_LENGHT
+define ('SALT_LENGTH', 3);
+
 // Phamm autogenerate UID from e-mail
 // set char used instead @ (default=.)
 // i.e. info@example.com produce UID=info.example.com
