@@ -483,8 +483,9 @@ function form_template($p_name,$attributes,$myvalues,$skip_table=null)
 		}
 
 		// @todo
+		// This works only for quota in GiB
 		if ('quota' == $key)
-			$total_key = ($total_key/1024/1024 - $active_val['count'] * 2000);
+		    $total_key = ($total_key/1024/1024/1024 - $active_val['count'] * 2);
 
 		$current_val_count = $total_key;
 	    }
