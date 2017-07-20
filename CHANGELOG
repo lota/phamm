@@ -2,7 +2,7 @@
 ;;; Phamm - CHANGELOG
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   
-  Copyright (c) 2005-2016 Alessandro De Zorzi, Mirko Grava
+  Copyright (c) 2005-2017 Alessandro De Zorzi, Mirko Grava
   <team@phamm.org> http://www.phamm.org/
   
   Project sponsored by RHX Srl - www.rhx.it
@@ -11,6 +11,9 @@
   under the terms of the GNU Free Documentation License, Version 1.2
   or any later version published by the Free Software Foundation;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+0.6.7 20170720
+    * Fixed CVE-2017-0378 reflected XSS #21 (Thanks to lightsey)
 
 0.6.6 20161015
     * Fixed bug related to crypt password hash (Thanks to steveblamey)
