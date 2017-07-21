@@ -100,7 +100,7 @@ function page_exit()
 function login_form()
 {
     if (isset($_POST["login_username"]))
-        $login_username = $_POST["login_username"];
+        $login_username = htmlspecialchars($_POST["login_username"], ENT_QUOTES, "utf-8");
     else
         $login_username = null;
 
