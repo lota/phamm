@@ -177,7 +177,7 @@ elseif($login->login_check())
 	$action = 'domain_view';
 
     // Link to logount and language select
-    phamm_print_xhtml ('<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">');
+    phamm_print_xhtml ('<div class="navbar-collapse" id="bs-example-navbar-collapse-1">');
     
     phamm_print_xhtml ('<ul class="nav navbar-nav">');
     phamm_print_xhtml ("<li><a href=\"?exit=1\">");
