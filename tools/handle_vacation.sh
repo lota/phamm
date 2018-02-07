@@ -8,7 +8,7 @@ BINDDN="cn=admin,dc=example,dc=tld"
 VACATION_USERS=`ldapsearch -L -x -w $LDAPPASS -b $BASE -D $BINDDN mail | grep ^mail | awk ' {print $2}'`
 for USER in $VACATION_USERS; do
 TMPFILE=`tempfile`
-ldapsearch -L -x -w $LDAPPASS -b $BASE -D $BINDDN "(mail=$USER)" vacationStart vacationEnd >$TMPFILE
+ldapsearch -o ldif-wrap=no -L -x -w $LDAPPASS -b $BASE -D $BINDDN "(mail=$USER)" vacationStart vacationEnd >$TMPFILE
 
 VACATION_START=`grep ^vacationStart: $TMPFILE | awk '{print $2}'`
 VACATION_END=`grep ^vacationEnd: $TMPFILE | awk '{print $2}'`
