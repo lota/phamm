@@ -4,9 +4,9 @@
 <plugin name="mail">
 	<label>MAIL</label>
 	<version>
-		<number>0.0.4</number>
+		<number>0.0.5</number>
 		<creationDate>2005-02-19</creationDate>
-		<updatedDate>2008-09-08</updatedDate>
+		<updatedDate>2017-01-19</updatedDate>
 		<status>stable</status>
 	</version>
 	<author>
@@ -123,8 +123,8 @@
 			<attribute name="quota">
 				<prettyName>Quota</prettyName>
 				<table>1</table>
-				<default>1000</default>
-				<multiplier>1048576</multiplier>
+				<default>2</default>
+				<multiplier>1073741824</multiplier>
 				<suffix></suffix>
 				<minAuthLevel>4</minAuthLevel>
 			</attribute>

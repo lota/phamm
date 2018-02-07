@@ -104,13 +104,15 @@ function login_form()
     else
         $login_username = null;
 
+    $url_action = htmlspecialchars($_SERVER["PHP_SELF"], ENT_QUOTES, "utf-8");
+
     $tag = '';
     $tag .= '<div class="row"><div class="col-md-12">';
     $tag .= '<div class="form-signin">';
     $tag .= '<a href="'.ORG_URL.'">'."\n";
     $tag .= "<img src=\"img/phamm_logo.svg\" width=\"120\" alt=\"Phamm logo\" /></a>"."\n";
 
-    $tag .= "<form method=\"post\" class=\"form-signin\" action=\"".$_SERVER["PHP_SELF"]."\" name=\"login\">"."\n";
+    $tag .= "<form method=\"post\" class=\"form-signin\" action=\"".$url_action."\" name=\"login\">"."\n";
     $tag .= "<input type=\"hidden\" name=\"action\" value=\"login\" />"."\n";
 
     $tag .= '<div class="form-group">';
@@ -166,7 +168,9 @@ function style_load($style)
 
 function domains_list($vds,$values)
 {
-    $tag = '<form method="post" action="'.$_SERVER["PHP_SELF"].'" name="domains" id="post-checks">';
+    $url_action = htmlspecialchars($_SERVER["PHP_SELF"], ENT_QUOTES, "utf-8");
+
+    $tag = '<form method="post" action="'.$url_action.'" name="domains" id="post-checks">';
     $tag .= '<table class="table table-striped">';
 
     $tag .= '<thead>';
@@ -282,6 +286,8 @@ function accounts_list($domain,$values,$initial, $domain_val)
     global $pn;
     global $pv;
     global $action;
+    
+    $url_action = htmlspecialchars($_SERVER["PHP_SELF"], ENT_QUOTES, "utf-8");
 
     // Rapresentative ObjectClass
     $myObjectClass = (isset($pv[$pn]["ACCOUNT"]["OBJECTCLASSES"]) ? key($pv[$pn]["ACCOUNT"]["OBJECTCLASSES"]) : 'virtualMailAccount');
@@ -293,7 +299,7 @@ function accounts_list($domain,$values,$initial, $domain_val)
 
     $max_account = ($pn == 'alias' ? $domain_val[0]["maxalias"][0] : $domain_val[0]["maxmail"][0]);
 
-    $tag = '<form method="post" action="'.$_SERVER["PHP_SELF"].'" name="accounts" id="post-checks">';
+    $tag = '<form method="post" action="'.$url_action.'" name="accounts" id="post-checks">';
     $tag .= '<table class="table table-striped">';
 
     $tag .= '<thead>';
@@ -396,7 +402,9 @@ function accounts_list($domain,$values,$initial, $domain_val)
 
 function form_add_domain ()
 {
-    $tag = '<form method="post" class="form-inline" action="'.$_SERVER["PHP_SELF"].'" name="add_domain">';
+    $url_action = htmlspecialchars($_SERVER["PHP_SELF"], ENT_QUOTES, "utf-8");
+
+    $tag = '<form method="post" class="form-inline" action="'.$url_action.'" name="add_domain">';
     $tag .= '<input type="hidden" name="action" value="add_domain" />';
     $tag .= '<div class="form-group">';
     $tag .= '<input type="text" class="form-control" size="30" name="domain_new"  maxlength="50" value="';
@@ -483,8 +491,9 @@ function form_template($p_name,$attributes,$myvalues,$skip_table=null)
 		}
 
 		// @todo
+		// This works only for quota in GiB
 		if ('quota' == $key)
-			$total_key = ($total_key/1024/1024 - $active_val['count'] * 2000);
+		    $total_key = ($total_key/1024/1024/1024 - $active_val['count'] * 2);
 
 		$current_val_count = $total_key;
 	    }
@@ -735,6 +744,7 @@ function form_add_domain_2 ($domain_new, $action, $values, $values_postmaster)
     global $pv;
     global $domain;
     
+    $url_action = htmlspecialchars($_SERVER["PHP_SELF"], ENT_QUOTES, "utf-8");
 
     if (in_array($action,array('update_account','modify_account')))
 	$submit_label = _("Modify domain");
@@ -747,7 +757,7 @@ function form_add_domain_2 ($domain_new, $action, $values, $values_postmaster)
     $tag .= '<div class="panel-heading"><h3>'._("Domain").' '.$domain_new.'</h3></div>';
     $tag .= '<div class="panel-body">';
 
-    $tag .= '<form method="post" action="'.$_SERVER["PHP_SELF"].'" name="add">'."\n";
+    $tag .= '<form method="post" action="'.$url_action.'" name="add">'."\n";
     $tag .= '<input type="hidden" name="action" value="'.$action.'" />'."\n";
     $tag .= '<input type="hidden" name="domain_new" value="'.$domain_new.'" />'."\n";
 
@@ -802,8 +812,10 @@ function form_add_domain_2 ($domain_new, $action, $values, $values_postmaster)
 function form_add_account ()
 {
     global $domain;
+    
+    $url_action = htmlspecialchars($_SERVER["PHP_SELF"], ENT_QUOTES, "utf-8");
 
-    $tag = '<form method="post" class="form-inline" action="'.$_SERVER["PHP_SELF"].'" name="add_account">'."\n";
+    $tag = '<form method="post" class="form-inline" action="'.$url_action.'" name="add_account">'."\n";
     $tag .= '<input type="hidden" name="action" value="add_account" />'."\n";
     $tag .= '<div class="input-group">'."\n";
     $tag .= '<input type="text" size="25" class="form-control" name="account_new"  maxlength="50" value="'."\n";
@@ -832,6 +844,8 @@ function form_add_account_2 ($account_new, $action, $values, $disabled=array())
     global $sn;
     #global $values;
     global $plugins_exclusion;
+    
+    $url_action = htmlspecialchars($_SERVER["PHP_SELF"], ENT_QUOTES, "utf-8");
   
     if (in_array($action,array('modify_account','update_account')))
 	$submit_label = _("Modify account");
@@ -844,7 +858,7 @@ function form_add_account_2 ($account_new, $action, $values, $disabled=array())
     $tag .= '<div class="panel-heading"><h3>'._("Account").' '.$account_new.'</h3></div>';
     $tag .= '<div class="panel-body">';
 
-    $tag .= '<form method="post" action="'.$_SERVER["PHP_SELF"].'" name="add">'."\n";
+    $tag .= '<form method="post" action="'.$url_action.'" name="add">'."\n";
     $tag .= '<input type="hidden" name="action" value="'.$action.'" />'."\n";
     $tag .= '<input type="hidden" name="account_new" value="'.$account_new.'" />'."\n";
 
@@ -1225,8 +1239,10 @@ function locale_select()
 {
     global $locale;
     global $supported_languages;
+    
+    $url_action = htmlspecialchars($_SERVER["PHP_SELF"], ENT_QUOTES, "utf-8");
 
-    $tag = '<form method="get" action="'.$_SERVER["PHP_SELF"].'" name="lang">';
+    $tag = '<form method="get" action="'.$url_action.'" name="lang">';
     $tag .= '<select class="form-control" name="language" onchange="document.lang.submit()">'."\n";
 	
     foreach ($supported_languages as $l_k => $l_v)
@@ -1247,9 +1263,11 @@ function locale_select()
 
 function form_catch_all($domain)
 {
+    $url_action = htmlspecialchars($_SERVER["PHP_SELF"], ENT_QUOTES, "utf-8");
+
     $tag = '<div class="message">'._("Catch-all").'</div>';
 
-    $tag .= '<form method="post" action="'.$_SERVER["PHP_SELF"].'" name="login">'."\n";
+    $tag .= '<form method="post" action="'.$url_action.'" name="login">'."\n";
     $tag .= '<input type="hidden" name="action" value="insert_account" />'."\n";
     $tag .= '<input type="hidden" name="account_new" value="@'.$domain.'" />'."\n";
     $tag .= '<input type="hidden" name="values[alias][accountactive]" value="TRUE" />'."\n";
@@ -1457,14 +1475,15 @@ function refresh ($url, $force_meta = false, $seconds = 0)
         $PROTOCOL = 'https';
     else
         $PROTOCOL = 'http';
+    
+    $url_action = htmlspecialchars($_SERVER["PHP_SELF"], ENT_QUOTES, "utf-8");
 
     // HTTP/1.1 requires an absolute URI
-    $uri = ereg ( '^http', $url ) ? $url : "$PROTOCOL://".
-           $_SERVER['HTTP_HOST'];
+    $uri = preg_match ( '/^http/', $url ) ? $url : "$PROTOCOL://".$_SERVER['HTTP_HOST'];
 
     // Server Root Check
-    if(dirname ($_SERVER['PHP_SELF']) != '' && dirname ($_SERVER['PHP_SELF']) != '/')
-        $uri .= dirname($_SERVER['PHP_SELF']);
+    if(dirname ($url_action) != '' && dirname ($url_action) != '/')
+        $uri .= dirname($url_action);
 
     $uri .= '/'.$url;
 

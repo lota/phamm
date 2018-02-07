@@ -84,11 +84,15 @@ $login = new PhammLogin();
 // First login
 if (!$login->login_check() && isset($_POST["login_username"]) && isset($_POST["login_password"]))
 {
-    $proposed = $login->login_dn_costructor($_POST["login_username"]);
+    // Sanitize _POST login_username
+    $login_username_sanitized = htmlspecialchars($_POST["login_username"], ENT_QUOTES, "utf-8");
+    $login_username_trimmed = trim($_POST["login_username"]);
 
-    $r_bind = $login->login_try($connect, $proposed, $_POST["login_password"],$_POST["login_username"]);
+    $proposed = $login->login_dn_costructor($login_username_trimmed);
 
-    $log->phamm_log ('',$_POST["login_username"],'login',$r_bind);
+    $r_bind = $login->login_try($connect, $proposed, $_POST["login_password"], $login_username_trimmed);
+
+    $log->phamm_log ('',$_POST["login_username"].$login_username_trimmed,'login',$r_bind);
 
     if (!$r_bind)
     {
@@ -177,7 +181,7 @@ elseif($login->login_check())
 	$action = 'domain_view';
 
     // Link to logount and language select
-    phamm_print_xhtml ('<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">');
+    phamm_print_xhtml ('<div class="navbar-collapse" id="bs-example-navbar-collapse-1">');
     
     phamm_print_xhtml ('<ul class="nav navbar-nav">');
     phamm_print_xhtml ("<li><a href=\"?exit=1\">");
