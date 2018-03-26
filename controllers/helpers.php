@@ -204,7 +204,7 @@ function phamm_password_hash($password_clear,$enc_type) {
 	//if (DEBUG_ENABLED && (($fargs=func_get_args())||$fargs='NOARGS'))
 	//	debug_log('Entered (%%)',1,0,__FILE__,__LINE__,__METHOD__,$fargs);
 
-	$enc_type = strtolower($enc_type);
+	$enc_type = strtolower(ENC_TYPE);
 
 	switch($enc_type) {
 		case 'blowfish':
