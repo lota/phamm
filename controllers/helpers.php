@@ -341,8 +341,8 @@ function phamm_password_hash($password_clear,$enc_type) {
  */
 
 function random_salt($length) {
-	if (DEBUG_ENABLED && (($fargs=func_get_args())||$fargs='NOARGS'))
-		debug_log('Entered (%%)',1,0,__FILE__,__LINE__,__METHOD__,$fargs);
+	//if (DEBUG_ENABLED && (($fargs=func_get_args())||$fargs='NOARGS'))
+	//	debug_log('Entered (%%)',1,0,__FILE__,__LINE__,__METHOD__,$fargs);
 
 	$possible = '0123456789'.
 		'abcdefghijklmnopqrstuvwxyz'.
