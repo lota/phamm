@@ -12,6 +12,9 @@
   or any later version published by the Free Software Foundation;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+0.6.8 20180628
+    * Security fixes and minor improvements
+
 0.6.7 20170720
     * Fixed CVE-2017-0378 reflected XSS #21 (Thanks to lightsey)
 
