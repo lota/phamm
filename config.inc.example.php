@@ -143,7 +143,7 @@ define ('HIDE_VERSION',0);
 define ('FORCE_SSL',0);
 
 // Min password length
-define ('PASSWORD_MIN_LENGHT',3);
+define ('PASSWORD_MIN_LENGTH',3);
 
 // Seconds after refresh page
 define ('REFRESH_TIME',1);
