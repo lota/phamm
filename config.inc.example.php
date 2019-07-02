@@ -145,8 +145,8 @@ define ('FORCE_SSL',0);
 // Min password length
 define ('PASSWORD_MIN_LENGTH',3);
 
-// Require Complex Passwords [0,1]
-define ('USE_COMPLEX_PASSWORDS' , 0);
+// Check Password Complexity [0,1]
+define ('CHECK_PASSWORD_COMPLEXITY' , 0);
 
 // Seconds after refresh page
 define ('REFRESH_TIME',1);
