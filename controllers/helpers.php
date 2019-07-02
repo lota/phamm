@@ -178,7 +178,7 @@ function wrong_pw ($password1,$password2,$length=PASSWORD_MIN_LENGTH)
     elseif ( strlen($password1) < $length )
 	$error_msg = _("Password too short!");
 
-    elseif ( USE_COMPLEX_PASSWORDS == 1 ) {
+    elseif ( CHECK_PASSWORD_COMPLEXITY == 1 ) {
         if ( !check_syntax ('password',$password1) && $length > 0)
             $error_msg = _("Password does not meet complexity requirements.");
     }
