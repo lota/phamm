@@ -170,7 +170,7 @@ case "postmaster" :
 * @return bool
 **/
 
-function wrong_pw ($password1,$password2,$length=PASSWORD_MIN_LENGHT)
+function wrong_pw ($password1,$password2,$length=PASSWORD_MIN_LENGTH)
 {
     if ( $password1 != $password2 )
         $error_msg = _("Passwords don't match!");
