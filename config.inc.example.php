@@ -183,7 +183,7 @@ define ('ENC_TYPE','CRYPT');
 //   Anything else - Use this phrase as a salt
 define ('CRYPT_SALT', 'RANDOM');
 
-// salt string length, must greater than or equal to PASSWORD_MIN_LENGHT
+// salt string length, must greater than or equal to PASSWORD_MIN_LENGTH
 define ('SALT_LENGTH', 3);
 
 // Phamm autogenerate UID from e-mail
