@@ -1,10 +1,17 @@
 PHP LDAP Virtual Hosting Manager
 ================================
 
-  Copyright (c) 2005-2016 Alessandro De Zorzi, Mirko Grava
+## New: Phamm 2.0
+
+  since 2020 rhx no longer supports Phamm
+  for the new version of Phamm 2.0 completely rewritten see https://www.phamm.com
+
+## Copyright Phamm 1.0
+
+  Copyright (c) 2005-2019 Alessandro De Zorzi, Mirko Grava
   <team@phamm.org> http://www.phamm.org/
   
-  Project sponsored by RHX Srl - www.rhx.it
+  Project sponsored by RHX Srl - https://www.rhx.it
 
   Permission is granted to copy, distribute and/or modify this document
   under the terms of the GNU Free Documentation License, Version 1.2
