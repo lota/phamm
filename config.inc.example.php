@@ -143,7 +143,10 @@ define ('HIDE_VERSION',0);
 define ('FORCE_SSL',0);
 
 // Min password length
-define ('PASSWORD_MIN_LENGHT',3);
+define ('PASSWORD_MIN_LENGTH',3);
+
+// Check Password Complexity [0,1]
+define ('CHECK_PASSWORD_COMPLEXITY' , 0);
 
 // Seconds after refresh page
 define ('REFRESH_TIME',1);
@@ -183,7 +186,7 @@ define ('ENC_TYPE','CRYPT');
 //   Anything else - Use this phrase as a salt
 define ('CRYPT_SALT', 'RANDOM');
 
-// salt string length, must greater than or equal to PASSWORD_MIN_LENGHT
+// salt string length, must greater than or equal to PASSWORD_MIN_LENGTH
 define ('SALT_LENGTH', 3);
 
 // Phamm autogenerate UID from e-mail

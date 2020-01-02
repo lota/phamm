@@ -170,13 +170,18 @@ case "postmaster" :
 * @return bool
 **/
 
-function wrong_pw ($password1,$password2,$length=PASSWORD_MIN_LENGHT)
+function wrong_pw ($password1,$password2,$length=PASSWORD_MIN_LENGTH)
 {
     if ( $password1 != $password2 )
         $error_msg = _("Passwords don't match!");
 
     elseif ( strlen($password1) < $length )
 	$error_msg = _("Password too short!");
+
+    elseif ( CHECK_PASSWORD_COMPLEXITY == 1 ) {
+        if ( !check_syntax ('password',$password1) && $length > 0)
+            $error_msg = _("Password does not meet complexity requirements.");
+    }
 
     if (isset($error_msg))
         return $error_msg;
@@ -479,14 +484,50 @@ function check_syntax ($type,$arg,$length="0")
     // Password
     elseif ($type == 'password')
     {
-	if (!preg_match ("/^[\._a-z0-9-]+$/i", $arg))
-	{
+        // does the entered password meet our requirements?
+        //
+        // Requirements:
+        //   1. Must be at least PASSWORD_MIN_LENGTH characters long.
+        //   2. Must contain at least 1 character from 3 of the following 4 categories:
+        //      + English uppercase characters (A through Z)
+        //      + English lowercase characters (a through z)
+        //      + Base 10 digits (0 through 9)
+        //      + Non-alphabetic "special" characters --- for example: ~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,
+        //        [,},],|,\,:,;,",',<,[comma],>,.,?,/,[space]
+        //   3. Must NOT contain the username.  This check is case-insensitive.
+
+        // note: see PHP manual entry for Pattern Syntax for explanation of the patterns used.
+        $lc_password = strtolower($arg);
+        $length = strlen($arg);
+
+        $matches = array();
+        $numberOfUppercase = preg_match_all("/\p{Lu}/",$arg,$matches);
+        $numberOfLowercase = preg_match_all("/\p{Ll}/",$arg,$matches);
+        $numberOfDigits = preg_match_all("/\d/",$arg,$matches);
+        $numberOfSpcChar = preg_match_all('/[~`!@#$%\^&*()\-_+={[}\]|\\\\:;"\'<,>.?\/ ]/',$arg,$matches);
+
+        // calculate initial password quality by determining how many of our 4 categories have at least
+        // one character in the password.
+        $quality = 0;
+        if( $numberOfUppercase > 0 )
+            $quality++;
+        if( $numberOfLowercase > 0 )
+            $quality++;
+        if( $numberOfDigits > 0 )
+            $quality++;
+        if( $numberOfSpcChar > 0 )
+            $quality++;
+
+        // does it contain the username?  (not case-sensitive)
+        if ( isset($_POST["givenname"]) ) $username=strtolower($_POST["givenname"]);
+        if ( isset($_POST["domain_new"]) ) $username=strtolower($_POST["domain_new"]);
+        if( substr_count( $lc_password, $username ) > 0 )
+            $quality = 0;
+
+        if( $length >= PASSWORD_MIN_LENGTH && $quality > 2 )
+            return true;
+        else
             return false;
-	}
-	else
-	{
-	    return true;
-	}
     }
 
     // Email
