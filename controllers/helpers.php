@@ -519,10 +519,12 @@ function check_syntax ($type,$arg,$length="0")
             $quality++;
 
         // does it contain the username?  (not case-sensitive)
+	/* I am not sure use $_POST is a good way, $username seems not a good name and seems overwriten
         if ( isset($_POST["givenname"]) ) $username=strtolower($_POST["givenname"]);
         if ( isset($_POST["domain_new"]) ) $username=strtolower($_POST["domain_new"]);
         if( substr_count( $lc_password, $username ) > 0 )
-            $quality = 0;
+        //    $quality = 0;
+	*/
 
         if( $length >= PASSWORD_MIN_LENGTH && $quality > 2 )
             return true;
